@@ -5,3 +5,13 @@
  */
 
 // You can delete this file if you're not using it
+const postsData = require('./src/config/posts');
+
+exports.createPages = ({actions}) => {
+    const {createPage} = actions;
+    postsData.posts.forEach((postData, index) => createPage({
+        path: `/post-${index}`,
+        component: require.resolve("./src/templates/post.jsx"),
+        context: {postData}
+    }))
+};
