@@ -1,7 +1,7 @@
 import React from "react";
 
-export default ({pageContext: {postData}}) => {
+export default ({pageContext: {postMetadata}}) => {
     return (
-        <div>Post data: {JSON.stringify(postData)}</div>
+        <div>Post data: {JSON.stringify(postMetadata)}</div>
     )
 };
