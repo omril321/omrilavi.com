@@ -24,6 +24,9 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@storybook/react": "^5.2.6",
+    "babel-loader": "^8.0.6",
     "prettier": "^1.18.2"
   },
   "keywords": [
@@ -36,6 +39,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "storybook": "NODE_ENV=production start-storybook -s public"
   }
 }
