@@ -1,0 +1,11 @@
+@import "../base";
+
+.header {
+  border-bottom: $bordersColor 2px solid;
+}
+
+.header_content-container {
+  @include pageAdaptedContent;
+  display: flex;
+  justify-content: space-between;
+}

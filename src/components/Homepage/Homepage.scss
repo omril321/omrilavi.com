@@ -1,19 +1,15 @@
-@import "../colors";
+@import "../base";
 
 .homepage {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-column-gap: 1fr;
-
   background-color: $backgroundColor;
 }
 
 .homepage_content {
-  display: inline-grid;
+  @include pageAdaptedContent;
+  display: grid;
+  grid-template-columns: auto;
   row-gap: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: 1000px;
+  justify-content: center;
 }
 
 .homepage_post-links-container {
