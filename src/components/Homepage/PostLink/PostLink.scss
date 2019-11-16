@@ -1,5 +1,6 @@
-$postLinkHeight: 340px;
-$postLinkImageHeight: 250px;
+@import "../../colors";
+
+$postLinkImageHeight: 70%;
 
 @mixin withBackgroundImage {
   background-repeat: no-repeat;
@@ -10,18 +11,20 @@ $postLinkImageHeight: 250px;
 .post-link {
   display: grid;
   grid-template-rows: $postLinkImageHeight 1fr;
-  height: $postLinkHeight;
-  border: 1px #c5bac1 solid;
-  border-radius: 8px;
+  border: 1px $bordersColor solid;
+
+  border-radius: 12px;
   flex-direction: column;
   text-decoration: none;
   overflow: hidden;
+  background-color: $backgroundSecondaryColor;
+  transition: all 200ms ease-out;
+
 }
 
 .post-link_image-container {
   position: relative;
   display: flex;
-  box-shadow: 0 1px 20px 0 #d4d4d4;
 }
 
 .post-link_image {
@@ -37,4 +40,13 @@ $postLinkImageHeight: 250px;
   left: 6px;
   height: 1.7rem;
   width: 1.7rem;
+}
+
+.post-link_title {
+  font-size: 1.6rem;
+  color: $textMainColor;
+}
+.post-link_description {
+  font-size: 1.2rem;
+  color: $textMainColor;
 }

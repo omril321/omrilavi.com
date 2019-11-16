@@ -16,7 +16,7 @@ export const YoutubeLink = () => {
     };
 
     return (
-        <div style={{margin: 40, width: 400}}>
+        <div style={{margin: 40, width: 400, height: 400, display: "grid"}}>
             <PostLink {...youtubePostData}/>
         </div>
     )
@@ -34,7 +34,7 @@ export const MediumLink = () => {
         "flags": []
     };
     return (
-        <div style={{margin: 40, width: 400}}>
+        <div style={{margin: 40, width: 400, height: 400, display: "grid"}}>
             <PostLink {...mediumPostData}/>
         </div>
     )
