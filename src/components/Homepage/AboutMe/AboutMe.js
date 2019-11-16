@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MeImage from "./MeImage/MeImage";
+import MeImage from "../../common/MeImage/MeImage";
 import './AboutMe.scss';
 
 

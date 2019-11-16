@@ -1,0 +1,28 @@
+@import "../base";
+
+$headerLinkIconSize: 28px;
+
+.header-link {
+  padding: 2px;
+  margin: 2px;
+
+  &:last-child {
+    padding-right: 0;
+    margin-right: 0;
+  }
+
+  svg {
+    transition: all $animationSpeedNormal ease-out;
+  }
+
+  &:hover {
+    svg {
+      fill: $textMainColor;
+    }
+  }
+}
+
+.header-link_icon-wrapper {
+  width: $headerLinkIconSize;
+  height: $headerLinkIconSize;
+}

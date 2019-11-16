@@ -1,5 +1,7 @@
 @import "colors";
 
+$animationSpeedNormal: 150ms;
+
 @mixin pageAdaptedContent {
   margin: 0 auto;
   max-width: 1000px;

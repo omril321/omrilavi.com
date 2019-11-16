@@ -8,4 +8,11 @@
   @include pageAdaptedContent;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.header_image-container {
+  width: 48px;
+  border-radius: 50%;
+  overflow: hidden;
 }
