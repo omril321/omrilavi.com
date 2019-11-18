@@ -1,0 +1,13 @@
+@import "../base";
+
+.page-layout {
+  background-color: $backgroundColor;
+}
+
+.page-layout_content-wrapper {
+  @include pageAdaptedContent;
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 20px;
+  justify-content: center;
+}

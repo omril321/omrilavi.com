@@ -1,17 +1,3 @@
-@import "../base";
-
-.homepage {
-  background-color: $backgroundColor;
-}
-
-.homepage_content {
-  @include pageAdaptedContent;
-  display: grid;
-  grid-template-columns: auto;
-  row-gap: 20px;
-  justify-content: center;
-}
-
 .homepage_post-links-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
