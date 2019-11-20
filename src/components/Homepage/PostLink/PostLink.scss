@@ -1,6 +1,8 @@
 @import "../../base";
 
-$postLinkImageHeight: 70%;
+$postLinkImageHeight: 150px;
+$postLinkImageWidth: 200px;
+$postLinkAdditionalInfoWidth: 150px;
 
 @mixin withBackgroundImage {
   background-repeat: no-repeat;
@@ -9,22 +11,25 @@ $postLinkImageHeight: 70%;
 }
 
 .post-link {
-  display: grid;
-  grid-template-rows: $postLinkImageHeight 1fr;
-  border: 1px $bordersColor solid;
-
-  border-radius: 12px;
-  flex-direction: column;
   text-decoration: none;
   overflow: hidden;
-  background-color: $backgroundSecondaryColor;
+  background-color: rgba($backgroundSecondaryColor, 0.2);
   transition: all 200ms ease-out;
+  padding: 20px;
 
+  display: grid;
+  grid-template-columns: $postLinkImageWidth 1fr $postLinkAdditionalInfoWidth;
+  grid-column-gap: 28px;
+
+  &:not(:first-child) {
+    margin-top: 30px;
+  }
 }
 
 .post-link_image-container {
-  position: relative;
   display: flex;
+  flex: 0 0 $postLinkImageWidth;
+  height: $postLinkImageHeight;
 }
 
 .post-link_image {
@@ -33,20 +38,26 @@ $postLinkImageHeight: 70%;
   height: 100%;
 }
 
-.post-link_icon {
-  @include withBackgroundImage;
-  position: absolute;
-  top: 0;
-  left: 6px;
-  height: 1.7rem;
-  width: 1.7rem;
+.post-link_title {
+  font-size: 1.5rem;
+  color: $textMainColor;
 }
 
-.post-link_title {
-  font-size: 1.6rem;
-  color: $textMainColor;
-}
 .post-link_description {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: $textMainColor;
+  margin-top: 12px;
+}
+
+.post-link_additional-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 10px;
+}
+
+.post-link_icon {
+  @include withBackgroundImage;
+  width: 24px;
+  height: 24px;
 }
