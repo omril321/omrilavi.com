@@ -10,4 +10,6 @@
   grid-template-columns: auto;
   row-gap: 20px;
   justify-content: center;
+  padding-left: $horizontalPagePadding;
+  padding-right: $horizontalPagePadding;
 }

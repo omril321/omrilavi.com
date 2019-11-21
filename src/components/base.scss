@@ -2,6 +2,7 @@
 @import "colors";
 
 $animationSpeedNormal: 150ms;
+$horizontalPagePadding: 22px;
 
 @mixin pageAdaptedContent {
   margin: 0 auto;

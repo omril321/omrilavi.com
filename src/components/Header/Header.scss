@@ -2,6 +2,8 @@
 
 .header {
   border-bottom: $bordersColor 2px solid;
+  padding-left: $horizontalPagePadding;
+  padding-right: $horizontalPagePadding;
 }
 
 .header_content-container {
