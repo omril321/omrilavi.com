@@ -13,8 +13,8 @@ const PostLink = ({title, icon, description, image, url, type, provider, flags})
             </div>
             <div className="post-link_additional-info">
                 <div className="post-link_icon" style={{backgroundImage: `url(${icon})`}}/>
-                <div>Reading time</div>
-                <div>{type}</div>
+                {/*<div>Reading time</div>*/}
+                {/*<div>Type {type}</div>*/}
             </div>
         </a>
     );

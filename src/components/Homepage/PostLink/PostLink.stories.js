@@ -3,7 +3,7 @@ import React from "react";
 
 export default {title: "PostLink"};
 
-export const YoutubeLink = () => {
+export const YoutubeLinkOnMobile = () => {
     const youtubePostData = {
         "title": "Microfrontends with iFrames",
         "icon": "https://www.youtube.com/yts/img/favicon_96-vflW9Ec0w.png",
@@ -16,7 +16,7 @@ export const YoutubeLink = () => {
     };
 
     return (
-        <div style={{margin: 40, width: 400, height: 400, display: "grid"}}>
+        <div style={{margin: 40, width: 700, display: "grid"}}>
             <PostLink {...youtubePostData}/>
         </div>
     )
@@ -34,7 +34,7 @@ export const MediumLink = () => {
         "flags": []
     };
     return (
-        <div style={{margin: 40, width: 400, height: 400, display: "grid"}}>
+        <div style={{margin: 40, width: 1000, display: "grid"}}>
             <PostLink {...mediumPostData}/>
         </div>
     )

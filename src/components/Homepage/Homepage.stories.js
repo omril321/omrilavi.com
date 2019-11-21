@@ -11,7 +11,10 @@ const postsMetadata = [
         "image": "https://i.ytimg.com/vi/Bov9v7Oept4/maxresdefault.jpg",
         "url": "https://www.youtube.com/watch?v=Bov9v7Oept4",
         "provider": "YouTube",
-        "flags": ["hebrew"]
+        "type": "video.other",
+        "flags": [
+            "hebrew"
+        ]
     },
     {
         "title": "Fixing Overly Aggressive Optimization with Terser",
@@ -20,6 +23,7 @@ const postsMetadata = [
         "image": "https://miro.medium.com/max/960/0*i_3GXfPLKlfDKwhY",
         "url": "https://medium.com/@omril321/fixing-overly-aggressive-optimization-with-terser-f07309761b50",
         "provider": "Medium",
+        "type": "article",
         "flags": []
     },
     {
@@ -29,6 +33,7 @@ const postsMetadata = [
         "image": "https://miro.medium.com/max/1200/0*6ht9ccoPSRX8SudN",
         "url": "https://medium.com/@omril321/7-things-you-should-know-before-starting-with-side-projects-42dc1ddc1c37",
         "provider": "Medium",
+        "type": "article",
         "flags": []
     },
     {
@@ -38,6 +43,7 @@ const postsMetadata = [
         "image": "https://miro.medium.com/max/1200/1*tPnsbYsfRrcPaDtsMX3ARQ.jpeg",
         "url": "https://medium.com/better-programming/cleaner-typescript-with-the-non-null-assertion-operator-300789388376",
         "provider": "Medium",
+        "type": "article",
         "flags": []
     },
     {
@@ -47,6 +53,7 @@ const postsMetadata = [
         "image": "https://miro.medium.com/max/1200/0*f6Vz4GodmmZIUtP6",
         "url": "https://medium.com/better-programming/link-previews-more-than-meets-the-eye-aa13c77c6d69",
         "provider": "Medium",
+        "type": "article",
         "flags": []
     }
 ];
