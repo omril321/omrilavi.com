@@ -7,3 +7,9 @@ $animationSpeedNormal: 150ms;
   margin: 0 auto;
   max-width: 1000px;
 }
+
+@mixin readableFont($fontSize, $baseColor) {
+  font-size: $fontSize;
+  line-height: (1.618 * $fontSize);
+  color: rgba($baseColor, 0.85);
+}
