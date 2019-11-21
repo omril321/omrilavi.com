@@ -29,6 +29,11 @@ $postLinkImageWidth: 200px;
     grid-row-gap: 0;
     grid-template-columns: $postLinkImageWidth 1fr auto;
   }
+
+  &:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2)
+  }
 }
 
 .post-link_image-container {
