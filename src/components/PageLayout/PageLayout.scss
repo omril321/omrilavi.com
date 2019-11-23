@@ -5,11 +5,7 @@
 }
 
 .page-layout_content-wrapper {
-  @include pageAdaptedContent;
-  display: grid;
-  grid-template-columns: auto;
-  row-gap: 20px;
-  justify-content: center;
-  padding-left: $horizontalPagePadding;
-  padding-right: $horizontalPagePadding;
+  margin: 0 auto;
+  padding: 2.625rem 1.3125rem;
+  max-width: 48rem;
 }

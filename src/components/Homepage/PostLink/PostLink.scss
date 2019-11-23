@@ -14,7 +14,7 @@ $postLinkImageWidth: 200px;
   overflow: hidden;
   background-color: rgba($backgroundSecondaryColor, 0.2);
   transition: all 200ms ease-out;
-  padding: 20px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.05);
 
   display: grid;
   grid-template-columns: 1fr;
@@ -26,13 +26,14 @@ $postLinkImageWidth: 200px;
   }
 
   @media only screen and (min-width: 800px) {
+    padding: 20px;
     grid-row-gap: 0;
     grid-template-columns: $postLinkImageWidth 1fr auto;
   }
 
   &:hover {
-    transform: translateY(-8px) scale(1.01);
-    box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2)
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 }
 

@@ -1,18 +1,26 @@
 .about-me {
-  display: inline-grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  grid-gap: 20px;
   justify-items: center;
-  margin-top: 36px;
+  margin-top: 2.5rem;
+  margin-bottom: 5.5rem;
 
   @media only screen and (min-width: 800px) {
-    grid-template-columns: 1fr auto;
+    flex-direction: row;
+    align-items: flex-start;
   }
 }
 
 .about-me_image-wrapper {
   border-radius: 50%;
   overflow: hidden;
-  width: 150px;
+  width: 128px;
+}
+
+.about-me_description-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 28px;
 }

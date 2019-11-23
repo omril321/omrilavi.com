@@ -1,8 +1,8 @@
-@import "../base";
+@import "../../base";
 
-$headerLinkIconSize: 30px;
+$personalLinkIconSize: 30px;
 
-.header-link {
+.personal-link {
   padding: 2px;
   margin: 2px;
 
@@ -22,7 +22,7 @@ $headerLinkIconSize: 30px;
   }
 }
 
-.header-link_icon-wrapper {
-  width: $headerLinkIconSize;
-  height: $headerLinkIconSize;
+.personal-link_icon-wrapper {
+  width: $personalLinkIconSize;
+  height: $personalLinkIconSize;
 }

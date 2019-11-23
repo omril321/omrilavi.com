@@ -1,20 +1,13 @@
 import * as React from 'react';
-import './Header.scss';
-import MeImage from "../common/MeImage/MeImage";
-import HeaderLinks from "./HeaderLinks";
+import AboutMe from "../Homepage/AboutMe/AboutMe";
 
 
-const Header = ({}) => {
-    return (
-        <header className="header">
-            <div className="header_content-container">
-                <div className="header_image-container">
-                    <MeImage/>
-                </div>
-                <HeaderLinks/>
-            </div>
-        </header>
-    )
-};
+const Header = () => (
+    <header>
+        <h1>Website Name</h1>
+
+        <AboutMe/>
+    </header>
+);
 
 export default Header;
