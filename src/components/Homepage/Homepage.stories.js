@@ -55,6 +55,16 @@ const postsMetadata = [
         "provider": "Medium",
         "type": "article",
         "flags": []
+    },
+    {
+        "title": "My Top 9 Hand-picked Talks from CSSConfBP and JSConfBP ’19 (+ Some Bonuses!)",
+        "icon": "https://cdn-images-1.medium.com/fit/c/76/76/1*8I-HPL0bfoIzGied-dzOvA.png",
+        "description": "9 favorite talks from the 2019 CSSConf & JSConf",
+        "image": "https://miro.medium.com/max/1200/0*_e0SBFKicMh2tgb5",
+        "url": "https://engineering.innovid.com/my-top-9-hand-picked-talks-from-cssconfbp-jsconfbp-19-some-bonuses-702fdf33bbf7",
+        "provider": "Medium",
+        "type": "article",
+        "flags": []
     }
 ];
 
