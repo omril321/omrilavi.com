@@ -65,6 +65,16 @@ const postsMetadata = [
         "provider": "Medium",
         "type": "article",
         "flags": []
+    },
+    {
+        "title": "3 Considerations for Your Next Utility Function Refactor — Static vs Dependency Injected",
+        "icon": "https://cdn-images-1.medium.com/fit/c/76/76/1*8I-HPL0bfoIzGied-dzOvA.png",
+        "description": "Choosing between static and a dependency injected utility function",
+        "image": "https://miro.medium.com/max/1200/0*QXTA-1khLYzcQRAj",
+        "url": "https://engineering.innovid.com/3-considerations-for-your-next-utility-function-refactor-static-vs-dependency-injected-e966d385bd27",
+        "provider": "Medium",
+        "type": "article",
+        "flags": []
     }
 ];
 
