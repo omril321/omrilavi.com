@@ -4,8 +4,6 @@ import AboutMe from "../Homepage/AboutMe/AboutMe";
 
 const Header = () => (
     <header>
-        <h1>Website Name</h1>
-
         <AboutMe/>
     </header>
 );

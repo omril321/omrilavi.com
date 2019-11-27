@@ -4,21 +4,23 @@ import './AboutMe.scss';
 import PersonalLinks from "../../Header/PersonalLinks/PersonalLinks";
 
 
-const AboutMe = () => {
-    return (
-        <div className="about-me">
-            <div className="about-me_image-wrapper">
-                <MeImage/>
-            </div>
-            <div className="about-me_description-wrapper">
-                <span>Hi</span>
-                This is a simple description of the blog. It shouldn't be too long, but that depends on my mood.
-
-                <PersonalLinks/>
-            </div>
-
+const AboutMe = () => (
+    <div className="about-me">
+        <div className="about-me_image-wrapper">
+            <MeImage/>
         </div>
-    )
-};
+        <div className="about-me_description-wrapper">
+            <div>
+                <h2>Hi, I'm Omri Lavi 👋</h2>
+                <p>
+                    A fullstack developer that loves frontend, testing and code quality.<br/>
+                    I enjoy learning new things, and sometimes write about them. You can find some of my content below.
+                </p>
+            </div>
+            <PersonalLinks/>
+        </div>
+
+    </div>
+);
 
 export default AboutMe;
