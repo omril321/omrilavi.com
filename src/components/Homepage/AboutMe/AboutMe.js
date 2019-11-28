@@ -12,7 +12,7 @@ const AboutMe = () => (
         <div className="about-me_description-wrapper">
             <div>
                 <h2>Hi, I'm Omri Lavi 👋</h2>
-                <p>
+                <p className="about-me_description-text">
                     A fullstack developer that loves frontend, testing and code quality.<br/>
                     I enjoy learning new things, and sometimes write about them. You can find some of my content below.
                 </p>

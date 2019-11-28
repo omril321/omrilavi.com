@@ -1,3 +1,5 @@
+@import "../../base";
+
 .about-me {
   display: flex;
   flex-direction: column;
@@ -25,4 +27,8 @@
   flex-direction: column;
   justify-content: space-between;
   margin-left: 28px;
+}
+
+.about-me_description-text {
+  @include readableFont(1.1rem, $headerTextColor)
 }

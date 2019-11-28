@@ -48,12 +48,12 @@ $postLinkImageWidth: 200px;
 }
 
 .post-link_title {
-  font-size: 1.4rem;
-  color: $textMainColor;
+  @include readableFont(1.35rem, $textMainColor, 1);
+  @include lineHeightCrop;
 }
 
 .post-link_description {
-  @include readableFont(1.1rem, $textMainColor);
+  @include readableFont(1rem, $textMainColor);
   margin-top: 8px;
 }
 
