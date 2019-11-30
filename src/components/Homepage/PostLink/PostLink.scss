@@ -25,7 +25,7 @@ $postLinkImageWidth: 200px;
     margin-top: 30px;
   }
 
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: $desktopScreenWidthBreak) {
     padding: 20px;
     grid-row-gap: 0;
     grid-template-columns: $postLinkImageWidth 1fr auto;
@@ -64,7 +64,7 @@ $postLinkImageWidth: 200px;
   align-items: flex-end;
   justify-content: flex-end;
 
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: $desktopScreenWidthBreak) {
     margin-top: 0;
     margin-left: 20px;
     flex-direction: column;

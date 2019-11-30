@@ -3,6 +3,7 @@
 
 $animationSpeedNormal: 150ms;
 $fontSizeToLineHeightRatio: 1.618;
+$desktopScreenWidthBreak: 800px;
 
 @function lineHeightForFontSize($fontSize) {
   @return $fontSize * $fontSizeToLineHeightRatio;
