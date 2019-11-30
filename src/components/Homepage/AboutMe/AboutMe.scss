@@ -5,10 +5,10 @@
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  margin-top: 2.5rem;
-  margin-bottom: 4.2rem;
+  margin-bottom: 3.3rem;
 
   @media only screen and (min-width: $desktopScreenWidthBreak) {
+    margin-top: 2.5rem;
     flex-direction: row;
     align-items: flex-start;
   }
@@ -26,7 +26,16 @@
   flex: 1 1 auto;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 28px;
+  margin-top: 28px;
+  text-align: center;
+  align-items: center;
+
+  @media only screen and (min-width: $desktopScreenWidthBreak) {
+    margin-top: 0;
+    margin-left: 28px;
+    text-align: inherit;
+    align-items: flex-start;
+  }
 }
 
 .about-me_description-text {
