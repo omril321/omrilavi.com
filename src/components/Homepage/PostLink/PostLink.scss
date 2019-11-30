@@ -21,14 +21,13 @@ $postLinkImageWidth: 200px;
   grid-column-gap: 28px;
   grid-row-gap: 12px;
 
-  &:not(:first-child) {
-    margin-top: 30px;
-  }
-
   @media only screen and (min-width: $desktopScreenWidthBreak) {
     padding: 20px;
-    grid-row-gap: 0;
     grid-template-columns: $postLinkImageWidth 1fr auto;
+  }
+
+  &:not(:first-child) {
+    margin-top: 30px;
   }
 
   &:hover {
