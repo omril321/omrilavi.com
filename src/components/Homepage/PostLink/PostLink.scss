@@ -2,6 +2,7 @@
 
 $postLinkImageHeight: 150px;
 $postLinkImageWidth: 200px;
+$postLinkPadding: 20px;
 
 @mixin withBackgroundImage {
   background-repeat: no-repeat;
@@ -17,17 +18,31 @@ $postLinkImageWidth: 200px;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.05);
 
   display: grid;
-  grid-template-columns: 1fr;
-  grid-column-gap: 28px;
-  grid-row-gap: 12px;
+  grid-template-areas:
+          "p p p" //preview
+          ". . ."
+          ". h ." //header
+          ". t ." //text
+          ". i ." //info
+          ". . .";
+  grid-template-columns: $postLinkPadding 1fr $postLinkPadding;
+
+  align-items: start;
+  grid-row-gap: 1rem;
 
   @media only screen and (min-width: $desktopScreenWidthBreak) {
-    padding: 20px;
+    grid-template-areas:
+            "p h i"
+            "p t t";
+    padding: $postLinkPadding;
     grid-template-columns: $postLinkImageWidth 1fr auto;
+    grid-template-rows: auto 1fr;
+    grid-column-gap: 28px;
+    grid-row-gap: 0.75rem;
   }
 
   &:not(:first-child) {
-    margin-top: 30px;
+    margin-top: 2.8rem;
   }
 
   &:hover {
@@ -36,11 +51,12 @@ $postLinkImageWidth: 200px;
   }
 }
 
-.post-link_image-container {
+.post-link_preview-image-container {
   height: $postLinkImageHeight;
+  grid-area: p;
 }
 
-.post-link_image {
+.post-link_preview-image {
   @include withBackgroundImage;
   width: 100%;
   height: 100%;
@@ -49,25 +65,18 @@ $postLinkImageWidth: 200px;
 .post-link_title {
   @include readableFont(1.35rem, $textMainColor, 1);
   @include lineHeightCrop;
+  grid-area: h;
 }
 
 .post-link_description {
   @include readableFont(1rem, $textMainColor);
-  margin-top: 8px;
+  grid-area: t;
 }
 
 .post-link_additional-info {
-  margin-top: 10px;
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
+  grid-area: i;
   justify-content: flex-end;
-
-  @media only screen and (min-width: $desktopScreenWidthBreak) {
-    margin-top: 0;
-    margin-left: 20px;
-    flex-direction: column;
-  }
 }
 
 .post-link_icon {
