@@ -63,9 +63,10 @@ $postLinkPadding: 20px;
 }
 
 .post-link_title {
-  @include readableFont(1.35rem, $textMainColor, 1);
+  @include readableFont(1.3rem, $textMainColor);
   @include lineHeightCrop;
   grid-area: h;
+  margin-bottom: 0;
 }
 
 .post-link_description {
