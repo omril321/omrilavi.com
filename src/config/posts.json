@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "url": "https://engineering.innovid.com/3-considerations-for-your-next-utility-function-refactor-static-vs-dependency-injected-e966d385bd27"
+    },
+    {
+      "url": "https://engineering.innovid.com/my-top-9-hand-picked-talks-from-cssconfbp-jsconfbp-19-some-bonuses-702fdf33bbf7"
+    },
+    {
+      "url": "https://medium.com/better-programming/link-previews-more-than-meets-the-eye-aa13c77c6d69"
+    },
+    {
+      "url": "https://medium.com/better-programming/cleaner-typescript-with-the-non-null-assertion-operator-300789388376"
+    },
+    {
+      "url": "https://medium.com/@omril321/7-things-you-should-know-before-starting-with-side-projects-42dc1ddc1c37"
+    },
+    {
+      "url": "https://medium.com/@omril321/fixing-overly-aggressive-optimization-with-terser-f07309761b50"
+    },
+    {
       "url": "https://www.youtube.com/watch?v=Bov9v7Oept4",
       "flags": [
         "hebrew"
@@ -8,24 +26,6 @@
       "overrides": {
         "description": "Over the last couple of years we, at Innovid, have engaged with reusing some of our apps and embedding them in other apps. Join us as we explore the options we've examined and challenges encountered."
       }
-    },
-    {
-      "url": "https://medium.com/@omril321/fixing-overly-aggressive-optimization-with-terser-f07309761b50"
-    },
-    {
-      "url": "https://medium.com/@omril321/7-things-you-should-know-before-starting-with-side-projects-42dc1ddc1c37"
-    },
-    {
-      "url": "https://medium.com/better-programming/cleaner-typescript-with-the-non-null-assertion-operator-300789388376"
-    },
-    {
-      "url": "https://medium.com/better-programming/link-previews-more-than-meets-the-eye-aa13c77c6d69"
-    },
-    {
-      "url": "https://engineering.innovid.com/my-top-9-hand-picked-talks-from-cssconfbp-jsconfbp-19-some-bonuses-702fdf33bbf7"
-    },
-    {
-      "url": "https://engineering.innovid.com/3-considerations-for-your-next-utility-function-refactor-static-vs-dependency-injected-e966d385bd27"
     }
   ]
 }
