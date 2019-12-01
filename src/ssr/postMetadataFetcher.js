@@ -2,9 +2,9 @@ const {getMetadata} = require('page-metadata-parser');
 const domino = require('domino');
 const fetch = require('node-fetch');
 
-const expandPostMetadata = async ({flags, url}) => {
+const expandPostMetadata = async ({overrides = {}, flags = [], url}) => {
     const {title, icon, description, image, provider, type, ...rest} = await fetchMetadataForUrl(url);
-    return {title, icon, description, image, url, provider, type, flags};
+    return {title, icon, description, image, url, provider, type, flags, ...overrides};
 };
 
 const fetchMetadataForUrl = async (url) => {

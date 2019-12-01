@@ -7,7 +7,7 @@ const postsMetadata = [
     {
         "title": "Microfrontends with iFrames",
         "icon": "https://www.youtube.com/yts/img/favicon_96-vflW9Ec0w.png",
-        "description": "Over the last couple of years we, at Innovid, have engaged with reusing some of our apps and embedding them in other apps. Join us as we explore the options ...",
+        "description": "Over the last couple of years we, at Innovid, have engaged with reusing some of our apps and embedding them in other apps. Join us as we explore the options we've examined and challenges encountered.",
         "image": "https://i.ytimg.com/vi/Bov9v7Oept4/maxresdefault.jpg",
         "url": "https://www.youtube.com/watch?v=Bov9v7Oept4",
         "provider": "YouTube",
