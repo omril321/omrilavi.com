@@ -1,3 +1,7 @@
+# Running Storybook
+When running Storybook, GraphQL queries are being removed, and reference to the latest build's versult of the queries.  
+Thus, when the queries' results should change from any reason, it is recommended to remove th `public/` folder, rebuild the project (`npm run build`), and only then run storybook.  
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">

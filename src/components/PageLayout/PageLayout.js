@@ -5,7 +5,7 @@ import SEO from "../seo";
 
 const PageLayout = ({children}) => (
     <div className="page-layout">
-        <SEO title="Omri Lavi"/>
+        <SEO/>
         <div className="page-layout_content-wrapper">
             {children}
         </div>
