@@ -1,5 +1,5 @@
 import React from "react";
-import Homepage from "../components/homepage/homepage";
+import Homepage from "../components/Homepage/homepage";
 
 export default ({pageContext: {allPostsMetadata}}) => {
     return (
