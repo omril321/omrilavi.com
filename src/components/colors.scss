@@ -1,10 +1,7 @@
-$paletteColor1: #f8f7ff;
-$paletteColor2: #006076;
-$paletteColor3: #005555;
-$paletteColor4: #e3e3e7;
+$primaryColor: #2f98b0; //using split-complementary colors
+$secondaryColor: #ab832e;
+$tertiaryColor: #ab2e55;
 
-$backgroundColor: $paletteColor1;
-$backgroundSecondaryColor: $paletteColor4;
-$textMainColor: $paletteColor2;
-$headerTextColor: darken($textMainColor, 20%);
-$bordersColor: $paletteColor3;
+$headersTextColor: darken($primaryColor, 8%);
+$backgroundColor: lighten($tertiaryColor, 55%);
+$textMainColor: darken($secondaryColor, 35%);

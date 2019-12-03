@@ -29,6 +29,7 @@
   margin-top: 28px;
   text-align: center;
   align-items: center;
+  @include readableFont(1.1rem, $headersTextColor, 1);
 
   @media only screen and (min-width: $desktopScreenWidthBreak) {
     margin-top: 0;
@@ -39,5 +40,5 @@
 }
 
 .about-me_description-text {
-  @include readableFont(1.1rem, $headerTextColor)
+  @include readableFont(1.1rem, $textMainColor)
 }

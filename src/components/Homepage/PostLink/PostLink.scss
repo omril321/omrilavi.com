@@ -13,7 +13,7 @@ $postLinkPadding: 20px;
 .post-link {
   text-decoration: none;
   overflow: hidden;
-  background-color: rgba($backgroundSecondaryColor, 0.2);
+  background-color: rgba($primaryColor, 0.07);
   transition: all 200ms ease-out;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.05);
 
@@ -63,7 +63,7 @@ $postLinkPadding: 20px;
 }
 
 .post-link_title {
-  @include readableFont(1.3rem, $textMainColor);
+  @include readableFont(1.3rem, $headersTextColor);
   @include lineHeightCrop;
   grid-area: h;
   margin-bottom: 0;
