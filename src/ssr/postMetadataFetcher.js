@@ -4,7 +4,11 @@ const fetch = require('node-fetch');
 
 const expandPostMetadata = async ({overrides = {}, flags = [], url}) => {
     const {title, icon, description, image, provider, type, ...rest} = await fetchMetadataForUrl(url);
-    return {title, icon, description, image, url, provider, type, flags, ...overrides};
+    const result = {title, icon, description, image, url, provider, type, flags, ...overrides};
+
+    throwIfAnyMetadataFieldIsMissing(result);
+
+    return result;
 };
 
 const fetchMetadataForUrl = async (url) => {
@@ -13,5 +17,18 @@ const fetchMetadataForUrl = async (url) => {
     const doc = domino.createWindow(html).document;
     return await getMetadata(doc, url);
 };
+
+function throwIfAnyMetadataFieldIsMissing(obj) {
+    const {url} = obj;
+    for (const [key, value] of Object.entries(obj)) {
+        throwIfNotExists(url, key, value);
+    }
+}
+
+function throwIfNotExists(url, key, value) {
+    if (!value) {
+        throw new Error(`Missing value for key "${key}", for URL: ${url}`);
+    }
+}
 
 module.exports = expandPostMetadata;
