@@ -16,7 +16,7 @@ const addPostPage = (createPage, postMetadata) => {
     const generatePathForPostTitle = (title) => `/${slugify(title)}`;
     createPage({
         path: generatePathForPostTitle(postMetadata.title),
-        component: require.resolve("./src/templates/post.jsx"),
+        component: require.resolve("./src/templates/post"),
         context: {postMetadata}
     });
 };
@@ -25,7 +25,7 @@ const addPostPage = (createPage, postMetadata) => {
 function createIndexPage(createPage, allPostsMetadata) {
     createPage({
         path: '/',
-        component: require.resolve("./src/templates/index.jsx"),
+        component: require.resolve("./src/templates/index"),
         context: {allPostsMetadata}
     });
 }
