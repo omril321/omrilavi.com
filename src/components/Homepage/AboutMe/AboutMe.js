@@ -14,7 +14,7 @@ const AboutMe = () => {
                 <MeImage/>
             </div>
             <div className="about-me_description-wrapper">
-                <h2>Hi, I'm Omri Lavi 👋</h2>
+                <h2>Hi, I'm Omri Lavi <span role="img" aria-label="hello">👋</span></h2>
                 <PersonalLinks/>
                 <p className="about-me_description-text">
                     {description}
