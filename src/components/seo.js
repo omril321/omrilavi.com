@@ -25,6 +25,10 @@ function SEO({ description, lang, meta, title }) {
       titleTemplate={`${siteMetadata.title}`} //in the future, use a template if the title should change
       meta={[
         {
+          property: `title`,
+          content: siteMetadata.title,
+        },
+        {
           name: `description`,
           content: metaDescription,
         },
@@ -34,7 +38,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: siteMetadata.title,
         },
         {
           property: `og:url`,
@@ -62,7 +66,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: siteMetadata.title,
         },
         {
           name: `twitter:description`,
