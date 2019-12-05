@@ -8,7 +8,7 @@ module.exports = {
     `,
     author: `@omril321`,
     image: "/images/me.png", // Path to your image you placed in the 'static' folder
-    url: "https://omrilavi.netlify.com", // No trailing slash allowed!
+    url: "https://omrilavi.com", // No trailing slash allowed!
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
