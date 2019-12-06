@@ -27,8 +27,13 @@
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@storybook/react": "^5.2.6",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
-    "prettier": "^1.18.2"
+    "babel-preset-gatsby": "^0.2.23",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "react-test-renderer": "^16.12.0"
   },
   "keywords": [
     "gatsby"
@@ -40,7 +45,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "test": "jest",
     "storybook": "NODE_ENV=production start-storybook -s public -p 61000"
   }
 }
