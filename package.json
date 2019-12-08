@@ -1,7 +1,7 @@
 {
-  "name": "omr-il",
+  "name": "omrilavi.com",
   "private": true,
-  "description": "A soon-to-be blog, built with Gatsby",
+  "description": "My personal website, built using Gatsby",
   "version": "0.1.0",
   "author": "Omri Lavi <omril321@gmail.com>",
   "dependencies": {
@@ -41,6 +41,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "test-and-build": "npm run test && npm run build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
