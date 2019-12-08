@@ -3,8 +3,9 @@ module.exports = {
   siteMetadata: {
     title: `Omri Lavi`,
     description: `
-    A fullstack developer that loves frontend, testing and code quality. 
-    I enjoy learning new things, and sometimes write about them. You can find some of my content below.
+    I am a fullstack developer that specializes in frontend. 
+    I learn new things as a hobby - sometimes I write about them as well. 
+    You can read my publications below.
     `,
     author: `@omril321`,
     image: "/images/me.png", // Path to your image you placed in the 'static' folder
