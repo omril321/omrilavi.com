@@ -26,7 +26,7 @@ describe('MediumImageService', () => {
 
             const result = attemptSettingMediumImageUrlByWidth(input, 123);
 
-            expect(result).toBe(expected);
+            expect(result).toBe("");
         });
 
         it('should return an altered URL with given width when input is a Medium image which has additional path info', () => {
