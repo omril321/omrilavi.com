@@ -30,6 +30,7 @@
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-preset-gatsby": "^0.2.23",
+    "cypress": "^3.7.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
@@ -41,12 +42,14 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "test-and-build": "npm run test && npm run build",
+    "test-and-build": "npm run test && npm run build && npm run test:e2e:ci",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "jest",
+    "test:e2e:ci": "cypress run",
+    "test:e2e": "cypress open",
     "storybook": "NODE_ENV=production start-storybook -s public -p 61000"
   }
 }
