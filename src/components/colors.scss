@@ -3,5 +3,6 @@ $secondaryColor: #ab832e;
 $tertiaryColor: #ab2e55;
 
 $headersTextColor: darken($primaryColor, 8%);
+$subheadersTextColor: darken($tertiaryColor, 18%);
 $backgroundColor: lighten($tertiaryColor, 55%);
 $textMainColor: darken($secondaryColor, 35%);

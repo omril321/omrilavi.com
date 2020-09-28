@@ -62,11 +62,20 @@ $postLinkPadding: 20px;
   height: 100%;
 }
 
+.post-link_header {
+  grid-area: h;
+  margin-bottom: 0;
+}
+
 .post-link_title {
   @include readableFont(1.3rem, $headersTextColor);
   @include lineHeightCrop;
-  grid-area: h;
-  margin-bottom: 0;
+  margin: 0;
+}
+
+.post-link_date {
+  @include readableFont(0.95rem, $subheadersTextColor);
+  margin-top: 0.2rem;
 }
 
 .post-link_description {
