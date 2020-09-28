@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "url": "https://www.testim.io/blog/writing-your-first-custom-stylelint-rule/",
+      "overrides": {
+        "title": "Writing Your First Custom Stylelint Rule",
+        "description": "Quickly create and integrate your own stylelint rules, to keep a higher level of code quality while respecting your project's requirements."
+      }
+    },
+    {
       "url": "https://engineering.innovid.com/3-considerations-for-your-next-utility-function-refactor-static-vs-dependency-injected-e966d385bd27"
     },
     {
