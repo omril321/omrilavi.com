@@ -9,7 +9,7 @@ const PostLink = ({title, icon, description, image, url, type, provider, flags, 
     const dateStr = new Date(publishDate).toLocaleDateString('EN', { year: 'numeric', month: 'long', day: 'numeric' });
 
     return (
-        <a className="post-link" href={url} target={"_blank"}>
+        <a className="post-link" href={url} target={"_blank"} rel="noreferrer">
             <div className="post-link_preview-image-container">
                 <div className="post-link_preview-image" style={{backgroundImage: `url(${adaptedImageUrl})`}}/>
             </div>
