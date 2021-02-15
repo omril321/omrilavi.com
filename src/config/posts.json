@@ -1,6 +1,9 @@
 {
   "posts": [
     {
+      "url": "https://dev.to/omril321/git-metric-solving-the-pain-of-measuring-a-project-migration-413j"
+    },
+    {
       "url": "https://www.testim.io/blog/writing-your-first-custom-stylelint-rule/",
       "overrides": {
         "title": "Writing Your First Custom Stylelint Rule",

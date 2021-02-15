@@ -22,6 +22,7 @@ const fetchMetadataForUrl = async (url) => {
                 rules: [
                     ['meta[property="article:published_time"]', element => element.getAttribute('content')],
                     ['meta[itemprop="datePublished"]', element => element.getAttribute('content')],
+                    ['time[datetime]', element => element.getAttribute('datetime')]
                 ],
                 processors: [
                     (dateOrTime, context) => new Date(dateOrTime)
