@@ -2,10 +2,8 @@ const primaryColor = `#2f98b0`; //needs to be up to date with primary color on c
 module.exports = {
   siteMetadata: {
     title: `Omri Lavi`,
-    description: `
-    I am a fullstack developer that specializes in frontend. 
-    I learn new things as a hobby - sometimes I write about them as well. 
-    You can read my publications below.
+    description: `A Fullstack Engineer with a passion for Frontend and UX ❤️
+I enjoy creating tools that enable faster development process ⚡
     `,
     author: `@omril321`,
     image: "/images/me.png", // Path to your image you placed in the 'static' folder
