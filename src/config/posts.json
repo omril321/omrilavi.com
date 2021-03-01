@@ -1,7 +1,16 @@
 {
   "posts": [
     {
-      "url": "https://dev.to/omril321/git-metric-solving-the-pain-of-measuring-a-project-migration-413j"
+      "url": "https://dev.to/omril321/better-error-messages-in-typescript-4-2-smarter-type-alias-preservation-3j7",
+      "overrides": {
+        "description": "Smarter Type Alias Preservation makes TypeScript “remember” which union-types are being used while displaying the error messages."
+      }
+    },
+    {
+      "url": "https://dev.to/omril321/git-metric-solving-the-pain-of-measuring-a-project-migration-413j",
+      "overrides": {
+        "description": "With Git Metric you can quickly analyze git repository’s history within minutes."
+      }
     },
     {
       "url": "https://www.testim.io/blog/writing-your-first-custom-stylelint-rule/",
