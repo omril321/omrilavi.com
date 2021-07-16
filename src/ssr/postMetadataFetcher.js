@@ -20,9 +20,11 @@ const fetchMetadataForUrl = async (url) => {
         ...{
             publishDate: {
                 rules: [
-                    ['meta[property="article:published_time"]', element => element.getAttribute('content')],
+                    ['#main-title time.date-no-year', element => element.getAttribute('datetime')], //for dev.to
+                    ['meta[itemprop="uploadDate"]', element => element.getAttribute('content')], //for YouTube (should be before the "application/ld+json" script)
+                    ['script[type="application/ld+json"]', element => JSON.parse(element.innerHTML).datePublished], //for Medium + testim (should come before "article:published_time")
+                    ['meta[property="article:published_time"]', element => element.getAttribute('content')], //for testim.io
                     ['meta[itemprop="datePublished"]', element => element.getAttribute('content')],
-                    ['time[datetime]', element => element.getAttribute('datetime')]
                 ],
                 processors: [
                     (dateOrTime, context) => new Date(dateOrTime)
