@@ -1,6 +1,12 @@
 {
   "posts": [
     {
+      "url": "https://dev.to/omril321/developing-self-compassion-an-answer-to-the-constant-burnout-35e1",
+      "overrides": {
+        "description": "Are you generally stressed about your value as a developer? Feeling like you’re just not enough? This post is for you."
+      }
+    },
+    {
       "url": "https://dev.to/omril321/better-error-messages-in-typescript-4-2-smarter-type-alias-preservation-3j7",
       "overrides": {
         "description": "Smarter Type Alias Preservation makes TypeScript “remember” which union-types are being used while displaying the error messages."
