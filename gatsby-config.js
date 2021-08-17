@@ -36,5 +36,20 @@ I enjoy creating tools that enable faster development process ⚡
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     "gatsby-plugin-sass",
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["G-HK4MP1TKW4"],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+          exclude: [],
+        },
+      },
+    },
   ],
 };
