@@ -6,11 +6,17 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import useSiteMetadata from "./common/useSiteMetadata";
 
-function SEO({ description, lang, meta, title }) {
+interface ISEO {
+  description?: string,
+  lang? : string,
+  meta?: Array<any>,
+  title?: string,
+}
+
+const SEO: React.FC<ISEO> = ({ description = '', lang = 'en', meta = [], title = '' }) => {
   const siteMetadata = useSiteMetadata();
 
   const metaDescription = description || siteMetadata.description;
@@ -79,20 +85,6 @@ function SEO({ description, lang, meta, title }) {
       ].concat(meta)}
     />
   )
-}
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-  title: ''
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string,
 };
 
 export default SEO
