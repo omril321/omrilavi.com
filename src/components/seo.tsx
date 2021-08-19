@@ -9,14 +9,14 @@ import React from "react"
 import Helmet from "react-helmet"
 import useSiteMetadata from "./common/useSiteMetadata";
 
-interface ISEO {
+interface SEOProps {
   description?: string,
   lang? : string,
   meta?: Array<any>,
   title?: string,
 }
 
-const SEO: React.FC<ISEO> = ({ description = '', lang = 'en', meta = [], title = '' }) => {
+const SEO: React.FC<SEOProps> = ({ description = '', lang = 'en', meta = [], title = '' }) => {
   const siteMetadata = useSiteMetadata();
 
   const metaDescription = description || siteMetadata.description;

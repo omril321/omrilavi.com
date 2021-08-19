@@ -5,17 +5,17 @@ import PersonalLinks from "../../Header/PersonalLinks/PersonalLinks";
 import useSiteMetadata from "../../common/useSiteMetadata";
 
 
-const AboutMe = () => {
-    const {description} = useSiteMetadata();
+const AboutMe: React.FC = () => {
+    const { description } = useSiteMetadata();
 
     return (
         <div className="about-me">
             <div className="about-me_image-wrapper">
-                <MeImage/>
+                <MeImage />
             </div>
             <div className="about-me_description-wrapper">
                 <h2>Hi, I'm Omri Lavi <span role="img" aria-label="hello">👋</span></h2>
-                <PersonalLinks/>
+                <PersonalLinks />
                 <p className="about-me_description-text">
                     {description}
                 </p>

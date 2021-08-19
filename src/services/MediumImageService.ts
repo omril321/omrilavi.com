@@ -1,4 +1,4 @@
-export const attemptSettingMediumImageUrlByWidth = (originalImageUrl, requiredWidth) => {
+export const attemptSettingMediumImageUrlByWidth = (originalImageUrl: string, requiredWidth: number) => {
     const mediumUrlPattern = /(https?:\/\/(?:www.)?miro.medium.com\/max\/)(\d+)(\/.*)/;
     if (!mediumUrlPattern.test(originalImageUrl)) {
         return originalImageUrl;

@@ -3,9 +3,9 @@ import './PageLayout.scss';
 import "typeface-open-sans";
 import SEO from "../seo";
 
-const PageLayout = ({children}) => (
+const PageLayout: React.FC = ({ children }) => (
     <div className="page-layout">
-        <SEO/>
+        <SEO />
         <div className="page-layout_content-wrapper">
             {children}
         </div>
