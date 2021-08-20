@@ -4,7 +4,7 @@ const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxy
 const p = new RegExp(a.split('').join('|'), 'g');
 
 //taken from https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1
-const slugify = (string: string) => string.toString().toLowerCase()
+const slugify = (string) => string.toString().toLowerCase()
     .replace(/\s+/g, '-') // Replace spaces with -
     .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
     .replace(/&/g, '-and-') // Replace & with 'and'
@@ -14,4 +14,4 @@ const slugify = (string: string) => string.toString().toLowerCase()
     .replace(/-+$/, ''); // Trim - from end of text
 
 
-export default slugify;
+module.exports = slugify;
