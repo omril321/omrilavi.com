@@ -1,8 +1,9 @@
 const { getMetadata, metadataRuleSets } = require('page-metadata-parser');
 import domino from 'domino'
 import nodeFetch from 'node-fetch';
+import { PostRawData } from '../../gatsby-node';
 
-const expandPostMetadata = async ({ overrides = {}, flags = [], url }: { overrides: any, flags: string[], url: string }) => {
+const expandPostMetadata = async ({ overrides = {}, flags = [], url }: PostRawData) => {
     const { title, icon, description, image, provider, type, publishDate, ...rest } = await fetchMetadataForUrl(url);
     const result = { title, icon, description, image, url, provider, type, flags, publishDate, ...overrides };
 

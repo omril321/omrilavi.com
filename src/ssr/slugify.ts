@@ -14,4 +14,4 @@ const slugify = (string: string) => string.toString().toLowerCase()
     .replace(/-+$/, ''); // Trim - from end of text
 
 
-module.exports = slugify;
+export default slugify;
