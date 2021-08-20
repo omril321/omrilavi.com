@@ -12,9 +12,8 @@ export interface PostMetadata {
     url: string,
     type: string,
     provider: string,
-    flags?: string[],
-    publishDate: string | Date,
-    overrides?: Partial<PostMetadata>
+    flags: string,
+    publishDate: string | Date
 }
 
 const PostLink: React.FC<PostMetadata> = ({ title, icon, description, image, url, type, provider, flags, publishDate }) => {
