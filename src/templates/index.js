@@ -1,8 +1,10 @@
 import React from "react";
 import Homepage from "../components/Homepage/Homepage";
 
-export default ({pageContext: {allPostsMetadata}}) => {
+const Index = ({pageContext: {allPostsMetadata}}) => {
     return (
         <Homepage postsMetadata={allPostsMetadata}/>
     )
 };
+
+export default Index;
