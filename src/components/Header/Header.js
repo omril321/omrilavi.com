@@ -1,7 +1,8 @@
 import * as React from 'react';
 import AboutMe from "../Homepage/AboutMe/AboutMe";
 
-const Header: React.FC = () => (
+
+const Header = () => (
     <header>
         <AboutMe/>
     </header>
