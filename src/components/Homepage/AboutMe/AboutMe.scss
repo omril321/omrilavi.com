@@ -20,26 +20,3 @@
   overflow: hidden;
   width: 128px;
 }
-
-.about-me_description-wrapper {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 28px;
-  text-align: center;
-  align-items: center;
-  @include readableFont(1.1rem, $headersTextColor, 1);
-
-  @media only screen and (min-width: $desktopScreenWidthBreak) {
-    margin-top: 0;
-    margin-left: 28px;
-    text-align: inherit;
-    align-items: flex-start;
-  }
-}
-
-.about-me_description-text {
-  @include readableFont(1.1rem, $textMainColor);
-  white-space: pre-wrap;
-}
