@@ -14,7 +14,6 @@
     "gatsby-plugin-react-helmet": "4.12.0",
     "gatsby-plugin-sass": "4.12.0",
     "gatsby-plugin-sharp": "3.11.0",
-    "gatsby-plugin-typescript": "3.11.0",
     "gatsby-source-filesystem": "3.11.0",
     "gatsby-transformer-sharp": "3.11.0",
     "node-fetch": "2.6.1",
@@ -28,16 +27,18 @@
   "devDependencies": {
     "@babel/core": "7.7.2",
     "@storybook/react": "5.2.6",
+    "autoprefixer": "10.3.1",
     "babel-jest": "24.9.0",
     "babel-loader": "8.0.6",
     "babel-preset-gatsby": "0.2.23",
     "cypress": "3.7.0",
-    "gatsby-plugin-ts-config": "2.0.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
+    "postcss": "8.3.6",
     "prettier": "1.18.2",
     "prop-types": "15.7.2",
-    "react-test-renderer": "16.12.0"
+    "react-test-renderer": "16.12.0",
+    "tailwindcss": "2.2.7"
   },
   "keywords": [
     "gatsby"
