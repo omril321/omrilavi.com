@@ -1,6 +1,5 @@
 import * as React from 'react';
 import MeImage from "../../common/MeImage/MeImage";
-import './AboutMe.scss';
 import PersonalLinks from "../../Header/PersonalLinks/PersonalLinks";
 import useSiteMetadata from "../../common/useSiteMetadata";
 
@@ -9,8 +8,8 @@ const AboutMe = () => {
     const {description} = useSiteMetadata();
 
     return (
-        <div className="about-me">
-            <div className="about-me_image-wrapper">
+        <div className="flex flex-col items-center justify-center mb-3 md:mt-10 md:flex-row md:items-start">
+            <div className="flex-shrink-0 rounded-full w-32 overflow-hidden">
                 <MeImage/>
             </div>
             <div className="flex flex-col justify-between mt-7 ml-0 md:mt-0 md:ml-7 items-center text-primary md:items-start">
