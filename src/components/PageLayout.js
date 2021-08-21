@@ -1,15 +1,14 @@
 import * as React from 'react';
-import './PageLayout.scss';
 import "typeface-open-sans";
-import Seo from "../seo";
+import Seo from "./seo";
 
 const PageLayout = ({children}) => (
-    <div className="page-layout">
+    <>
         <Seo/>
-        <div className="page-layout_content-wrapper">
+        <div className="mx-auto px-5 py-11 max-w-3xl">
             {children}
         </div>
-    </div>
+    </>
 );
 
 export default PageLayout;

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import MeImage from "../../common/MeImage/MeImage";
-import PersonalLinks from "../../Header/PersonalLinks/PersonalLinks";
-import useSiteMetadata from "../../common/useSiteMetadata";
+import MeImage from "../common/MeImage";
+import PersonalLinks from "../Header/PersonalLinks/PersonalLinks";
+import useSiteMetadata from "../common/useSiteMetadata";
 
 
 const AboutMe = () => {

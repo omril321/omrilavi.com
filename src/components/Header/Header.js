@@ -1,5 +1,5 @@
 import * as React from 'react';
-import AboutMe from "../Homepage/AboutMe/AboutMe";
+import AboutMe from "../Homepage/AboutMe";
 
 
 const Header = () => (
