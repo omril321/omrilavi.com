@@ -12,10 +12,10 @@ const AboutMe = () => {
             <div className="flex-shrink-0 rounded-full w-32 overflow-hidden">
                 <MeImage/>
             </div>
-            <div className="flex flex-col justify-between mt-7 ml-0 md:mt-0 md:ml-7 items-center text-primary md:items-start">
+            <div className="flex flex-col justify-between mt-7 ml-0 md:mt-0 md:ml-7 items-center text-primary-xlight md:items-start">
                 <h2 className="filter drop-shadow-md">Hi, I'm Omri Lavi <span role="img" aria-label="hello">👋</span></h2>
                 <PersonalLinks/>
-                <p className="text-primary-dark whitespace-pre-wrap text-center md:text-left text-lg">
+                <p className="text-secondary-xlight whitespace-pre-wrap text-center md:text-left text-lg">
                     {description}
                 </p>
             </div>
