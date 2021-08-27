@@ -42,6 +42,9 @@ module.exports = {
         normal: '100%',
         'zoomed-in': '105%',
       },
+      boxShadow: {
+        sharp: '8px 8px 0 rgb(0 0 0 / 25%)'
+      }
     },
   },
   variants: {
@@ -51,7 +54,9 @@ module.exports = {
       translate: ['group-hover'],
       height: ['group-hover'],
       fontSize: ['group-hover'],
-      scale: ['group-hover']
+      scale: ['group-hover'],
+      margin: ['group-hover'],
+      flex: ['group-hover'],
     },
   },
   plugins: [],
