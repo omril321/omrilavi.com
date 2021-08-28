@@ -1,8 +1,8 @@
 const color = require('color');
 
-const primaryColor = '#02d5ff'; //using split-complementary colors - https://www.sessions.edu/color-calculator/
-const secondaryColor = '#ff8902';
-const tertiaryColor = '#ff0a02';
+const primaryColor = '#aaf758'; //using split-complementary colors - https://www.sessions.edu/color-calculator/
+const secondaryColor = '#f7585b';
+const tertiaryColor = '#f458f7';
 
 
 const darken = (_color, amount) => color(_color).darken(amount).toString();
@@ -34,16 +34,17 @@ module.exports = {
         'secondary-light': lighten(secondaryColor, 0.3),
         'tertiary-light': lighten(tertiaryColor, 0.3),
 
-        'primary-xlight': lighten(primaryColor, 0.75),
-        'secondary-xlight': lighten(secondaryColor, 0.75),
-        'tertiary-xlight': lighten(tertiaryColor, 0.75),
+        'primary-xlight': lighten(primaryColor, 0.4),
+        'secondary-xlight': lighten(secondaryColor, 0.4),
+        'tertiary-xlight': lighten(tertiaryColor, 0.4),
       },
       backgroundSize: {
         normal: '100%',
         'zoomed-in': '105%',
       },
       boxShadow: {
-        sharp: '8px 8px 0 rgb(0 0 0 / 25%)'
+        sharp: '8px 8px 0 rgb(0 0 0 / 25%)',
+        'strong-inner': 'inset 0px 0px 10px 0px rgb(0 0 0 / 85%)',
       }
     },
   },
@@ -57,6 +58,7 @@ module.exports = {
       scale: ['group-hover'],
       margin: ['group-hover'],
       flex: ['group-hover'],
+      flexShrink: ['group-hover'],
     },
   },
   plugins: [],
