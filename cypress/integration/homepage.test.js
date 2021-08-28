@@ -10,8 +10,8 @@ describe("Homepage", () => {
     });
 
     it('should have the same number of posts like the configuration', async () => {
-        cy.get(".page-layout")
-            .find("a.post-link")
+        cy.get("[data-test-page-layout]")
+            .find("[data-test-post-link]")
             .should('have.lengthOf', postsConfig.posts.length);
     });
 });

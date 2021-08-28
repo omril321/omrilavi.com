@@ -3,7 +3,7 @@ import "typeface-open-sans";
 import Seo from "./seo";
 
 const PageLayout = ({children}) => (
-    <div className="bg-gray-800">
+    <div className="bg-gray-800" data-test-page-layout>
         <Seo/>
         <div className="mx-auto px-5 py-11 max-w-3xl">
             {children}
