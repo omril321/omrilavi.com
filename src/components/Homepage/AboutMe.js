@@ -9,7 +9,7 @@ const AboutMe = () => {
 
     return (
         <div className="flex flex-col items-center justify-center mb-3 md:mt-10 md:flex-row md:items-start">
-            <div className="flex-shrink-0 rounded-full w-32 overflow-hidden">
+            <div className="flex-shrink-0 rounded-full w-32 overflow-hidden filter drop-shadow-2xl">
                 <MeImage/>
             </div>
             <div className="flex flex-col justify-between mt-7 ml-0 md:mt-0 md:ml-7 items-center text-primary-xlight md:items-start">
