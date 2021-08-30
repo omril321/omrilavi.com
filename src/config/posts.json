@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "url": "https://www.testim.io/blog/typescript-skiplibcheck/",
+      "overrides": {
+        "title": "Understanding TypeScript’s skipLibCheck Once and For All",
+        "description": "Read about the behavior and usages of the skipLibCheck option, and understand when to use it."
+      }
+    },
+    {
       "url": "https://dev.to/omril321/developing-self-compassion-an-answer-to-the-constant-burnout-35e1",
       "overrides": {
         "description": "Are you generally stressed about your value as a developer? Feeling like you’re just not enough? This post is for you."

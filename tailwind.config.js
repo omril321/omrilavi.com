@@ -1,4 +1,5 @@
 const color = require('color');
+const colors = require('tailwindcss/colors');
 
 const primaryColor = '#aaf758'; //using split-complementary colors - https://www.sessions.edu/color-calculator/
 const secondaryColor = '#f7585b';
@@ -12,6 +13,9 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    colors: {
+      gray: colors.gray,
+    },
     extend: {
       colors: {
         primary: primaryColor,
