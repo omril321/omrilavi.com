@@ -8,9 +8,7 @@ const Homepage = ({postsMetadata}) => (
         <Header/>
 
         <div className="flex flex-col">
-            {postsMetadata.map(metadata => <>
-                <PostLink key={metadata.url} {...metadata}/>
-            </>)}
+            {postsMetadata.map(metadata => <PostLink key={metadata.url} {...metadata}/>)}
         </div>
     </PageLayout>
 );
