@@ -4,12 +4,12 @@ import Seo from "./seo";
 import SocialButtons from "./common/SocialButtons/SocialButtons";
 
 const PageLayout = ({children}) => (
-    <div className="bg-gray-800 flex flex-col md:flex-row-reverse fixed inset-0" data-test-page-layout>
+    <div className="bg-gray-800 flex flex-col lg:flex-row-reverse fixed inset-0" data-test-page-layout>
         <Seo/>
-        <div className="mx-auto px-5 py-11 max-w-3xl overflow-scroll">
+        <div className="mx-auto px-14 lg:px-48 py-11 overflow-scroll">
             {children}
         </div>
-        <div className="bg-gray-900 md:bg-opacity-0 flex md:fixed -inset-y-0 left-0 items-center">
+        <div className="bg-gray-900 lg:bg-opacity-0 flex lg:fixed -inset-y-0 left-0 items-center">
             <SocialButtons/>
         </div>
     </div>
