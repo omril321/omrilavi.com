@@ -69,6 +69,8 @@ module.exports = {
       margin: ['group-hover'],
       flex: ['group-hover'],
       flexShrink: ['group-hover'],
+      padding: ['hover'],
+      width: ['hover'],
     },
   },
   plugins: [],

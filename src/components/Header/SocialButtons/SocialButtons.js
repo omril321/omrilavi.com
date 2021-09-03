@@ -3,13 +3,19 @@ import { GitHubIcon, LinkedInIcon, MediumIcon, TwitterIcon, DevToIcon } from "..
 import SocialButton from "./SocialButton";
 
 
+const SBWrapper = ({ bgColor, url, iconSvg, iconColor }) => (
+    <a className={`bg-${bgColor} w-16 h-16 hover:pl-4 hover:w-20 transition-all`} href={url} target="_blank" rel="noopener noreferrer">
+        <SocialButton iconSvg={iconSvg} iconColor={iconColor} />
+    </a>
+);
+
 const SocialButtons = () => (
-    <div className="flex flex-col justify-center content-center mb-5 -ml-2 fixed left-0 top-0 bottom-0">
-        <SocialButton url="https://medium.com/@omril321" iconSvg={<MediumIcon/>} bgColor='medium'/>
-        <SocialButton url="https://github.com/omril321" iconSvg={<GitHubIcon/>} bgColor='github'/>
-        <SocialButton url="https://twitter.com/omril321" iconSvg={<TwitterIcon/>} bgColor='twitter'/>
-        <SocialButton url="https://linkedin.com/in/omri-lavi" iconSvg={<LinkedInIcon/>} bgColor='linkedin'/>
-        <SocialButton url="https://dev.to/omril321" iconSvg={<DevToIcon/>} bgColor='devto' iconColor="black"/>
+    <div className="flex flex-col justify-center align-start content-center fixed left-0 top-0 bottom-0">
+        <SBWrapper url="https://github.com/omril321" iconSvg={<GitHubIcon />} bgColor='github' />
+        <SBWrapper url="https://linkedin.com/in/omri-lavi" iconSvg={<LinkedInIcon />} bgColor='linkedin' />
+        <SBWrapper url="https://dev.to/omril321" iconSvg={<DevToIcon />} bgColor='devto' iconColor="black" />
+        <SBWrapper url="https://medium.com/@omril321" iconSvg={<MediumIcon />} bgColor='medium' />
+        <SBWrapper url="https://twitter.com/omril321" iconSvg={<TwitterIcon />} bgColor='twitter' />
     </div>
 );
 
