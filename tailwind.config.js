@@ -4,6 +4,7 @@ const colors = require('tailwindcss/colors');
 const primaryColor = '#aaf758'; //using split-complementary colors - https://www.sessions.edu/color-calculator/
 const secondaryColor = '#f7585b';
 const tertiaryColor = '#f458f7';
+const bodyColor = colors.gray[800];
 
 
 const darken = (_color, amount) => color(_color).darken(amount).toString();
@@ -22,6 +23,7 @@ module.exports = {
         primary: primaryColor,
         secondary: secondaryColor,
         tertiary: tertiaryColor,
+        bodyColor,
 
         'primary-dark': darken(primaryColor, 0.5),
         'secondary-dark': darken(secondaryColor, 0.5),
@@ -76,4 +78,8 @@ module.exports = {
     },
   },
   plugins: [],
+}
+
+module.exports = {
+  bodyColor,
 }

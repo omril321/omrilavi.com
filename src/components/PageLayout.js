@@ -4,7 +4,7 @@ import Seo from "./seo";
 import SocialButtons from "./common/SocialButtons/SocialButtons";
 
 const PageLayout = ({children}) => (
-    <div className="bg-gray-800 flex flex-col lg:flex-row-reverse fixed inset-0" data-test-page-layout>
+    <div className="bg-bodyColor flex flex-col lg:flex-row-reverse fixed inset-0" data-test-page-layout>
         <Seo/>
         <div className="mx-auto px-14 lg:px-48 py-11 overflow-scroll">
             {children}

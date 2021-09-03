@@ -1,7 +1,8 @@
-const primaryColor = `#2f98b0`; //needs to be up to date with primary color on colors.scss
+const primaryColor = require('./tailwind.config').bodyColor;
+
 module.exports = {
   siteMetadata: {
-    title: `Omri Lavi`,
+    title: `About Omri Lavi`,
     description: `A Fullstack Engineer with a passion for Frontend and UX ❤️
 I enjoy creating tools that enable faster development process ⚡
     `,
@@ -23,7 +24,7 @@ I enjoy creating tools that enable faster development process ⚡
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Omri Lavi`,
+        name: `About Omri Lavi`,
         short_name: `Omri L.`,
         start_url: `/`,
         background_color: `${primaryColor}`,
