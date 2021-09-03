@@ -14,6 +14,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
+      ...colors,
       gray: colors.gray,
     },
     extend: {
@@ -41,6 +42,12 @@ module.exports = {
         'primary-xlight': lighten(primaryColor, 0.4),
         'secondary-xlight': lighten(secondaryColor, 0.4),
         'tertiary-xlight': lighten(tertiaryColor, 0.4),
+
+        'github': '#4e545a',
+        'linkedin': '#0077b5',
+        'medium': '#00ab6c',
+        'twitter': '#1da1f2',
+        'devto': '#ffffff',
       },
       backgroundSize: {
         normal: '100%',
@@ -54,7 +61,6 @@ module.exports = {
   },
   variants: {
     extend: {
-      fill: ['hover', 'focus'],
       backgroundSize: ['hover', 'focus'],
       translate: ['group-hover'],
       height: ['group-hover'],
