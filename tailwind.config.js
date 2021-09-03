@@ -56,6 +56,9 @@ module.exports = {
       boxShadow: {
         sharp: '8px 8px 0 rgb(0 0 0 / 25%)',
         'strong-inner': 'inset 0px 0px 10px 0px rgb(0 0 0 / 85%)',
+      },
+      borderWidth: {
+        24: '24px',
       }
     },
   },
@@ -69,8 +72,7 @@ module.exports = {
       margin: ['group-hover'],
       flex: ['group-hover'],
       flexShrink: ['group-hover'],
-      padding: ['hover'],
-      width: ['hover'],
+      borderWidth: ['hover'],
     },
   },
   plugins: [],
