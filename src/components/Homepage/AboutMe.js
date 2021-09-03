@@ -1,6 +1,6 @@
 import * as React from 'react';
 import MeImage from "../common/MeImage";
-import PersonalLinks from "../Header/PersonalLinks/PersonalLinks";
+import SocialButtons from "../Header/SocialButtons/SocialButtons";
 import useSiteMetadata from "../common/useSiteMetadata";
 
 
@@ -14,7 +14,7 @@ const AboutMe = () => {
             </div>
             <div className="flex flex-col justify-between mt-7 ml-0 md:mt-0 md:ml-7 items-center text-primary-xlight md:items-start">
                 <h2 className="filter drop-shadow-md">Hi, I'm Omri Lavi <span role="img" aria-label="hello">👋</span></h2>
-                <PersonalLinks/>
+                <SocialButtons/>
                 <p className="text-secondary-xlight whitespace-pre-wrap text-center md:text-left text-lg font-semibold">
                     {description}
                 </p>
