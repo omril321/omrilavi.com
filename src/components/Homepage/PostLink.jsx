@@ -13,7 +13,7 @@ const PostLink = ({ title, icon, description, image, url, type, provider, flags,
             style={{ backgroundImage: `url(${adaptedImageUrl})` }}
             href={url}>
             <div className="h-full bg-primary-xlight bg-opacity-90 flex flex-col shadow-strong-inner">
-                <div className="h-64 flex group-hover:h-0 transition-all flex-shrink-0 items-center overflow-hidden relative">
+                <div className="h-full flex group-hover:h-0 transition-all flex-shrink-0 items-center overflow-hidden relative">
                     <h3 className="px-10 py-0 m-0 flex-auto text-2xl font-extrabold">{title}</h3>
                     <span className="transition-all text-secondary-xdark text-base absolute bottom-8 left-8 ">{dateStr}</span>
                 </div>
