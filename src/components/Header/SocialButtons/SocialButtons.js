@@ -4,7 +4,7 @@ import SocialButton from "./SocialButton";
 
 
 const SBWrapper = ({ bgColor, url, iconSvg, iconColor }) => (
-    <a className={`bg-${bgColor} w-16 h-16 border-${bgColor} hover:border-l-24 box-content transition-all`} href={url} target="_blank" rel="noopener noreferrer">
+    <a className={`bg-${bgColor} w-14 h-14 border-${bgColor} hover:border-l-24 box-content transition-all`} href={url} target="_blank" rel="noopener noreferrer">
         <SocialButton iconSvg={iconSvg} iconColor={iconColor} />
     </a>
 );

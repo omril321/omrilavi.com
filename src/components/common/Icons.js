@@ -38,7 +38,7 @@ export const LinkedInIcon = () => (
 
 export const DevToIcon = () => (
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid"
-        style={{ transformOrigin: "center" }} transform="scale(0.9) translate(-6 -6)" viewBox="0 0 64 64" width="64" height="64" xmlSpace="preserve">
+        style={{ transformOrigin: "center" }} transform="scale(0.9) translate(-11 -11)" viewBox="0 0 64 64" width="64" height="64" xmlSpace="preserve">
         <path d="M39.8,27.2c0.7,2.5,1.7,6.5,2.4,9c1,3.9,1.3,4.7,2.2,5.6c0.6,0.6,1.3,1,1.8,1c1,0,2.2-1,2.7-2.1
             c0.3-0.8,4.8-17.4,4.8-17.8c0-0.1-0.9-0.2-1.9-0.1l-2,0.1L48,29.6c-1.1,4.3-1.8,6.5-1.9,6.1C45.8,35,42.7,23,42.7,22.9
             c0-0.1-0.9-0.1-2-0.1h-2L39.8,27.2z M27,23.6c-0.6,0.8-0.7,1.2-0.7,9.3v8.4l0.8,0.8c0.7,0.8,0.9,0.8,5,0.8h4.2v-3.4l-3.2-0.1
