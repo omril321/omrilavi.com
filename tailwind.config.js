@@ -79,7 +79,3 @@ module.exports = {
   },
   plugins: [],
 }
-
-module.exports = {
-  bodyColor,
-}

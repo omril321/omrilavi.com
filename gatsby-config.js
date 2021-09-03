@@ -1,4 +1,4 @@
-const primaryColor = require('./tailwind.config').bodyColor;
+const primaryColor = '#27272A'; //needs to be up to date with bgColor on tailwind.config
 
 module.exports = {
   siteMetadata: {
