@@ -14,7 +14,7 @@ const PostLink = ({ title, icon, description, image, url, type, provider, flags,
             href={url}>
             <article className="h-full bg-primary-xlight bg-opacity-90 flex flex-col shadow-strong-inner">
                 <div className="h-full flex group-hover:h-0 transition-all flex-shrink-0 items-center overflow-hidden relative">
-                    <h3 className="px-10 md:py-0 m-0 flex-auto text-lg md:text-2xl font-extrabold">{title}</h3>
+                    <h3 className="px-10 md:py-0 m-0 flex-auto text-lg md:text-2xl font-extrabold leading-6">{title}</h3>
                     <span className="transition-all text-secondary-xdark text-xs md:text-base absolute bottom-4 left-4 md:bottom-8 md:left-8 ">{dateStr}</span>
                 </div>
 
