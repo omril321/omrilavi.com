@@ -7,7 +7,7 @@ const Homepage = ({ postsMetadata }) => (
     <PageLayout>
         <Header />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-10 max-w-5xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-10">
             {postsMetadata.map(metadata => <PostLink key={metadata.url} {...metadata} />)}
         </div>
     </PageLayout>
