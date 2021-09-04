@@ -6,7 +6,7 @@ import SocialButtons from "./common/SocialButtons/SocialButtons";
 const PageLayout = ({children}) => (
     <div className="bg-bodyColor flex flex-col lg:flex-row-reverse fixed inset-0" data-test-page-layout>
         <Seo/>
-        <div className="mx-auto px-14 lg:px-48 py-11 overflow-scroll">
+        <div className="mx-auto px-10 md:px-20 lg:px-28 xl:px-48 py-11 overflow-scroll">
             {children}
         </div>
         <div className="bg-gray-900 lg:bg-opacity-0 flex lg:fixed -inset-y-0 left-0 items-center">

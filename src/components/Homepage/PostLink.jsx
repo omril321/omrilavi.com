@@ -8,7 +8,7 @@ const PostLink = ({ title, icon, description, image, url, type, provider, flags,
     const dateStr = new Date(publishDate).toLocaleDateString('EN', { year: 'numeric', month: 'long', day: 'numeric' });
 
     return (
-        <a className="h-48 md:h-64 rounded-xl transition-all group bg-center text-center overflow-hidden duration-700 mb-8 shadow-sharp bg-no-repeat bg-cover"
+        <a className="h-48 md:h-64 rounded-xl transition-all group bg-center text-center overflow-hidden duration-700 shadow-sharp bg-no-repeat bg-cover"
             data-test-post-link
             style={{ backgroundImage: `url(${adaptedImageUrl})` }}
             href={url}>
