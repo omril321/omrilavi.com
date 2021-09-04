@@ -1,9 +1,8 @@
 const color = require('color');
 const colors = require('tailwindcss/colors');
 
-const primaryColor = '#aaf758'; //using split-complementary colors - https://www.sessions.edu/color-calculator/
-const secondaryColor = '#f7585b';
-const tertiaryColor = '#f458f7';
+const primaryColor = '#549eff';
+const secondaryColor = '#54ffdd';
 const bodyColor = colors.gray[800];
 
 
@@ -22,28 +21,22 @@ module.exports = {
       colors: {
         primary: primaryColor,
         secondary: secondaryColor,
-        tertiary: tertiaryColor,
         bodyColor,
 
         'primary-dark': darken(primaryColor, 0.5),
         'secondary-dark': darken(secondaryColor, 0.5),
-        'tertiary-dark': darken(tertiaryColor, 0.5),
 
         'primary-xdark': darken(primaryColor, 0.6),
         'secondary-xdark': darken(secondaryColor, 0.6),
-        'tertiary-xdark': darken(tertiaryColor, 0.6),
 
         'primary-2xdark': darken(primaryColor, 0.85),
         'secondary-2xdark': darken(secondaryColor, 0.85),
-        'tertiary-2xdark': darken(tertiaryColor, 0.85),
 
-        'primary-light': lighten(primaryColor, 0.3),
-        'secondary-light': lighten(secondaryColor, 0.3),
-        'tertiary-light': lighten(tertiaryColor, 0.3),
+        'primary-light': lighten(primaryColor, 0.25),
+        'secondary-light': lighten(secondaryColor, 0.25),
 
         'primary-xlight': lighten(primaryColor, 0.4),
         'secondary-xlight': lighten(secondaryColor, 0.4),
-        'tertiary-xlight': lighten(tertiaryColor, 0.4),
 
         'github': '#4e545a',
         'linkedin': '#0077b5',

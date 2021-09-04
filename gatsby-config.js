@@ -3,8 +3,8 @@ const primaryColor = '#27272A'; //needs to be up to date with bgColor on tailwin
 module.exports = {
   siteMetadata: {
     title: `About Omri Lavi`,
-    description: `A Fullstack Engineer with a passion for Frontend and UX ❤️
-I enjoy creating tools that enable faster development process ⚡
+    description: `A Fullstack Engineer with a passion for Frontend and UX.
+I enjoy creating tools that enable faster development process
     `,
     author: `@omril321`,
     image: "/images/me.png", // Path to your image you placed in the 'static' folder
