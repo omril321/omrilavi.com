@@ -29,9 +29,6 @@ module.exports = {
         'primary-xdark': darken(primaryColor, 0.6),
         'secondary-xdark': darken(secondaryColor, 0.6),
 
-        'primary-2xdark': darken(primaryColor, 0.85),
-        'secondary-2xdark': darken(secondaryColor, 0.85),
-
         'primary-light': lighten(primaryColor, 0.25),
         'secondary-light': lighten(secondaryColor, 0.25),
 
