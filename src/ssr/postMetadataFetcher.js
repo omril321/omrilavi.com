@@ -12,7 +12,7 @@ const expandPostMetadata = async ({ overrides = {}, flags = [], url }) => {
 };
 
 const fetchMetadataForUrl = async (url) => {
-    const response = await fetch(url);
+    const response = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } });
     const html = await response.text();
     const doc = domino.createWindow(html).document;
     const rules = {
