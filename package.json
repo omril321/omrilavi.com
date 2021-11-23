@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Omri Lavi <omril321@gmail.com>",
   "dependencies": {
+    "@tailwindcss/line-clamp": "0.2.2",
     "color": "4.0.1",
     "domino": "2.1.6",
     "gatsby": "3.11.0",

@@ -7,7 +7,7 @@ const AboutMe = () => {
     const {description} = useSiteMetadata();
 
     return (
-        <div className="flex flex-col items-center justify-center mb-3 my-10 lg:my-16 lg:flex-row lg:items-start">
+        <div className="flex flex-col m-auto items-center justify-center mb-3 my-10 px-8 sm:max-w-3xl lg:my-16 lg:flex-row lg:items-start">
             <div className="flex-shrink-0 rounded-full w-32 overflow-hidden filter drop-shadow-2xl">
                 <MeImage/>
             </div>

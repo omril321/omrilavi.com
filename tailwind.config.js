@@ -48,9 +48,16 @@ module.exports = {
       boxShadow: {
         sharp: '8px 8px 0 rgb(0 0 0 / 25%)',
         'strong-inner': 'inset 0px 0px 10px 0px rgb(0 0 0 / 85%)',
+        'soft-dark': '0 0 26px 7px  rgb(0 0 0 / 12%)',
       },
       borderWidth: {
         24: '24px',
+      },
+      width: {
+        tiny: '157px',
+      },
+      height: {
+        120: '30rem',
       }
     },
   },
@@ -67,5 +74,7 @@ module.exports = {
       borderWidth: ['hover'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }
