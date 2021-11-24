@@ -7,13 +7,13 @@ const AboutMe = () => {
     const {description} = useSiteMetadata();
 
     return (
-        <div className="flex flex-col m-auto items-center justify-center mb-3 my-10 px-8 sm:max-w-3xl lg:my-16 lg:flex-row lg:items-start">
-            <div className="flex-shrink-0 rounded-full w-32 overflow-hidden filter drop-shadow-2xl">
+        <div className="flex m-auto items-center justify-center px-8 py-4 sm:py-10 lg:pb-16 max-w-3xl">
+            <div className="flex-shrink-0 rounded-full hidden sm:block w-32 overflow-hidden filter drop-shadow-2xl">
                 <MeImage/>
             </div>
-            <div className="flex flex-col justify-between mt-7 ml-0 lg:mt-0 lg:ml-7 items-center text-primary-xlight lg:items-start">
-                <h2 className="filter drop-shadow-md">Hi, I'm Omri Lavi <span role="img" aria-label="hello">👋</span></h2>
-                <p className="text-secondary-xlight whitespace-pre-wrap text-center lg:text-left text-lg font-semibold">
+            <div className="sm:ml-8">
+                <h2 className="text-primary-xlight filter drop-shadow-md">Hi, I'm Omri Lavi <span role="img" aria-label="hello">👋</span></h2>
+                <p className="text-secondary-xlight whitespace-pre-wrap text-lg font-semibold">
                     {description}
                 </p>
             </div>
