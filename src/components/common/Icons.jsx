@@ -19,7 +19,7 @@ export const GitHubIcon = () => (
 
 export const TwitterIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" style={{transformOrigin: "center"}}
-         transform="scale(1.2) translate(0 1)">
+         transform="scale(1.2) translate(0 )">
         <path
             d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23"/>
     </svg>
@@ -38,7 +38,7 @@ export const LinkedInIcon = () => (
 
 export const DevToIcon = () => (
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid"
-        style={{ transformOrigin: "center" }} transform="scale(0.9) translate(-11 -11)" viewBox="0 0 64 64" width="64" height="64" xmlSpace="preserve">
+        style={{ transformOrigin: "center" }} transform="scale(0.6) translate(-33 -35)" viewBox="0 0 64 64" width="64" height="64" xmlSpace="preserve">
         <path d="M39.8,27.2c0.7,2.5,1.7,6.5,2.4,9c1,3.9,1.3,4.7,2.2,5.6c0.6,0.6,1.3,1,1.8,1c1,0,2.2-1,2.7-2.1
             c0.3-0.8,4.8-17.4,4.8-17.8c0-0.1-0.9-0.2-1.9-0.1l-2,0.1L48,29.6c-1.1,4.3-1.8,6.5-1.9,6.1C45.8,35,42.7,23,42.7,22.9
             c0-0.1-0.9-0.1-2-0.1h-2L39.8,27.2z M27,23.6c-0.6,0.8-0.7,1.2-0.7,9.3v8.4l0.8,0.8c0.7,0.8,0.9,0.8,5,0.8h4.2v-3.4l-3.2-0.1

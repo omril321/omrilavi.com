@@ -1,13 +1,13 @@
 import * as React from 'react';
 import MeImage from "../common/MeImage";
 import useSiteMetadata from "../common/useSiteMetadata";
-
+import SocialButtons from '../common/SocialButtons/SocialButtons';
 
 const AboutMe = () => {
     const {description} = useSiteMetadata();
 
     return (
-        <div className="flex m-auto items-center justify-center px-8 py-4 sm:py-10 lg:pb-16 max-w-3xl">
+        <div className="flex m-auto items-center justify-center">
             <div className="flex-shrink-0 rounded-full hidden sm:block w-32 overflow-hidden filter drop-shadow-2xl">
                 <MeImage/>
             </div>
@@ -16,6 +16,9 @@ const AboutMe = () => {
                 <p className="text-secondary-xlight whitespace-pre-wrap text-lg font-semibold">
                     {description}
                 </p>
+                <div className="flex flex-1 justify-center mb-4 sm:justify-start sm:mb-0">
+                    <SocialButtons/>
+                </div>
             </div>
 
         </div>
