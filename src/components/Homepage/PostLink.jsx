@@ -17,9 +17,9 @@ const PostLink = ({ title, icon, description, image, url, type, provider, flags,
                 </span>
 
                 <div className="pl-5 sm:p-4">
-                    <div className="text-xs font-semibold text-secondary-xlight mb-2">{dateStr}</div>
-                    <h4 className="text-sm text-primary-xlight line-clamp-3 whitespace-break-spaces md:h-16">{title}</h4>
-                    <desc className="invisible md:visible text-primary-xlight text-sm">{description}</desc>
+                    <div className="text-xs font-semibold text-secondary-light mb-2">{dateStr}</div>
+                    <h4 className="text-sm text-primary-light line-clamp-3 whitespace-break-spaces md:h-16">{title}</h4>
+                    <desc className="invisible md:visible text-primary-light text-sm">{description}</desc>
                 </div>
             </a>
         </article>

@@ -26,28 +26,16 @@ module.exports = {
         'primary-dark': darken(primaryColor, 0.5),
         'secondary-dark': darken(secondaryColor, 0.5),
 
-        'primary-xdark': darken(primaryColor, 0.6),
-        'secondary-xdark': darken(secondaryColor, 0.6),
+        'primary-light': lighten(primaryColor, 0.4),
+        'secondary-light': lighten(secondaryColor, 0.4),
 
-        'primary-light': lighten(primaryColor, 0.25),
-        'secondary-light': lighten(secondaryColor, 0.25),
-
-        'primary-xlight': lighten(primaryColor, 0.4),
-        'secondary-xlight': lighten(secondaryColor, 0.4),
-
-        'github': '#4e545a',
-        'linkedin': '#0077b5',
-        'medium': '#00ab6c',
-        'twitter': '#1da1f2',
-        'devto': '#ffffff',
-      },
-      backgroundSize: {
-        normal: '100%',
-        'zoomed-in': '105%',
+        // 'github': '#4e545a',
+        // 'linkedin': '#0077b5',
+        // 'medium': '#00ab6c',
+        // 'twitter': '#1da1f2',
+        // 'devto': '#ffffff',
       },
       boxShadow: {
-        sharp: '8px 8px 0 rgb(0 0 0 / 25%)',
-        'strong-inner': 'inset 0px 0px 10px 0px rgb(0 0 0 / 85%)',
         'soft-dark': '0 0 26px 7px  rgb(0 0 0 / 12%)',
       },
       borderWidth: {
@@ -63,15 +51,6 @@ module.exports = {
   },
   variants: {
     extend: {
-      backgroundSize: ['hover', 'focus'],
-      translate: ['group-hover'],
-      height: ['group-hover'],
-      fontSize: ['group-hover'],
-      scale: ['group-hover'],
-      margin: ['group-hover'],
-      flex: ['group-hover'],
-      flexShrink: ['group-hover'],
-      borderWidth: ['hover'],
     },
   },
   plugins: [

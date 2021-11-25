@@ -12,8 +12,8 @@ const AboutMe = () => {
                 <MeImage/>
             </div>
             <div className="sm:ml-8">
-                <h2 className="text-primary-xlight filter drop-shadow-md">Hi, I'm Omri Lavi <span role="img" aria-label="hello">👋</span></h2>
-                <p className="text-secondary-xlight whitespace-pre-wrap text-lg font-semibold">
+                <h2 className="text-primary-light filter drop-shadow-md">Hi, I'm Omri Lavi <span role="img" aria-label="hello">👋</span></h2>
+                <p className="text-secondary-light whitespace-pre-wrap text-lg font-semibold">
                     {description}
                 </p>
                 <div className="flex flex-1 justify-center mb-4 sm:justify-start sm:mb-0">
