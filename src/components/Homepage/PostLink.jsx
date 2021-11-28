@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { getResponsiveImage } from '../../services/MediumImageService';
+import { getResponsiveImage } from '../../services/ResponsiveImageService';
 
 const SRC_SET_BREAPOINTS = [400, 350, 160];
 const SIZES = '(min-width: 1300px) 33vw, (min-width: 640px) 50vw, 158px';

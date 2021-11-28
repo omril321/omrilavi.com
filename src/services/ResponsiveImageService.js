@@ -1,6 +1,6 @@
 const PROVIDERS_TO_BUILDER = [
     {
-        pattern: /(https?:\/\/(?:www.)?miro.medium.com\/max\/)(\d+)(\/.*)/,
+        pattern: /(https?:\/\/(?:www.)?miro\.medium\.com\/max\/)(\d+)(\/.*)/,
         replacement: widthInPixel => `$1${widthInPixel}$3`
     }
 ]
