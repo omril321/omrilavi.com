@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { attemptSettingMediumImageUrlByWidth } from '../../services/MediumImageService';
+import { getResponsiveImage } from '../../services/MediumImageService';
 
-const idealImageWidth = 800;
+const SRC_SET_BREAPOINTS = [400, 350, 160];
+const SIZES = '(min-width: 1300px) 33vw, (min-width: 640px) 50vw, 158px';
 
 const PostLink = ({ title, icon, description, image, url, type, provider, flags, publishDate }) => {
-    const adaptedImageUrl = attemptSettingMediumImageUrlByWidth(image, idealImageWidth);
+    const { srcSet, src } = getResponsiveImage(image, SRC_SET_BREAPOINTS);
     const dateStr = new Date(publishDate).toLocaleDateString('EN', { year: 'numeric', month: 'long', day: 'numeric' });
 
     return (
@@ -13,7 +14,7 @@ const PostLink = ({ title, icon, description, image, url, type, provider, flags,
                 data-test-post-link
                 href={url}>
                 <span className="w-tiny flex-none h-20 sm:h-32 sm:w-auto">
-                    <img className="h-full w-full object-cover" src={adaptedImageUrl} alt={title}/>
+                    <img className="h-full w-full object-cover" src={src} srcSet={srcSet} sizes={SIZES} alt={title}/>
                 </span>
 
                 <div className="pl-5 sm:p-4">
