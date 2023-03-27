@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "url": "https://engineering.monday.com/the-superpower-of-babel-how-we-saved-16-on-our-bundle-size/",
+      "overrides": {
+        "publishDate": "2023-03-19T08:34:53+00:00",
+        "description": "Discover new web optimization techniques with our custom Babel loader that decreased our bundle sizes by up to 16%."
+      }
+    },
+    {
       "url": "https://www.testim.io/blog/typescript-skiplibcheck/",
       "overrides": {
         "title": "Understanding TypeScript’s skipLibCheck Once and For All",
@@ -52,9 +59,7 @@
     },
     {
       "url": "https://www.youtube.com/watch?v=Bov9v7Oept4",
-      "flags": [
-        "hebrew"
-      ],
+      "flags": ["hebrew"],
       "overrides": {
         "description": "Over the last couple of years we, at Innovid, have engaged with reusing some of our apps and embedding them in other apps. Join us as we explore the options we've examined and challenges encountered."
       }

@@ -1,9 +1,9 @@
-const primaryColor = '#27272A'; //needs to be up to date with bgColor on tailwind.config
+const primaryColor = "#27272A" //needs to be up to date with bgColor on tailwind.config
 
 module.exports = {
   siteMetadata: {
     title: `About Omri Lavi`,
-    description: `A Fullstack Engineer with a passion for Frontend and UX. I enjoy creating tools that enable faster development process. See some of my stuff below.`,
+    description: `A client infrastructure engineer with a passion for DX, speed and quality. I enjoy creating tools that enable faster development process. See some of my stuff below.`,
     author: `@omril321`,
     image: "/images/me.png", // Path to your image you placed in the 'static' folder
     url: "https://omrilavi.com", // No trailing slash allowed!
@@ -59,4 +59,4 @@ module.exports = {
       },
     },
   ],
-};
+}
