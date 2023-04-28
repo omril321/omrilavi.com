@@ -1,0 +1,1 @@
+import{X as s,G as r,_ as a,a as l,d as o,K as _}from"./q-a522ca5e.js";const e=s(r(()=>a(()=>import("./q-fb65cbc7.js"),["build/q-fb65cbc7.js","build/q-a522ca5e.js"]),"s_VoFcmxAl0R0")),t=()=>l("div",null,{class:"bg-bodyColor flex flex-col"},l("main",null,{class:"mx-auto py-11 overflow-scroll"},[o(e,null,3,"70_0"),o(_,null,3,"70_1")],1,null),1,"70_2");export{t as s_NPoKW1pd1fA};

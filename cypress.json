@@ -1,5 +1,0 @@
-{
-  "integrationFolder": "cypress/integration",
-  "fileServerFolder": "public/",
-  "blockHosts": "*.google-analytics.com"
-}

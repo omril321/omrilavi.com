@@ -1,0 +1,1 @@
+import{X as o,G as s,_ as t,i as a}from"./q-a522ca5e.js";import{k as r}from"./q-c8bb8517.js";const i=o(s(()=>t(()=>import("./q-ee409761.js"),["build/q-ee409761.js","build/q-a522ca5e.js"]),"s_NPoKW1pd1fA")),d=r(a("s_aIs5uFsLPP0"));export{i as default,d as usePostsMetadata};

@@ -1,17 +1,17 @@
-const color = require('color');
-const colors = require('tailwindcss/colors');
+const color = require("color");
+const colors = require("tailwindcss/colors");
 
-const primaryColor = '#549eff';
-const secondaryColor = '#54ffdd';
-const bodyColor = colors.gray[800];
-
+const primaryColor = "#549eff";
+const secondaryColor = "#54ffdd";
+const bodyColor = colors.zinc[800];
 
 const darken = (_color, amount) => color(_color).darken(amount).toString();
 const lighten = (_color, amount) => color(_color).lighten(amount).toString();
 
-module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "media", // or 'media' or 'class'
   theme: {
     colors: {
       ...colors,
@@ -23,11 +23,11 @@ module.exports = {
         secondary: secondaryColor,
         bodyColor,
 
-        'primary-dark': darken(primaryColor, 0.5),
-        'secondary-dark': darken(secondaryColor, 0.5),
+        "primary-dark": darken(primaryColor, 0.5),
+        "secondary-dark": darken(secondaryColor, 0.5),
 
-        'primary-light': lighten(primaryColor, 0.4),
-        'secondary-light': lighten(secondaryColor, 0.4),
+        "primary-light": lighten(primaryColor, 0.4),
+        "secondary-light": lighten(secondaryColor, 0.4),
 
         // 'github': '#4e545a',
         // 'linkedin': '#0077b5',
@@ -36,24 +36,21 @@ module.exports = {
         // 'devto': '#ffffff',
       },
       boxShadow: {
-        'soft-dark': '0 0 26px 7px  rgb(0 0 0 / 12%)',
+        "soft-dark": "0 0 26px 7px  rgb(0 0 0 / 12%)",
       },
       borderWidth: {
-        24: '24px',
+        24: "24px",
       },
       width: {
-        tiny: '157px',
+        tiny: "157px",
       },
       height: {
-        120: '30rem',
-      }
+        120: "30rem",
+      },
     },
   },
   variants: {
-    extend: {
-    },
+    extend: {},
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-  ],
-}
+  plugins: [],
+};
