@@ -22,5 +22,5 @@
     }
   },
   "files": ["./.eslintrc.cjs"],
-  "include": ["src", "cypress", "*.ts"]
+  "include": ["src", "*.ts"]
 }
