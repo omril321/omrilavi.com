@@ -20,8 +20,6 @@
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
     "test": "jest",
-    "test:e2e": "cypress open",
-    "test:e2e:ci": "cypress run",
     "qwik": "qwik"
   },
   "devDependencies": {
