@@ -1,1 +1,0 @@
-import{X as e,G as r,_ as s,a,d as o}from"./q-a522ca5e.js";const t=e(r(()=>s(()=>import("./q-c3ec7fcf.js").then(_=>_.e),["build/q-c3ec7fcf.js","build/q-e0ab869a.js","build/q-a522ca5e.js"]),"s_beJEHFhiD8M")),p=()=>a("header",null,{class:"px-8 py-4 max-w-4xl sm:py-10 lg:pb-16"},o(t,null,3,"Ow_0"),1,"Ow_1");export{p as s_VoFcmxAl0R0};
