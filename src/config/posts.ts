@@ -8,6 +8,13 @@ export type PostMetadata = {
 
 export const posts: PostMetadata[] = [
   {
+    url: "https://www.youtube.com/watch?v=DobKkCDjZRM",
+    title: "Omri Lavi @ ReactNext 24` | The Superpower of ASTs: How We Saved 16% on Our Bundle Size",
+    publishDate: "Aug 7, 2024",
+    description: "Omri's talk at ReactNext 24` about the superpower of ASTs and how we saved 16% on our bundle size",
+    image: "https://i.ytimg.com/vi/DobKkCDjZRM/maxresdefault.jpg",
+  },
+  {
     url: "https://engineering.monday.com/the-superpower-of-babel-how-we-saved-16-on-our-bundle-size/",
     title: "The Superpower of Babel: How We Saved 16% on Our Bundle Size",
     publishDate: "2023-03-19T08:34:53+00:00",
