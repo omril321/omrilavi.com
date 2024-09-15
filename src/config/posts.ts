@@ -15,6 +15,13 @@ export const posts: PostMetadata[] = [
     image: "https://i.ytimg.com/vi/DobKkCDjZRM/maxresdefault.jpg",
   },
   {
+    url: "https://engineering.monday.com/keeping-your-data-fresh-optimizing-live-updates-with-websockets/",
+    title: "Keeping Your Data Fresh: Optimizing Live Updates with WebSockets",
+    publishDate: "2023-06-04T08:34:53+00:00",
+    description: "Learn how we optimized live updates with WebSockets to keep your data fresh.",
+    image: "https://engineering.monday.com/wp-content/uploads/2023/06/Control_Yellow-1024x512.jpg",
+  },
+  {
     url: "https://engineering.monday.com/the-superpower-of-babel-how-we-saved-16-on-our-bundle-size/",
     title: "The Superpower of Babel: How We Saved 16% on Our Bundle Size",
     publishDate: "2023-03-19T08:34:53+00:00",
