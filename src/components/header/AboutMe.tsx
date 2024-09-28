@@ -10,10 +10,11 @@ export default component$(() => {
         <MeImage />
       </div>
       <div class="sm:ml-8">
-        <h2 class="text-primary-light filter drop-shadow-md">
-          Hi, I'm Omri Lavi{" "}
-          <span role="img" aria-label="hello">
-            👋
+        <h2 class="text-primary filter drop-shadow-md">
+          Omri Lavi
+          <span class="text-secondary-light border-secondary-light border-l-2 ml-2">
+            {" "}
+            Building Tools for Developers
           </span>
         </h2>
         <p class="text-secondary-light whitespace-pre-wrap text-lg font-semibold">{ABOUT_ME_DESCRIPTION}</p>
