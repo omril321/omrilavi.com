@@ -18,7 +18,7 @@ const PostLink = component$<PostLinkProps>(({ title, description, image, url, pu
         href={url}
       >
         <span class="w-tiny flex-none h-20 sm:h-32 sm:w-auto">
-          <img class="h-full w-full object-cover" src={src} srcSet={srcSet} sizes={SIZES} alt={title} />
+          <img class="h-full w-full object-cover" src={src} srcset={srcSet} sizes={SIZES} alt={title} />
         </span>
 
         <div class="pl-5 sm:p-4">
