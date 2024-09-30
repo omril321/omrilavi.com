@@ -1,1 +1,0 @@
-const e="About Omri Lavi",t="About Omri Lavi",o="A client infrastructure engineer with a passion for DX, speed and quality. I enjoy creating tools that enable faster development process. See some of my stuff below.";export{o as A,e as W,t as a};
