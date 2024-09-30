@@ -86,6 +86,11 @@
   resolved "https://registry.npmjs.org/@bugsnag/safe-json-stringify/-/safe-json-stringify-6.0.0.tgz#22abdcd83e008c369902976730c34c150148a758"
   integrity sha512-htzFO1Zc57S8kgdRK9mLcPVTW1BY2ijfH7Dk2CeZmspTWKdKqSo1iwmqrq2WtRjFlo8aRZYgLX0wFrDXF/9DLA==
 
+"@builder.io/partytown@^0.8.1":
+  version "0.8.2"
+  resolved "https://registry.npmjs.org/@builder.io/partytown/-/partytown-0.8.2.tgz#bd3689aac3965d7dc05e56c1bb0ef357fdd1d0b0"
+  integrity sha512-WKGE+SO0qUGirW8J+xOWkHeCkfFEoPPvHnFkcdMl+MY3kDbAcTwjZCzjg27JCvoD0h8fH47FR7DSIss0/S5lyg==
+
 "@builder.io/qwik-city@^1.9.0":
   version "1.9.0"
   resolved "https://registry.npmjs.org/@builder.io/qwik-city/-/qwik-city-1.9.0.tgz#d9d7f21545f53aa8f3e74c41ec172cd423795d85"

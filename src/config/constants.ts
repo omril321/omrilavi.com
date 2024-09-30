@@ -9,3 +9,5 @@ export const ABOUT_ME = {
   
 Previously, Omri led the Testing Guild at monday.com, fostering best practices and building testing infrastructures that support quality across teams. He is an advocate for knowledge sharing, regularly speaking at internal and external conferences on advanced technologies, including TypeScript, AST manipulation, and testing frameworks. His work continues to influence how developers approach tooling, architecture, and developer productivity at scale.`,
 };
+
+export const GTAG = "G-HK4MP1TKW4";
