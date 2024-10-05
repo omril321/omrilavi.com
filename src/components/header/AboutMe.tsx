@@ -1,4 +1,4 @@
-import { component$, useSignal } from "@builder.io/qwik";
+import { component$, useSignal, $ } from "@builder.io/qwik";
 import SocialButtons from "../socialButtons";
 import MeImage from "./MeImage";
 import { ABOUT_ME } from "../../config/constants";
@@ -10,6 +10,15 @@ export default component$(() => {
   const hasMore = nextMore !== description.value;
   const nextLess = description.value === ABOUT_ME.long ? ABOUT_ME.medium : ABOUT_ME.short;
   const hasLess = nextLess !== description.value;
+
+  const showDescription = (newDescription: string, eventLabel: string) =>
+    $(() => {
+      description.value = newDescription;
+      gtag?.("event", "click", {
+        event_category: "about_me",
+        event_label: eventLabel,
+      });
+    });
 
   return (
     <div class="flex m-auto items-start justify-center">
@@ -32,7 +41,7 @@ export default component$(() => {
             <button
               class="text-secondary-light text-sm bg-primary-dark px-2 py-1 rounded whitespace-pre-wrap hover:bg-primary transition-colors"
               aria-label="Time to Breathe"
-              onClick$={() => (description.value = nextLess)}
+              onClick$={showDescription(nextLess, "show_less")}
             >
               😮‍💨{"   "}Time to Breathe
             </button>
@@ -41,7 +50,7 @@ export default component$(() => {
             <button
               class="text-secondary-light text-sm bg-primary-dark px-2 py-1 rounded whitespace-pre-wrap hover:bg-primary transition-colors"
               aria-label="Go Deeper"
-              onClick$={() => (description.value = nextMore)}
+              onClick$={showDescription(nextMore, "show_more")}
             >
               🤿{"   "}Go Deeper
             </button>
