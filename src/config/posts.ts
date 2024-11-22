@@ -43,7 +43,7 @@ export const posts: PostMetadata[] = [
     description:
       "Are you generally stressed about your value as a developer? Feeling like you’re just not enough? This post is for you.",
     image:
-      "https://res.cloudinary.com/practicaldev/image/fetch/s--sjd6g3ZP--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pzxms95r4ohe1a75acff.png",
+      "https://media2.dev.to/dynamic/image/width=500,height=210,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpzxms95r4ohe1a75acff.png",
     publishDate: "Jul 16, 2021",
   },
   {
@@ -52,7 +52,7 @@ export const posts: PostMetadata[] = [
     description:
       "Smarter Type Alias Preservation makes TypeScript “remember” which union-types are being used while displaying the error messages.",
     image:
-      "https://res.cloudinary.com/practicaldev/image/fetch/s--pwd1299o--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fy0rld7utq2k67npfa8f.png",
+      "https://media2.dev.to/dynamic/image/width=500,height=210,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffy0rld7utq2k67npfa8f.png",
     publishDate: "Feb 28, 2021",
   },
   {
@@ -61,7 +61,7 @@ export const posts: PostMetadata[] = [
     description: "With Git Metric you can quickly analyze git repository’s history within minutes.",
     publishDate: "Feb 14, 2021",
     image:
-      "https://res.cloudinary.com/practicaldev/image/fetch/s--kIQ5Sxs---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/h3f22fk6mmiwufqjn3ef.png",
+      "https://media2.dev.to/cdn-cgi/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fh3f22fk6mmiwufqjn3ef.png",
   },
   {
     url: "https://www.testim.io/blog/writing-your-first-custom-stylelint-rule/",
