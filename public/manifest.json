@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "About Omri Lavi",
+  "name": "About Omri Lavi - Client Platform Expert",
   "short_name": "Omri Lavi",
-  "description": "About Omri Lavi",
+  "description": "Omri Lavi is specializing in dev tools, client architecture, and optimizing workflows to enhance developer velocity and confidence.",
   "start_url": "/",
   "display": "minimal-ui",
   "background_color": "#27272A",
