@@ -12,7 +12,7 @@ export const posts: PostMetadata[] = [
     title: "Omri Lavi @ ReactNext 24` | The Superpower of ASTs: How We Saved 16% on Our Bundle Size",
     publishDate: "Aug 7, 2024",
     description: "Omri's talk at ReactNext 24` about the superpower of ASTs and how we saved 16% on our bundle size",
-    image: "https://i.ytimg.com/vi/DobKkCDjZRM/maxresdefault.jpg",
+    image: "https://i.ytimg.com/vi/DobKkCDjZRM/hqdefault.jpg",
   },
   {
     url: "https://engineering.monday.com/keeping-your-data-fresh-optimizing-live-updates-with-websockets/",
@@ -61,7 +61,7 @@ export const posts: PostMetadata[] = [
     description: "With Git Metric you can quickly analyze git repository’s history within minutes.",
     publishDate: "Feb 14, 2021",
     image:
-      "https://media2.dev.to/cdn-cgi/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fh3f22fk6mmiwufqjn3ef.png",
+      "https://media2.dev.to/cdn-cgi/image/width=400%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fh3f22fk6mmiwufqjn3ef.png",
   },
   {
     url: "https://www.testim.io/blog/writing-your-first-custom-stylelint-rule/",
@@ -76,27 +76,27 @@ export const posts: PostMetadata[] = [
     url: "https://engineering.innovid.com/3-considerations-for-your-next-utility-function-refactor-static-vs-dependency-injected-e966d385bd27",
     title: "3 Considerations for Your Next Utility Function Refactor — Static vs. Dependency Injected",
     description: "Choosing between static and a dependency injected utility function",
-    image: "https://miro.medium.com/v2/resize:fit:4800/0*QXTA-1khLYzcQRAj",
+    image: "https://miro.medium.com/v2/resize:fit:400/0*QXTA-1khLYzcQRAj",
     publishDate: "Nov 27, 2019",
   },
   {
     url: "https://engineering.innovid.com/my-top-9-hand-picked-talks-from-cssconfbp-jsconfbp-19-some-bonuses-702fdf33bbf7",
     title: "My Top 9 Hand-picked Talks from CSSConfBP and JSConfBP ’19",
     description: "Summarizing my favorite talks from JSConf and CSSConf '19",
-    image: "https://miro.medium.com/v2/resize:fit:4800/0*_e0SBFKicMh2tgb5",
+    image: "https://miro.medium.com/v2/resize:fit:400/0*_e0SBFKicMh2tgb5",
     publishDate: "Nov 26, 2019",
   },
   {
     url: "https://medium.com/better-programming/link-previews-more-than-meets-the-eye-aa13c77c6d69",
     title: "Link Previews — More than Meets the Eye",
     description: "Ever wondered how is this preview generated?",
-    image: "https://miro.medium.com/v2/resize:fit:4800/0*f6Vz4GodmmZIUtP6",
+    image: "https://miro.medium.com/v2/resize:fit:400/0*f6Vz4GodmmZIUtP6",
     publishDate: "Sep 10, 2019",
   },
   {
     url: "https://medium.com/better-programming/cleaner-typescript-with-the-non-null-assertion-operator-300789388376",
     description: "Reduce your cognitive load and make your code less verbose",
-    image: "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*tPnsbYsfRrcPaDtsMX3ARQ.jpeg",
+    image: "https://miro.medium.com/v2/resize:fit:400/format:webp/1*tPnsbYsfRrcPaDtsMX3ARQ.jpeg",
     title: "Cleaner TypeScript With the Non-Null Assertion Operator",
     publishDate: "Aug 25, 2019",
   },
@@ -105,7 +105,7 @@ export const posts: PostMetadata[] = [
     title: "7 Things You Should Know Before Starting with Side Projects",
     description:
       "I discontinued my work on a side project I’ve started 18 months ago. Doesn’t sound like a big success story, right? I thought so…",
-    image: "https://miro.medium.com/v2/resize:fit:4800/0*6ht9ccoPSRX8SudN",
+    image: "https://miro.medium.com/v2/resize:fit:400/0*6ht9ccoPSRX8SudN",
     publishDate: "Feb 24, 2019",
   },
   {
@@ -113,13 +113,13 @@ export const posts: PostMetadata[] = [
     title: "Fixing Overly Aggressive Optimization with Terser",
     description:
       "A story of solving a mysterious “Syntax Error”, that appeared in our production Webpack build with no apparent reason.",
-    image: "https://miro.medium.com/v2/resize:fit:4800/0*i_3GXfPLKlfDKwhY",
+    image: "https://miro.medium.com/v2/resize:fit:400/0*i_3GXfPLKlfDKwhY",
     publishDate: "Jan 8, 2019",
   },
   {
     url: "https://www.youtube.com/watch?v=Bov9v7Oept4",
     title: "Microfrontends with iFrames",
-    image: "https://i.ytimg.com/vi/Bov9v7Oept4/maxresdefault.jpg",
+    image: "https://i.ytimg.com/vi/Bov9v7Oept4/hqdefault.jpg",
     description:
       "Over the last couple of years we, at Innovid, have engaged with reusing some of our apps and embedding them in other apps. Join us as we explore the options we've examined and challenges encountered.",
     publishDate: "December 7, 2018",
