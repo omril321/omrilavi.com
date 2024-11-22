@@ -23,7 +23,7 @@ const PostLink = component$<PostLinkProps>(({ title, description, image, url, pu
 
         <div class="pl-5 sm:p-4">
           <div class="text-xs font-semibold text-secondary-light mb-2">{dateStr}</div>
-          <h4 class="text-sm text-primary-light line-clamp-3 whitespace-break-spaces md:h-16">{title}</h4>
+          <h3 class="text-sm text-primary-light line-clamp-3 whitespace-break-spaces md:h-16">{title}</h3>
           <desc class="invisible md:visible text-primary-light text-sm">{description}</desc>
         </div>
       </a>
