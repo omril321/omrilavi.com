@@ -67,7 +67,7 @@ export const head: DocumentHead = {
     },
     {
       name: "robots",
-      content: " index, nofollow",
+      content: "index, follow",
     },
   ],
 };

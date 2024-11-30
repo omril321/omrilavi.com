@@ -16,6 +16,8 @@ const PostLink = component$<PostLinkProps>(({ title, description, image, url, pu
         class="flex h-28 transition-all duration-300 sm:h-60 sm:mb-8 sm:flex-col overflow-hidden sm:rounded-lg sm:hover:shadow-soft-dark md:h-96 md:mb-14"
         data-test-post-link
         href={url}
+        // assume all posts are external
+        rel="nofollow"
       >
         <span class="w-tiny flex-none h-20 sm:h-32 sm:w-auto">
           <img class="h-full w-full object-cover" src={src} srcset={srcSet} sizes={SIZES} alt={title} />
