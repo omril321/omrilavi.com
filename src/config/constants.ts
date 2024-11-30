@@ -1,5 +1,5 @@
 // don't forget to sync this with the manifest.json file
-export const WEBSITE_TITLE = "Omri Lavi - Expert in Developer Tools and Client Architecture";
+export const WEBSITE_TITLE = "Omri Lavi - Developer Tools and Client Architecture expert";
 export const ABOUT_ME = {
   // this appears in the manifest as well
   description:

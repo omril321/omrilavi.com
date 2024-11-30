@@ -26,13 +26,13 @@ export default component$(() => {
         <MeImage />
       </div>
       <div class="sm:ml-8">
-        <h2 class="text-primary filter drop-shadow-md">
+        <h1 class="text-primary filter drop-shadow-md">
           Omri Lavi
           <span class="text-secondary-light border-secondary-light border-l-2 ml-2">
             {" "}
             Building Tools for Developers
           </span>
-        </h2>
+        </h1>
         <p aria-label="description" class="text-secondary-light whitespace-pre-wrap text-lg font-semibold">
           {description}
         </p>
