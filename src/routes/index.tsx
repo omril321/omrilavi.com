@@ -8,13 +8,11 @@ import { ME_IMAGE_URL } from "~/components/header/MeImage";
 export default component$(() => {
   const postsMetadata = usePostsMetadata();
   return (
-    <>
-      <div class="grid grid-cols-1 max-w-6xl sm:grid-cols-2 md:grid-cols-3">
-        {postsMetadata.value.map((metadata) => (
-          <PostLink key={metadata.url} {...metadata} />
-        ))}
-      </div>
-    </>
+    <div class="grid grid-cols-1 max-w-6xl sm:grid-cols-2 md:grid-cols-3">
+      {postsMetadata.value.map((metadata) => (
+        <PostLink key={metadata.url} {...metadata} />
+      ))}
+    </div>
   );
 });
 
