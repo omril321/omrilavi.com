@@ -22,12 +22,48 @@ export const head: DocumentHead = {
   title: WEBSITE_TITLE,
   meta: [
     {
+      name: "og:title",
+      content: WEBSITE_TITLE,
+    },
+    {
+      name: "twitter:title",
+      content: WEBSITE_TITLE,
+    },
+    {
       name: "description",
       content: WEBSITE_META_DESCRIPTION,
     },
     {
+      name: "og:description",
+      content: WEBSITE_META_DESCRIPTION,
+    },
+    {
+      name: "twitter:description",
+      content: WEBSITE_META_DESCRIPTION,
+    },
+    {
+      name: "og:url",
+      content: "https://omrilavi.com/",
+    },
+    {
+      name: "og:type",
+      content: "website",
+    },
+    {
       name: "og:image",
       content: ME_IMAGE_URL,
+    },
+    {
+      name: "twitter:image",
+      content: ME_IMAGE_URL,
+    },
+    {
+      name: "author",
+      content: "Omri Lavi",
+    },
+    {
+      name: "twitter:card",
+      content: "summary",
     },
     {
       name: "robots",
