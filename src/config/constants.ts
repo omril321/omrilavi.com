@@ -1,7 +1,9 @@
-export const WEBSITE_TITLE = "About Omri Lavi - Client Platform Expert";
+// don't forget to sync this with the manifest.json file
+export const WEBSITE_TITLE = "Omri Lavi - Expert in Developer Tools and Client Architecture";
 export const ABOUT_ME = {
+  // this appears in the manifest as well
   description:
-    "Omri Lavi is specializing in dev tools, client architecture, and optimizing workflows to enhance developer velocity and confidence.",
+    "Experienced tech lead specializing in client-side architecture, testing frameworks, and tools that improve developer workflows and boost productivity.",
   short:
     "A Tech Lead at monday.com with over a decade of experience, specializing in developer tools, client architecture, and optimizing workflows to enhance developer velocity and confidence.",
   medium:
