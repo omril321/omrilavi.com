@@ -1,12 +1,12 @@
-const color = require("color");
-const colors = require("tailwindcss/colors");
+import color from "color";
+import colors from "tailwindcss/colors";
 
 const primaryColor = "#549eff";
 const secondaryColor = "#54ffdd";
 const bodyColor = colors.zinc[800];
 
-const darken = (_color, amount) => color(_color).darken(amount).toString();
-const lighten = (_color, amount) => color(_color).lighten(amount).toString();
+const darken = (_color, amount) => color(_color)?.darken(amount).toString();
+const lighten = (_color, amount) => color(_color)?.lighten(amount).toString();
 
 /** @type {import('tailwindcss').Config} */
 export default {
