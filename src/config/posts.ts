@@ -8,6 +8,15 @@ export type PostMetadata = {
 
 export const posts: PostMetadata[] = [
   {
+    url: "https://gitnation.com/contents/the-superpower-of-asts-how-we-saved-16percent-on-our-bundle-size",
+    title: "Omri Lavi @ React Day Berlin 24` | The Superpower of ASTs: How We Saved 16% on Our Bundle Size",
+    publishDate: "Dec 16, 2024",
+    description:
+      "Omri's talk at React Day Berlin 24` about the superpower of ASTs and how we saved 16% on our bundle size",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D22AQFDB984r4TY4A/feedshare-shrink_800/B4DZPWDhqjHMAk-/0/1734463072464?e=2147483647&v=beta&t=HBG3JELQ0vgba4trztn7HtSaiZCWQnKWsw0-gQCDAoM",
+  },
+  {
     url: "https://www.youtube.com/watch?v=DobKkCDjZRM",
     title: "Omri Lavi @ ReactNext 24` | The Superpower of ASTs: How We Saved 16% on Our Bundle Size",
     publishDate: "Aug 7, 2024",
