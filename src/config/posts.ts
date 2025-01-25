@@ -8,6 +8,14 @@ export type PostMetadata = {
 
 export const posts: PostMetadata[] = [
   {
+    url: "https://engineering.monday.com/how-typescripts-compiler-helped-us-prevent-redux-performance-issues/",
+    title: "How TypeScript’s Compiler Helped Us Prevent Redux Performance Issues",
+    publishDate: "Jan 25, 2025",
+    description:
+      "Discover how we built a TypeScript tool to test and optimize selectors, improving performance by ensuring consistent references for identical inputs.",
+    image: "https://engineering.monday.com/wp-content/uploads/2025/01/How-TypeScripts-Compiler-Helped-Us-Prevent-Redux-Performance-1024x512.png",
+  },
+  {
     url: "https://gitnation.com/contents/the-superpower-of-asts-how-we-saved-16percent-on-our-bundle-size",
     title: "Omri Lavi @ React Day Berlin 24` | The Superpower of ASTs: How We Saved 16% on Our Bundle Size",
     publishDate: "Dec 16, 2024",
