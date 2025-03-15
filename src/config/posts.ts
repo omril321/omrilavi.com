@@ -8,12 +8,58 @@ export type PostMetadata = {
 
 export const posts: PostMetadata[] = [
   {
+    url: "https://dev.to/omril321/growing-as-a-technical-leader-lessons-from-the-book-staff-engineer-4dod",
+    title: "Growing as a Technical Leader: Lessons from the Book Staff Engineer",
+    publishDate: "Feb 1, 2025",
+    description:
+      "Exploring key lessons from Will Larson's 'Staff Engineer,' this article delves into the four archetypes of Staff+ Engineers and strategies for impactful technical leadership.",
+    image:
+      "https://media2.dev.to/dynamic/image/width=500,height=210,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhu5uh0exng5yoa9pkajy.png",
+  },
+  {
+    url: "https://engineering.monday.com/testkit-mastery-part-5-key-takeaways-and-lessons-learned-for-building-better-testkits/",
+    title: "Testkit Mastery, Part 5: Key Takeaways and Lessons Learned for Building Better Testkits",
+    description:
+      "Reflecting on building testkits for complex libraries, this article shares key takeaways and lessons learned to enhance testing workflows and create developer-friendly tools.",
+    image:
+      "https://engineering.monday.com/wp-content/uploads/2025/01/Key-Takeaways-and-Lessons-Learned-for-Building-Better-Testkits-1024x512.png",
+    publishDate: "Mar 14, 2025",
+  },
+  {
+    url: "https://engineering.monday.com/testkit-mastery-part-4-design-for-easy-integration-into-testing-environments/",
+    title: "Testkit Mastery, Part 4: Design for Easy Integration into Testing Environments",
+    description:
+      "This article explores strategies for seamlessly integrating testkits into environments like Vitest and Storybook, ensuring minimal setup and a consistent developer experience.",
+    image:
+      "https://engineering.monday.com/wp-content/uploads/2025/01/Seamlessly-Integrating-a-Testkit-into-Testing-and-Storybook-Environment-1024x512.png",
+    publishDate: "Feb 28, 2025",
+  },
+  {
+    url: "https://engineering.monday.com/testkit-mastery-part-3-building-the-core-structure-of-a-flexible-and-reliable-testkit/",
+    title: "Testkit Mastery, Part 3: Building the Core Structure of a Flexible and Reliable Testkit",
+    description:
+      "Delving into the implementation of core components, this article discusses balancing flexibility and accuracy to create a robust testkit for complex libraries.",
+    image:
+      "https://engineering.monday.com/wp-content/uploads/2025/01/How-to-Build-the-Core-Structure-of-a-Flexible-and-Reliable-Testkit-1024x512.png",
+    publishDate: "Feb 21, 2025",
+  },
+  {
+    url: "https://engineering.monday.com/testkit-mastery-part-2-designing-a-developer-friendly-testkit/",
+    title: "Testkit Mastery, Part 2: Designing a Developer-Friendly Testkit",
+    description:
+      "This article walks through prototyping a testkit API, focusing on key requirements for usability, flexibility, and seamless TypeScript integration.",
+    image:
+      "https://engineering.monday.com/wp-content/uploads/2025/01/Designing-a-Developer-Friendly-Testkit_-Prototyping-and-Defining-Requirement-1024x512.png",
+    publishDate: "Feb 14, 2025",
+  },
+  {
     url: "https://engineering.monday.com/how-typescripts-compiler-helped-us-prevent-redux-performance-issues/",
     title: "How TypeScript’s Compiler Helped Us Prevent Redux Performance Issues",
     publishDate: "Jan 25, 2025",
     description:
       "Discover how we built a TypeScript tool to test and optimize selectors, improving performance by ensuring consistent references for identical inputs.",
-    image: "https://engineering.monday.com/wp-content/uploads/2025/01/How-TypeScripts-Compiler-Helped-Us-Prevent-Redux-Performance-1024x512.png",
+    image:
+      "https://engineering.monday.com/wp-content/uploads/2025/01/How-TypeScripts-Compiler-Helped-Us-Prevent-Redux-Performance-1024x512.png",
   },
   {
     url: "https://gitnation.com/contents/the-superpower-of-asts-how-we-saved-16percent-on-our-bundle-size",
