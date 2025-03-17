@@ -8,6 +8,15 @@ export type PostMetadata = {
 
 export const posts: PostMetadata[] = [
   {
+    url: "https://podcasts.apple.com/tr/podcast/scaling-frontend-development-challenges-strategies/id1788326535?i=1000696932002",
+    title: "[PODCAST] Scaling Frontend Development - Challenges & Strategies",
+    description:
+      "Exploring challenges and strategies in scaling frontend development, including platform teams, microfrontends, and automated testing to maintain productivity and quality.",
+    image:
+      "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/24/8a/c9/248ac9d8-0bb0-f60e-502f-a27cdbca931a/mza_10060067411653588489.jpg/600x600bb.webp",
+    publishDate: "Mar 1, 2025",
+  },
+  {
     url: "https://dev.to/omril321/growing-as-a-technical-leader-lessons-from-the-book-staff-engineer-4dod",
     title: "Growing as a Technical Leader: Lessons from the Book Staff Engineer",
     publishDate: "Feb 1, 2025",
