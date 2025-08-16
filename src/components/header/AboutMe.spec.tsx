@@ -1,4 +1,4 @@
-import { createDOM } from "@builder.io/qwik/testing";
+import { createDOM } from "@qwik.dev/core/testing";
 import { expect, describe, beforeEach, it } from "vitest";
 import AboutMe from "./AboutMe";
 import { ABOUT_ME } from "~/config/constants";

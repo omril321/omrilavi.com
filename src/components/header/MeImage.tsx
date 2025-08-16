@@ -1,6 +1,6 @@
 import ImgMe from "~/media/me.png?jsx";
 import ImgMeUrl from "~/media/me.png";
-import { component$ } from "@builder.io/qwik";
+import { component$ } from "@qwik.dev/core";
 
 export const ME_IMAGE_URL = ImgMeUrl;
 

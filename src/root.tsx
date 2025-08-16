@@ -1,5 +1,5 @@
-import { component$ } from "@builder.io/qwik";
-import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from "@builder.io/qwik-city";
+import { component$ } from "@qwik.dev/core";
+import { QwikRouterProvider, RouterOutlet, ServiceWorkerRegister } from "@qwik.dev/router";
 import { RouterHead } from "./components/router-head/router-head";
 import { QwikPartytown } from "./components/partytown/partytown";
 import { GTAG } from "./config/constants";
@@ -15,7 +15,7 @@ export default component$(() => {
    */
 
   return (
-    <QwikCityProvider>
+    <QwikRouterProvider>
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
@@ -38,6 +38,6 @@ export default component$(() => {
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>
-    </QwikCityProvider>
+    </QwikRouterProvider>
   );
 });
