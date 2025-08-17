@@ -9,7 +9,7 @@
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
-    "build.server": "vite build -c adapters/netlify-edge/vite.config.ts",
+    "build.server": "vite build -c adapters/static/vite.config.mts",
     "build.types": "tsc --incremental --noEmit",
     "cypress": "TS_NODE_PROJECT=cypress/tsconfig.json cypress open",
     "cypress:run": "TS_NODE_PROJECT=cypress/tsconfig.json cypress run",
