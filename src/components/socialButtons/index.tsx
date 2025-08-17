@@ -1,5 +1,5 @@
-import { component$ } from "@qwik.dev/core";
-import type { JSXChildren } from "@qwik.dev/core";
+import { component$ } from "@builder.io/qwik";
+import type { JSXChildren } from "@builder.io/qwik";
 import { GitHubIcon, LinkedInIcon, MediumIcon, TwitterIcon, DevToIcon } from "./Icons";
 
 const SBWrapper = ({

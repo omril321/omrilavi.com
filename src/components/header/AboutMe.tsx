@@ -1,4 +1,4 @@
-import { component$, useSignal, $ } from "@qwik.dev/core";
+import { component$, useSignal, $ } from "@builder.io/qwik";
 import SocialButtons from "../socialButtons";
 import MeImage from "./MeImage";
 import { ABOUT_ME } from "../../config/constants";

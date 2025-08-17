@@ -1,4 +1,4 @@
-import { component$ } from "@qwik.dev/core";
+import { component$ } from "@builder.io/qwik";
 import type { PostMetadata } from "~/config/posts";
 import { getResponsiveImage } from "../../services/ResponsiveImageService";
 const SRC_SET_BREAPOINTS = [400, 350, 160];

@@ -1,6 +1,6 @@
-import { component$, Slot } from "@qwik.dev/core";
+import { component$, Slot } from "@builder.io/qwik";
 import Header from "~/components/header/Header";
-import { routeLoader$ } from "@qwik.dev/router";
+import { routeLoader$ } from "@builder.io/qwik-city";
 import { posts } from "../config/posts";
 import "typeface-open-sans";
 

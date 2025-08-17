@@ -7,27 +7,6 @@
 @tailwind utilities;
 
 /**
- * Prism.js theme integration with Tailwind Typography
- * 
- * Minimal overrides to ensure Prism themes work properly with Tailwind Typography.
- * The actual theme CSS is imported from src/styles/prism-theme.ts
- */
-
-/* Allow Prism theme to control code block backgrounds and colors */
-.prose pre {
-  @apply !bg-transparent !border-0 !text-inherit;
-}
-
-.prose pre code {
-  @apply !bg-transparent !text-inherit;
-}
-
-/* Keep Tailwind Typography styling for inline code (not in code blocks) */
-.prose :not(pre) > code {
-  @apply bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-sm font-medium;
-}
-
-/**
  * WHAT IS THIS FILE?
  *
  * Globally applied styles. No matter which components are in the page or matching route,
