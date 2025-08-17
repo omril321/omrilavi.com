@@ -5,6 +5,7 @@ import { QwikPartytown } from "./components/partytown/partytown";
 import { GTAG } from "./config/constants";
 
 import "./global.css";
+import "./styles/prism-theme";
 
 export default component$(() => {
   /**

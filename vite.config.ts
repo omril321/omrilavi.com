@@ -7,7 +7,13 @@ import { join } from "path";
 export default defineConfig(() => {
   return {
     plugins: [
-      qwikRouter(),
+      qwikRouter({
+        mdxPlugins: {
+          remarkGfm: true,
+          rehypeSyntaxHighlight: true, // Use Qwik's built-in (cleanest!)
+          rehypeAutolinkHeadings: true,
+        },
+      }),
       qwikVite(),
       partytownVite({ dest: join(__dirname, "dist", "~partytown") }),
     ],
