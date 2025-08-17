@@ -1,11 +1,24 @@
 import { createDOM } from "@builder.io/qwik/testing";
-import { expect, describe, beforeEach, it } from "vitest";
+import { expect, describe, beforeEach, it, beforeAll, vi, afterAll } from "vitest";
 import AboutMe from "./AboutMe";
 import { ABOUT_ME } from "~/config/constants";
+
 
 describe("[AboutMe Component]", () => {
   let screen: Awaited<ReturnType<typeof createDOM>>["screen"];
   let userEvent: Awaited<ReturnType<typeof createDOM>>["userEvent"];
+
+  let originalGtag: typeof globalThis.gtag;
+  
+  beforeAll(() => {
+    originalGtag = globalThis.gtag;
+    // Mock gtag function to prevent ReferenceError
+    globalThis.gtag = vi.fn();
+  });
+
+  afterAll(() => {
+    globalThis.gtag = originalGtag;
+  });
 
   beforeEach(async () => {
     const { render, screen: _screen, userEvent: _userEvent } = await createDOM();
