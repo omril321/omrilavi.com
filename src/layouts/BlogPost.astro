@@ -1,0 +1,141 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  image: string;
+  publishDate: string;
+}
+
+const { title, description, image, publishDate } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">← Home</a>
+      </nav>
+    </header>
+    
+    <main>
+      <article>
+        <header>
+          <h1>{title}</h1>
+          <p class="description">{description}</p>
+          <time datetime={publishDate}>{publishDate}</time>
+          <img src={image} alt={title} />
+        </header>
+        
+        <div class="content">
+          <slot />
+        </div>
+      </article>
+    </main>
+    
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+      
+      header nav {
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+      }
+      
+      header nav a {
+        margin-right: 1rem;
+        text-decoration: none;
+        color: #0066cc;
+      }
+      
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      
+      article header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+      
+      article header .description {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 1rem;
+      }
+      
+      article header time {
+        color: #888;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+      
+      article header img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+      }
+      
+      .content {
+        line-height: 1.8;
+      }
+      
+      .content h1, .content h2, .content h3 {
+        color: #333;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .content p {
+        margin-bottom: 1rem;
+      }
+      
+      .content pre {
+        background: #f4f4f4;
+        padding: 1rem;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+      
+      .content code {
+        background: #f4f4f4;
+        padding: 0.2rem 0.4rem;
+        border-radius: 3px;
+        font-family: 'Monaco', 'Courier New', monospace;
+      }
+      
+      .content pre code {
+        background: none;
+        padding: 0;
+      }
+    </style>
+  </body>
+</html>
