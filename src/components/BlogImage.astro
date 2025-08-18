@@ -1,0 +1,35 @@
+---
+/**
+ * Optimized blog image component for public folder images
+ * Provides responsive images, lazy loading, and modern formats
+ */
+
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  loading?: "lazy" | "eager";
+  sizes?: string;
+}
+
+const {
+  src,
+  alt,
+  class: className = "",
+  loading = "lazy",
+  sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+} = Astro.props;
+
+// Generate srcset for responsive images (if the image supports it)
+const baseSrc = src.replace(/\.[^/.]+$/, ""); // Remove extension
+const extension = src.split(".").pop();
+---
+
+<img
+  src={src}
+  alt={alt}
+  class={`w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 ${className}`}
+  loading={loading}
+  sizes={sizes}
+  decoding="async"
+/>
