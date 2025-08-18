@@ -1,0 +1,45 @@
+---
+export interface Props {
+  href: string;
+  label: string;
+  platform: "linkedin" | "github" | "devto" | "medium" | "twitter";
+}
+
+const { href, label, platform } = Astro.props;
+
+// Base social button styles using CSS custom properties
+const baseClasses =
+  "group relative flex items-center justify-center transition-all duration-300 ease-out bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30";
+
+// Platform-specific hover styles (shorter syntax)
+const platformHover = {
+  linkedin: "hover:border-linkedin hover:bg-linkedin/20 group-hover:text-linkedin",
+  github: "hover:border-white hover:bg-white/10 group-hover:text-white",
+  devto: "hover:border-white hover:bg-black/30 group-hover:text-white",
+  medium: "hover:border-medium hover:bg-medium/20 group-hover:text-medium",
+  twitter: "hover:border-twitter hover:bg-twitter/20 group-hover:text-twitter",
+};
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={label}
+  class={`${baseClasses} ${platformHover[platform]}`}
+  style="width: var(--social-size); height: var(--social-size); border-radius: var(--social-radius);"
+>
+  <!-- Shine effect -->
+  <div
+    class="absolute inset-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent"
+  >
+  </div>
+
+  <!-- Icon -->
+  <div
+    class="relative z-10 fill-current text-gray-200 transition-colors duration-300"
+    style="width: var(--social-icon-size); height: var(--social-icon-size);"
+  >
+    <slot />
+  </div>
+</a>

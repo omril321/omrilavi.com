@@ -1,39 +1,30 @@
-import color from "color";
-import colors from "tailwindcss/colors";
-
-const primaryColor = "#549eff";
+const primaryColor = "#4a9eff";
 const secondaryColor = "#54ffdd";
-const bodyColor = colors.zinc[800];
-
-const darken = (_color, amount) => color(_color)?.darken(amount).toString();
-const lighten = (_color, amount) => color(_color)?.lighten(amount).toString();
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: "media", // or 'media' or 'class'
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  darkMode: "class", // Use 'class' for manual theme toggle
   theme: {
-    colors: {
-      ...colors,
-      gray: colors.gray,
-    },
     extend: {
       colors: {
         primary: primaryColor,
         secondary: secondaryColor,
-        bodyColor,
 
-        "primary-dark": darken(primaryColor, 0.5),
-        "secondary-dark": darken(secondaryColor, 0.5),
+        // Background colors
+        background: "var(--color-background)",
+        surface: "var(--color-surface)",
 
-        "primary-light": lighten(primaryColor, 0.4),
-        "secondary-light": lighten(secondaryColor, 0.4),
+        // Text colors
+        foreground: "var(--color-foreground)",
+        muted: "var(--color-muted)",
 
-        // 'github': '#4e545a',
-        // 'linkedin': '#0077b5',
-        // 'medium': '#00ab6c',
-        // 'twitter': '#1da1f2',
-        // 'devto': '#ffffff',
+        // Social brand colors
+        linkedin: "#0077b5",
+        github: "#333333",
+        medium: "#00ab6c",
+        twitter: "#1da1f2",
+        devto: "#0a0a0a",
       },
       boxShadow: {
         "soft-dark": "0 0 26px 7px  rgb(0 0 0 / 12%)",
