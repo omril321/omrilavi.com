@@ -1,10 +1,4 @@
-export type PostMetadata = {
-  url: string;
-  title: string;
-  description: string;
-  image: `/blog-assets/${string}`;
-  publishDate: string;
-};
+import type { PostMetadata } from "../types/seo";
 
 export const posts: PostMetadata[] = [
   {

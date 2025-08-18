@@ -1,7 +1,7 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
 import SocialButtons from "../socialButtons";
 import MeImage from "./MeImage";
-import { ABOUT_ME } from "../../config/constants";
+import { ABOUT_ME, PROFESSIONAL_INFO } from "../../config/constants";
 
 export default component$(() => {
   const description = useSignal(ABOUT_ME.short);
@@ -27,11 +27,8 @@ export default component$(() => {
       </div>
       <div class="sm:ml-8">
         <h1 class="text-primary filter drop-shadow-md">
-          Omri Lavi
-          <span class="text-secondary-light border-secondary-light border-l-2 ml-2">
-            {" "}
-            Building Tools for Developers
-          </span>
+          {PROFESSIONAL_INFO.name}
+          <span class="text-secondary-light border-secondary-light border-l-2 ml-2"> {PROFESSIONAL_INFO.tagline}</span>
         </h1>
         <p aria-label="description" class="text-secondary-light whitespace-pre-wrap text-lg font-semibold">
           {description}

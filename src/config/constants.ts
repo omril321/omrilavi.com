@@ -1,4 +1,5 @@
 // don't forget to sync this with the manifest.json file
+// Use PROFESSIONAL_INFO for consistency - keeping this for Qwik compatibility during migration
 export const WEBSITE_TITLE = "Omri Lavi - Developer Tools and Client Architecture expert";
 export const ABOUT_ME = {
   // this appears in the manifest as well
@@ -15,3 +16,30 @@ Previously, Omri led the Testing Guild at monday.com, fostering best practices a
 export const WEBSITE_META_DESCRIPTION = ABOUT_ME.description;
 
 export const GTAG = "G-HK4MP1TKW4";
+
+export const SOCIAL_LINKS = {
+  linkedin: "https://linkedin.com/in/omri-lavi",
+  github: "https://github.com/omril321",
+  devto: "https://dev.to/omril321",
+  medium: "https://medium.com/@omril321",
+  twitter: "https://twitter.com/omril321",
+};
+
+export const PROFESSIONAL_INFO = {
+  name: "Omri Lavi",
+  jobTitle: "Tech Lead",
+  company: "monday.com",
+  tagline: "Building Tools for Developers",
+  // Consistent site branding
+  get fullTitle() {
+    return `${this.name} - ${this.tagline}`;
+  },
+  // Twitter handle extracted from social links
+  get twitterHandle() {
+    return "@omril321";
+  },
+  // For Qwik compatibility during migration. To be removed after migration
+  get qwikTitle() {
+    return `${this.name} - Developer Tools and Client Architecture expert`;
+  },
+};

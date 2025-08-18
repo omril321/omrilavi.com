@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { PostLink } from "~/components/postLink/PostLink";
-import { WEBSITE_META_DESCRIPTION, WEBSITE_TITLE } from "~/config/constants";
+import { WEBSITE_META_DESCRIPTION, WEBSITE_TITLE, PROFESSIONAL_INFO } from "~/config/constants";
 import { usePostsMetadata } from "./layout";
 import { ME_IMAGE_URL } from "~/components/header/MeImage";
 
@@ -57,7 +57,7 @@ export const head: DocumentHead = {
     },
     {
       name: "author",
-      content: "Omri Lavi",
+      content: PROFESSIONAL_INFO.name,
     },
     {
       name: "twitter:card",
