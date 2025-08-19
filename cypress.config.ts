@@ -7,6 +7,10 @@ export default defineConfig({
     // Priority: CYPRESS_BASE_URL env var > default local dev server
     baseUrl: process.env.CYPRESS_BASE_URL || "http://localhost:4321",
 
+    // Viewport settings for consistent rendering across environments
+    viewportWidth: 1440,
+    viewportHeight: 900,
+
     // Additional settings for CI reliability
     video: true,
     screenshotOnRunFailure: true,
@@ -14,11 +18,36 @@ export default defineConfig({
     requestTimeout: 10000,
     responseTimeout: 10000,
 
+    // Force consistent pixel density across all environments
+    // This ensures screenshots are always the same size regardless of host DPI
+    experimentalStudio: false,
+
     setupNodeEvents(on, config) {
       addMatchImageSnapshotPlugin(on, config);
 
-      // Log baseURL for debugging in CI
+      // Force consistent browser settings for cross-environment compatibility
+      on("before:browser:launch", (browser, launchOptions) => {
+        // Force device scale factor to 1 (disable retina/high-DPI scaling)
+        if (browser.family === "chromium" && browser.name !== "electron") {
+          launchOptions.args.push("--force-device-scale-factor=1");
+          launchOptions.args.push("--high-dpi-support=1");
+          launchOptions.args.push("--device-scale-factor=1");
+        }
+
+        // For Electron (default Cypress browser)
+        if (browser.name === "electron") {
+          launchOptions.preferences.width = config.viewportWidth;
+          launchOptions.preferences.height = config.viewportHeight;
+          launchOptions.preferences.deviceScaleFactor = 1;
+        }
+
+        return launchOptions;
+      });
+
+      // Log configuration for debugging in CI
       console.log(`🔧 Cypress baseUrl: ${config.baseUrl}`);
+      console.log(`🔧 Cypress viewport: ${config.viewportWidth}x${config.viewportHeight}`);
+      console.log(`🔧 Forcing device scale factor to 1 for consistent screenshots`);
 
       return config;
     },

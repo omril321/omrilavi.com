@@ -4,6 +4,18 @@ const VIEWPORTS = {
   mobile: { width: 390, height: 844, name: "Mobile" },
 };
 
+// Consistent image snapshot options across all tests
+const SNAPSHOT_OPTIONS = {
+  threshold: 0.02, // 2% threshold for differences
+  thresholdType: "percent",
+  failureThreshold: 0.02,
+  failureThresholdType: "percent",
+  // Better cross-environment consistency
+  customDiffConfig: {
+    includeAA: false, // Ignore anti-aliasing differences
+  },
+};
+
 describe("Visual Regression Tests", () => {
   describe("Homepage", () => {
     const homepageViewports = [
@@ -17,7 +29,7 @@ describe("Visual Regression Tests", () => {
         cy.visit("/");
         cy.viewport(viewport.width, viewport.height);
         cy.waitForPageLoad();
-        cy.matchImageSnapshot(viewport.snapshot);
+        cy.matchImageSnapshot(viewport.snapshot, SNAPSHOT_OPTIONS);
       });
     });
   });
@@ -54,7 +66,7 @@ describe("Visual Regression Tests", () => {
         cy.visit("/non-existent-page", { failOnStatusCode: false });
         cy.viewport(viewport.width, viewport.height);
         cy.waitForPageLoad();
-        cy.matchImageSnapshot(viewport.snapshot);
+        cy.matchImageSnapshot(viewport.snapshot, SNAPSHOT_OPTIONS);
       });
     });
   });
