@@ -13,8 +13,3 @@ TERM = "xterm"
 [[plugins]]
 # runs Cypress tests against the deployed URL before publishing
 package = "netlify-plugin-cypress"
-
-  [plugins.inputs]
-  cypress = "yarn cypress:run"
-  wait-on = "/"
-  timeout = "120"
