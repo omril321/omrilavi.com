@@ -1,5 +1,5 @@
 // don't forget to sync this with the manifest.json file
-// Use PROFESSIONAL_INFO for consistency - keeping this for Qwik compatibility during migration
+// Use PROFESSIONAL_INFO for consistency across site
 export const WEBSITE_TITLE = "Omri Lavi - Developer Tools and Client Architecture expert";
 export const ABOUT_ME = {
   // this appears in the manifest as well
@@ -37,9 +37,5 @@ export const PROFESSIONAL_INFO = {
   // Twitter handle extracted from social links
   get twitterHandle() {
     return "@omril321";
-  },
-  // For Qwik compatibility during migration. To be removed after migration
-  get qwikTitle() {
-    return `${this.name} - Developer Tools and Client Architecture expert`;
   },
 };

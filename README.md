@@ -1,15 +1,15 @@
 # omrilavi.com
 
-Omri Lavi's personal website - **Currently migrating from Qwik to Astro**
+Omri Lavi's personal website - **Built with Astro**
 
-## 🚧 Migration Status
+## ✅ Completed Migration
 
-**Current Phase**: Step 2 - Content Collections & Routing  
-**Target**: Pure Astro application with mixed content strategy (external links + local MDX posts)
+**Status**: Pure Astro application  
+**Features**: Mixed content strategy (external links + local MDX posts)
 
 ### Architecture Overview
 
-- **Homepage**: Hero section + Posts grid (matches current Qwik design)
+- **Homepage**: Hero section + Posts grid with modern dark theme
 - **Hero Section**: Name, bio (expandable), social links, tagline "Building Tools for Developers"
 - **Posts Grid**: Mixed external (dev.to, medium, etc.) + local MDX posts, sorted by date
 - **Content Collections**: Type-safe local blog posts with Zod validation
@@ -29,11 +29,11 @@ Omri Lavi's personal website - **Currently migrating from Qwik to Astro**
 - Medium: https://medium.com/@omril321
 - Twitter: https://twitter.com/omril321
 
-### Commands During Migration
+### Commands
 
-- `yarn dev` → Qwik (current site)
-- `yarn dev:astro` → New Astro site (in development)
-- `yarn build:astro` → Build Astro version
+- `yarn dev` → Astro development server
+- `yarn build` → Build for production
+- `yarn preview` → Preview production build
 
 ### Content Collections Schema
 
@@ -53,37 +53,41 @@ const blog = defineCollection({
 ## Development
 
 ```bash
-# Qwik (current)
+# Development
 yarn dev
 
-# Astro (new)
-yarn dev:astro
-yarn build:astro
+# Production
+yarn build
+yarn preview
+
+# Type checking
 npx astro check
 ```
 
-## Project Structure (During Migration)
+## Project Structure
 
 ```
 ├── src/
-│   ├── components/           # Qwik components (will be migrated/removed)
-│   ├── routes/              # Qwik routes (will be removed)
-│   ├── content/             # Astro content collections
-│   │   └── blog/           # Local MDX blog posts
-│   ├── layouts/            # Astro layouts
-│   ├── pages/              # Astro pages
+│   ├── components/         # Astro components
+│   ├── content/           # Astro content collections
+│   │   └── blog/         # Local MDX blog posts
+│   ├── layouts/          # Astro layouts
+│   ├── pages/            # Astro pages
 │   └── config/
-│       ├── constants.ts    # Bio content, social links
-│       └── posts.ts        # External posts data
+│       ├── constants.ts  # Bio content, social links
+│       └── posts.ts      # External posts data
 ├── public/
-│   └── blog-assets/        # Assets for local blog posts
-└── MIGRATION_TO_ASTRO.md   # Migration plan (temporary)
+│   └── blog-assets/      # Assets for local blog posts
+└── cypress/              # E2E tests with visual regression
 ```
 
 ---
 
-## ⚠️ Important Notes
+## ✨ Features
 
-- **Migration Documentation**: `MIGRATION_TO_ASTRO.md` is temporary and will be deleted after migration
-- **Dual Setup**: Both Qwik and Astro run side-by-side during migration
-- **Final State**: Pure Astro application, all Qwik code will be completely removed
+- **Modern Astro Framework**: Fast, optimized static site generation
+- **Dark Theme**: Premium dark theme with responsive design
+- **Content Collections**: Type-safe local blog posts with Zod validation
+- **Visual Regression Testing**: Comprehensive Cypress tests with screenshot comparison
+- **SEO Optimized**: Open Graph, Twitter Cards, JSON-LD structured data
+- **Performance**: Minimal dependencies, optimized build pipeline
