@@ -27,20 +27,33 @@ export default defineConfig({
 
       // Force consistent browser settings for cross-environment compatibility
       on("before:browser:launch", (browser, launchOptions) => {
-        // Force device scale factor to 1 (disable retina/high-DPI scaling)
-        if (browser.family === "chromium" && browser.name !== "electron") {
-          launchOptions.args.push("--force-device-scale-factor=1");
-          launchOptions.args.push("--high-dpi-support=1");
-          launchOptions.args.push("--device-scale-factor=1");
-        }
+        console.log(`🔧 Browser: ${browser.name} (${browser.family})`);
 
         // For Electron (default Cypress browser) - force 1x pixel density
         if (browser.name === "electron") {
-          // Set window preferences for consistent rendering
           launchOptions.preferences = launchOptions.preferences || {};
+          launchOptions.preferences.deviceScaleFactor = 1;
           launchOptions.preferences.width = config.viewportWidth;
           launchOptions.preferences.height = config.viewportHeight;
-          launchOptions.preferences.deviceScaleFactor = 1;
+          launchOptions.preferences.zoomFactor = 1;
+          launchOptions.preferences.webSecurity = false;
+
+          // Force Electron window properties
+          launchOptions.args = launchOptions.args || [];
+          launchOptions.args.push("--force-device-scale-factor=1");
+          launchOptions.args.push("--high-dpi-support=1");
+          launchOptions.args.push("--device-scale-factor=1");
+
+          console.log(`🔧 Electron preferences set:`, launchOptions.preferences);
+        }
+
+        // For Chrome/Chromium browsers
+        if (browser.family === "chromium" && browser.name !== "electron") {
+          launchOptions.args.push("--force-device-scale-factor=1");
+          launchOptions.args.push("--disable-dev-shm-usage");
+          launchOptions.args.push("--disable-gpu");
+          launchOptions.args.push("--no-sandbox");
+          launchOptions.args.push("--disable-web-security");
         }
 
         return launchOptions;
