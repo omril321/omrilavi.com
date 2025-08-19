@@ -34,8 +34,10 @@ export default defineConfig({
           launchOptions.args.push("--device-scale-factor=1");
         }
 
-        // For Electron (default Cypress browser)
+        // For Electron (default Cypress browser) - force 1x pixel density
         if (browser.name === "electron") {
+          // Set window preferences for consistent rendering
+          launchOptions.preferences = launchOptions.preferences || {};
           launchOptions.preferences.width = config.viewportWidth;
           launchOptions.preferences.height = config.viewportHeight;
           launchOptions.preferences.deviceScaleFactor = 1;
