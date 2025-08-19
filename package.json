@@ -3,11 +3,11 @@
   "type": "module",
   "description": "About Omri Lavi",
   "engines": {
-    "node": ">=15.0.0"
+    "node": ">=24.0.0"
   },
   "private": true,
   "scripts": {
-    "build": "qwik build",
+    "build": "astro build",
     "build:astro": "astro build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",

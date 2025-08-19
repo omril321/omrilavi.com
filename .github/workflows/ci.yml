@@ -1,0 +1,19 @@
+# .github/workflows/ci.yml
+name: Required CI Checks
+on:
+  push:
+    branches: [master]
+jobs:
+  required-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: "yarn"
+      - run: yarn install --frozen-lockfile
+      - run: npx astro check
+      - run: yarn build
+      - run: yarn preview:astro & sleep 3
+      - run: yarn cypress:run
