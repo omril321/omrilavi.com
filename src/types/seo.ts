@@ -2,7 +2,7 @@
 export interface BaseSEOData {
   title: string;
   description: string;
-  image?: `/blog-assets/${string}`;
+  image: string;
   publishDate?: string;
 }
 
@@ -15,4 +15,5 @@ export interface SEOProps extends BaseSEOData {
 export interface PostMetadata extends BaseSEOData {
   url: string;
   publishDate: string; // Required for posts
+  image: `/blog-assets/${string}`;
 }

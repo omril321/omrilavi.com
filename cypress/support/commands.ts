@@ -1,37 +1,64 @@
 /// <reference types="cypress" />
-// ***********************************************
-// This example commands.ts shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-//
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
+/// <reference types="cypress-image-snapshot" />
+
+import { addMatchImageSnapshotCommand } from "cypress-image-snapshot/command";
+
+// Add the matchImageSnapshot command
+addMatchImageSnapshotCommand({
+  failureThreshold: 0.03, // threshold for the difference as a percentage (0.03 = 3%)
+  failureThresholdType: "percent", // pixel or percent
+  customDiffConfig: { threshold: 0.1 }, // threshold for the individual pixel diff
+  capture: "fullPage", // capture full page in screenshot (not just viewport)
+});
+
+// Custom commands for visual regression testing
+Cypress.Commands.add("waitForPageLoad", () => {
+  // Wait for page to be ready
+  cy.get("body").should("be.visible");
+
+  // Wait for document to be fully loaded
+  cy.window().its("document.readyState").should("eq", "complete");
+
+  // For pages with images, properly wait for lazy loading to complete
+  cy.get("body").then(($body) => {
+    const images = $body.find("img");
+    if (images.length > 0) {
+      cy.log(`🖼️  Found ${images.length} images, triggering lazy loading...`);
+
+      // Step 1: Quickly scroll through ALL images to trigger lazy loading
+      cy.get("img").each(($img) => {
+        cy.wrap($img).scrollIntoView({ duration: 50 });
+      });
+
+      // Step 2: Wait for ALL images to start loading
+      cy.get("img").should(($images) => {
+        // First pass: ensure images are at least attempting to load
+        $images.each((index, img) => {
+          // Image is either complete or has started loading (naturalWidth > 0)
+          const isLoadingOrLoaded = img.complete || img.naturalWidth > 0;
+          expect(isLoadingOrLoaded, `Image ${index + 1} should be loading or loaded`).to.be.true;
+        });
+      });
+
+      // Step 3: Wait for ALL images to be fully loaded
+      cy.get("img").should(($images) => {
+        $images.each((index, img) => {
+          expect(img.naturalWidth, `Image ${index + 1} should be fully loaded`).to.be.greaterThan(0);
+        });
+      });
+
+      cy.log("✅ All images loaded successfully");
+    } else {
+      cy.log("📄 No images found on page");
+    }
+  });
+});
+
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      waitForPageLoad(): Chainable<void>;
+      matchImageSnapshot(name?: string, options?: any): Chainable<void>;
+    }
+  }
+}

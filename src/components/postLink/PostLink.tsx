@@ -1,13 +1,13 @@
 import { component$ } from "@builder.io/qwik";
-import type { PostMetadata } from "~/config/posts";
+import type { PostMetadata } from "../../types/seo";
 import { getResponsiveImage } from "../../services/ResponsiveImageService";
-const SRC_SET_BREAPOINTS = [400, 350, 160];
+const SRC_SET_BREAKPOINTS = [400, 350, 160];
 const SIZES = "(min-width: 1300px) 33vw, (min-width: 640px) 50vw, 158px";
 
 type PostLinkProps = Pick<PostMetadata, "title" | "description" | "image" | "url" | "publishDate">;
 
 const PostLink = component$<PostLinkProps>(({ title, description, image, url, publishDate }) => {
-  const { srcSet, src } = getResponsiveImage(image, SRC_SET_BREAPOINTS);
+  const { srcSet, src } = getResponsiveImage(image, SRC_SET_BREAKPOINTS);
   const dateStr = new Date(publishDate).toLocaleDateString("EN", { year: "numeric", month: "long", day: "numeric" });
 
   return (

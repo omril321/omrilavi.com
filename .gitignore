@@ -49,3 +49,9 @@ lerna-debug.log*
 
 # Netlify
 .netlify
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+cypress/snapshots/**/__diff_output__/
+# Note: cypress/snapshots/ baseline images should be committed for visual regression testing

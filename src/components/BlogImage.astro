@@ -19,10 +19,6 @@ const {
   loading = "lazy",
   sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
 } = Astro.props;
-
-// Generate srcset for responsive images (if the image supports it)
-const baseSrc = src.replace(/\.[^/.]+$/, ""); // Remove extension
-const extension = src.split(".").pop();
 ---
 
 <img
