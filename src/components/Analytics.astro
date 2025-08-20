@@ -11,9 +11,7 @@ const shouldLoadAnalytics = !isDev;
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${GTAG}`}></script>
     <script is:inline define:vars={{ GTAG }}>
       const isCypressTest = window?.navigator?.userAgent?.toLowerCase().includes('cypress');
-      const shouldLoadAnalytics = !isDev && !isCypressTest;
-
-      if (shouldLoadAnalytics) {
+      if (!isCypressTest) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
