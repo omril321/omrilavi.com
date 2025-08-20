@@ -1,11 +1,13 @@
 ---
 import { GTAG } from "../config/constants";
 
-// Only load Google Analytics in production
+// Only load Google Analytics in production, exclude dev and Cypress tests
 const isDev = import.meta.env.DEV;
+const isCypressTest = window.navigator?.userAgent?.toLowerCase().includes('cypress');
+const shouldLoadAnalytics = !isDev && !isCypressTest;
 ---
 
-{!isDev && (
+{shouldLoadAnalytics && (
   <>
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${GTAG}`}></script>
     <script is:inline define:vars={{ GTAG }}>

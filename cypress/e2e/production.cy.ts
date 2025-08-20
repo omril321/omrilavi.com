@@ -24,25 +24,6 @@ const isProduction =
 // Only define production tests if running against production
 if (isProduction) {
   describe("Production Build Verification", () => {
-    describe("Google Analytics Integration", () => {
-      it("should have GA script and gtag function available", () => {
-        cy.visit("/");
-        cy.waitForPageLoad();
-
-        // GA script should be present with correct ID
-        cy.get('head script[src*="googletagmanager.com/gtag/js"]')
-          .should("exist")
-          .should("have.attr", "src")
-          .and("include", GTAG);
-
-        // gtag function should be defined and callable
-        cy.window().should("have.property", "gtag");
-        cy.window().its("gtag").should("be.a", "function");
-
-        cy.log("✅ Google Analytics properly configured");
-      });
-    });
-
     describe("SEO Meta Tags", () => {
       it("should have all required SEO meta tags with content", () => {
         cy.visit("/");
