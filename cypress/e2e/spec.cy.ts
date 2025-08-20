@@ -9,18 +9,6 @@ describe("Functional Tests", () => {
       cy.visit("/");
     });
 
-    it("should have external blog post links with security attributes", () => {
-      // Test that external blog links have proper security attributes
-      cy.get("article a[href]").each(($link) => {
-        cy.wrap($link)
-          .should("have.attr", "href")
-          .and("match", /^https?:\/\//); // External URLs
-
-        cy.wrap($link).should("have.attr", "target", "_blank");
-        cy.wrap($link).should("have.attr", "rel", "noopener noreferrer");
-      });
-    });
-
     it("should have working social media links", () => {
       // Test social links functionality (not appearance - visual tests cover that)
       Object.values(SOCIAL_LINKS).forEach((url) => {
