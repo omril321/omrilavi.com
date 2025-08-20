@@ -3,12 +3,11 @@
 
 import { addMatchImageSnapshotCommand } from "cypress-image-snapshot/command";
 
-// Add the matchImageSnapshot command
 addMatchImageSnapshotCommand({
   failureThreshold: 0.03, // threshold for the difference as a percentage (0.03 = 3%)
   failureThresholdType: "percent", // pixel or percent
   customDiffConfig: { threshold: 0.1 }, // threshold for the individual pixel diff
-  capture: "fullPage", // capture full page in screenshot (not just viewport)
+  disableTimersAndAnimations: true,
 });
 
 // Custom commands for visual regression testing

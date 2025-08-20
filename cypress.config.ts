@@ -18,51 +18,33 @@ export default defineConfig({
     requestTimeout: 10000,
     responseTimeout: 10000,
 
-    // Force consistent pixel density across all environments
-    // This ensures screenshots are always the same size regardless of host DPI
-    experimentalStudio: false,
-
     setupNodeEvents(on, config) {
       addMatchImageSnapshotPlugin(on, config);
 
-      // Force consistent browser settings for cross-environment compatibility
+      // Fix retina display screenshot size mismatch (force 1x pixel density) - https://github.com/cypress-io/cypress/issues/6485#issuecomment-655536907
       on("before:browser:launch", (browser, launchOptions) => {
-        console.log(`🔧 Browser: ${browser.name} (${browser.family})`);
+        launchOptions.args = launchOptions.args || [];
 
-        // For Electron (default Cypress browser) - force 1x pixel density
+        // Core fix: Force device scale factor to 1 for all browsers
+        launchOptions.args.push("--force-device-scale-factor=1");
+        launchOptions.args.push("--device-scale-factor=1");
+
         if (browser.name === "electron") {
           launchOptions.preferences = launchOptions.preferences || {};
           launchOptions.preferences.deviceScaleFactor = 1;
           launchOptions.preferences.width = config.viewportWidth;
           launchOptions.preferences.height = config.viewportHeight;
           launchOptions.preferences.zoomFactor = 1;
-          launchOptions.preferences.webSecurity = false;
-
-          // Force Electron window properties
-          launchOptions.args = launchOptions.args || [];
-          launchOptions.args.push("--force-device-scale-factor=1");
-          launchOptions.args.push("--high-dpi-support=1");
-          launchOptions.args.push("--device-scale-factor=1");
-
-          console.log(`🔧 Electron preferences set:`, launchOptions.preferences);
         }
 
-        // For Chrome/Chromium browsers
         if (browser.family === "chromium" && browser.name !== "electron") {
-          launchOptions.args.push("--force-device-scale-factor=1");
           launchOptions.args.push("--disable-dev-shm-usage");
-          launchOptions.args.push("--disable-gpu");
           launchOptions.args.push("--no-sandbox");
-          launchOptions.args.push("--disable-web-security");
+          launchOptions.args.push(`--window-size=${config.viewportWidth},${config.viewportHeight}`);
         }
 
         return launchOptions;
       });
-
-      // Log configuration for debugging in CI
-      console.log(`🔧 Cypress baseUrl: ${config.baseUrl}`);
-      console.log(`🔧 Cypress viewport: ${config.viewportWidth}x${config.viewportHeight}`);
-      console.log(`🔧 Forcing device scale factor to 1 for consistent screenshots`);
 
       return config;
     },
