@@ -1,5 +1,4 @@
-const primaryColor = "#4a9eff";
-const secondaryColor = "#54ffdd";
+import { colors } from "./src/config/design-tokens";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -8,23 +7,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: primaryColor,
-        secondary: secondaryColor,
+        primary: colors.primary,
+        secondary: colors.secondary,
+        background: colors.background,
+        surface: colors.surface,
+        foreground: colors.foreground,
+        muted: colors.muted,
 
-        // Background colors
-        background: "var(--color-background)",
-        surface: "var(--color-surface)",
-
-        // Text colors
-        foreground: "var(--color-foreground)",
-        muted: "var(--color-muted)",
-
-        // Social brand colors
-        linkedin: "#0077b5",
-        github: "#333333",
-        medium: "#00ab6c",
-        twitter: "#1da1f2",
-        devto: "#0a0a0a",
+        linkedin: colors.linkedin,
+        github: colors.github,
+        medium: colors.medium,
+        twitter: colors.twitter,
+        devto: colors.devto,
       },
       boxShadow: {
         "soft-dark": "0 0 26px 7px  rgb(0 0 0 / 12%)",
@@ -43,5 +37,5 @@ export default {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

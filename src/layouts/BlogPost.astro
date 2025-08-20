@@ -1,6 +1,7 @@
 ---
 import SEO from "../components/SEO.astro";
 import Analytics from "../components/Analytics.astro";
+import { colors } from "../config/design-tokens";
 
 export interface Props {
   title: string;
@@ -25,7 +26,11 @@ const { title, description, image, publishDate } = Astro.props;
   </head>
   <body class="bg-background text-foreground font-sans leading-relaxed">
     <header class="border-b border-gray-700 bg-surface">
-      <nav class="max-w-6xl mx-auto p-4">
+      <nav class="max-w-6xl mx-auto p-4 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <img src="/me.png" alt="Omri Lavi" class="w-10 h-10 rounded-full border-2 border-primary/20 shadow-md" />
+          <span class="text-white font-medium hidden sm:block">Omri Lavi</span>
+        </div>
         <a
           href="/"
           class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors duration-200 font-medium"
@@ -56,7 +61,9 @@ const { title, description, image, publishDate } = Astro.props;
           </div>
         </header>
 
-        <div class="content p-8 md:p-12">
+        <div
+          class="prose prose-lg max-w-3xl mx-auto p-8 md:p-12 prose-gray prose-headings:text-gray-900 prose-a:text-blue-600 prose-strong:text-gray-900 prose-code:text-gray-800 prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-code:text-sm prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-blockquote:border-blue-500 prose-blockquote:bg-blue-50"
+        >
           <slot />
         </div>
       </article>
@@ -64,12 +71,11 @@ const { title, description, image, publishDate } = Astro.props;
 
     <style>
       :root {
-        /* Colors - Match homepage theme */
-        --color-background: #0f0f0f;
-        --color-surface: #1a1a1a;
-        --color-foreground: #ffffff;
-        --color-muted: #c5c5c5;
-        --color-primary: #4a9eff;
+        --color-background: ${colors.background};
+        --color-surface: ${colors.surface};
+        --color-foreground: ${colors.foreground};
+        --color-muted: ${colors.muted};
+        --color-primary: ${colors.primary};
       }
 
       body {
@@ -77,133 +83,34 @@ const { title, description, image, publishDate } = Astro.props;
         color: var(--color-foreground);
       }
 
-      .content {
-        line-height: 1.8;
-        color: #333;
-      }
-
-      .content h1,
-      .content h2,
-      .content h3,
-      .content h4,
-      .content h5,
-      .content h6 {
-        color: #1f2937;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        font-weight: 600;
-      }
-
-      .content h1 {
-        font-size: 2.25rem;
-        border-bottom: 2px solid #e5e7eb;
-        padding-bottom: 0.5rem;
-      }
-
-      .content h2 {
-        font-size: 1.875rem;
-      }
-
-      .content h3 {
-        font-size: 1.5rem;
-      }
-
-      .content p {
-        margin-bottom: 1.5rem;
-        color: #4b5563;
-      }
-
-      .content a {
-        color: #3b82f6;
-        text-decoration: underline;
-        text-underline-offset: 2px;
-      }
-
-      .content a:hover {
-        color: #1d4ed8;
-      }
-
-      .content ul,
-      .content ol {
-        margin-bottom: 1.5rem;
-        padding-left: 1.5rem;
-      }
-
-      .content li {
-        margin-bottom: 0.5rem;
-        color: #4b5563;
-      }
-
-      .content blockquote {
-        border-left: 4px solid #3b82f6;
-        padding-left: 1rem;
-        margin: 1.5rem 0;
-        font-style: italic;
-        color: #6b7280;
-        background: #f9fafb;
-        padding: 1rem 1rem 1rem 2rem;
-        border-radius: 0 0.375rem 0.375rem 0;
-      }
-
-      .content pre {
-        background: #1f2937;
-        color: #f9fafb;
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-        overflow-x: auto;
-        margin: 1.5rem 0;
-        font-size: 0.875rem;
-        line-height: 1.6;
-      }
-
-      .content code {
-        background: #f3f4f6;
-        color: #1f2937;
-        padding: 0.25rem 0.5rem;
-        border-radius: 0.25rem;
-        font-family: "SF Mono", "Monaco", "Cascadia Code", "Roboto Mono", "Courier New", monospace;
-        font-size: 0.875rem;
-      }
-
-      .content pre code {
-        background: none;
-        color: inherit;
-        padding: 0;
-        border-radius: 0;
-      }
-
-      .content img {
+      .mermaid {
         max-width: 100%;
+        width: auto;
         height: auto;
-        border-radius: 0.5rem;
-        margin: 1.5rem 0;
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        max-height: 500px;
+        margin: 2rem 0;
+        display: block;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: auto;
       }
 
-      .content table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 1.5rem 0;
-        border-radius: 0.5rem;
-        overflow: hidden;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      @media (max-width: 768px) {
+        .mermaid {
+          max-height: 350px;
+          margin: 1.5rem 0;
+          padding: 0.75rem;
+        }
+      }
+      .prose {
+        line-height: 1.75;
       }
 
-      .content th,
-      .content td {
-        padding: 0.75rem 1rem;
-        text-align: left;
-        border-bottom: 1px solid #e5e7eb;
-      }
-
-      .content th {
-        background: #f9fafb;
-        font-weight: 600;
-        color: #1f2937;
-      }
-
-      .content td {
-        color: #4b5563;
+      .prose img {
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
     </style>
   </body>
