@@ -11,6 +11,7 @@ export default {
         secondary: colors.secondary,
         background: colors.background,
         surface: colors.surface,
+        heroSurface: colors.heroSurface,
         foreground: colors.foreground,
         muted: colors.muted,
 
@@ -20,17 +21,17 @@ export default {
         twitter: colors.twitter,
         devto: colors.devto,
       },
-      boxShadow: {
-        "soft-dark": "0 0 26px 7px  rgb(0 0 0 / 12%)",
-      },
-      borderWidth: {
-        24: "24px",
-      },
       width: {
         tiny: "157px",
       },
       height: {
         120: "30rem",
+      },
+      boxShadow: {
+        "soft-dark": "0 0 26px 7px  rgb(0 0 0 / 12%)",
+      },
+      borderWidth: {
+        24: "24px",
       },
     },
   },

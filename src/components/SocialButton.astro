@@ -7,7 +7,6 @@ export interface Props {
 
 const { href, label, platform } = Astro.props;
 
-// Base social button styles using CSS custom properties
 const baseClasses =
   "group relative flex items-center justify-center transition-all duration-300 ease-out bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30";
 
@@ -26,8 +25,7 @@ const platformHover = {
   target="_blank"
   rel="noopener noreferrer"
   aria-label={label}
-  class={`${baseClasses} ${platformHover[platform]}`}
-  style="width: var(--social-size); height: var(--social-size); border-radius: var(--social-radius);"
+  class={`${baseClasses} ${platformHover[platform]} w-12 h-12 sm:w-14 sm:h-14 rounded-lg`}
 >
   <!-- Shine effect -->
   <div
@@ -36,10 +34,7 @@ const platformHover = {
   </div>
 
   <!-- Icon -->
-  <div
-    class="relative z-10 fill-current text-gray-200 transition-colors duration-300"
-    style="width: var(--social-icon-size); height: var(--social-icon-size);"
-  >
+  <div class="relative z-10 fill-current text-gray-200 transition-colors duration-300 w-5 h-5">
     <slot />
   </div>
 </a>

@@ -20,6 +20,6 @@
     }
   },
   "files": ["./.eslintrc.json"],
-  "include": ["src", "*.ts", ".astro/types.d.ts"],
+  "include": ["src", "*.ts", "*.js", "*.mjs", ".astro/types.d.ts"],
   "exclude": ["dist"]
 }

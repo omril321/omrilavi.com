@@ -12,6 +12,7 @@ export const colors = {
   // Theme colors
   background: "#0f0f0f",
   surface: "#1a1a1a",
+  heroSurface: "#2a2a2a",
   foreground: "#ffffff",
   muted: "#c5c5c5",
 

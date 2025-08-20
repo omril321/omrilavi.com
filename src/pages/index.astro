@@ -42,41 +42,12 @@ validateAllPostImages(allPosts);
     <SEO title={PROFESSIONAL_INFO.fullTitle} description={ABOUT_ME.description} image="/me.png" type="website" />
 
     <Analytics />
-    <style>
-      :root {
-        /* Colors - Current Dark Theme */
-        --color-background: #0f0f0f;
-        --color-surface: #1a1a1a;
-        --color-hero-surface: #2a2a2a;
-        --color-foreground: #ffffff;
-        --color-muted: #c5c5c5;
-        --color-primary: #4a9eff;
-
-        /* Spacing */
-        --space-hero-padding: 4rem 2rem 3.5rem;
-        --space-social-gap: 1.25rem;
-        --space-posts-gap: 2rem;
-
-        /* Sizes */
-        --size-social-button: 3rem;
-        --size-social-icon: 1.2rem;
-      }
-
-      /* Future light mode support */
-      [data-theme="light"] {
-        --color-background: #ffffff;
-        --color-surface: #f8fafc;
-        --color-hero-surface: #f1f5f9;
-        --color-foreground: #0f172a;
-        --color-muted: #64748b;
-      }
-    </style>
   </head>
   <body class="bg-background text-foreground font-sans leading-relaxed">
     <!-- Hero Section -->
     <header
-      class="hero-responsive relative overflow-hidden text-center border-b border-gray-700"
-      style="background: linear-gradient(135deg, #1a1a1a 0%, var(--color-hero-surface) 100%);"
+      class="relative overflow-hidden text-center border-b border-gray-700 pt-16 px-8 pb-14 mobile:pt-10 mobile:px-4 mobile:pb-8"
+      style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);"
     >
       <!-- Subtle accent overlay -->
       <div
@@ -115,7 +86,7 @@ validateAllPostImages(allPosts);
       </p>
 
       <!-- Social Links -->
-      <div class="social-responsive relative z-10 flex justify-center items-center flex-wrap sm:flex-nowrap">
+      <div class="relative z-10 flex justify-center items-center flex-wrap sm:flex-nowrap gap-4 sm:gap-5 mt-4">
         <SocialButton href={SOCIAL_LINKS.linkedin} label="LinkedIn account" platform="linkedin">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path
@@ -168,7 +139,7 @@ validateAllPostImages(allPosts);
           allPosts.map((post) => {
             const isExternal = post.url.startsWith("http");
             return (
-              <article class="group bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <article class="group bg-surface rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
                 <a
                   href={post.url}
                   class="block text-inherit no-underline"
@@ -177,14 +148,14 @@ validateAllPostImages(allPosts);
                 >
                   <BlogImage src={post.image} alt={post.title} />
                   <div class="p-6">
-                    <h2 class="text-xl font-semibold text-gray-900 mb-2 leading-tight line-clamp-2">{post.title}</h2>
-                    <p class="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">{post.description}</p>
-                    <div class="flex items-center justify-between text-xs text-gray-500">
+                    <h2 class="text-xl font-semibold text-foreground mb-2 leading-tight line-clamp-2">{post.title}</h2>
+                    <p class="text-muted text-sm mb-4 leading-relaxed line-clamp-3">{post.description}</p>
+                    <div class="flex items-center justify-between text-xs text-muted">
                       <time datetime={post.publishDate} class="font-medium">
                         {post.publishDate}
                       </time>
                       {isExternal && (
-                        <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded-full font-medium">External</span>
+                        <span class="bg-primary/20 text-primary px-2 py-1 rounded-full font-medium">External</span>
                       )}
                     </div>
                   </div>
@@ -195,45 +166,5 @@ validateAllPostImages(allPosts);
         }
       </div>
     </main>
-
-    <!-- Mobile responsive styles using CSS custom properties -->
-    <style>
-      :root {
-        /* Default social button sizing */
-        --social-size: 3rem;
-        --social-gap: 1.25rem;
-        --social-icon-size: 1.2rem;
-        --social-radius: 0.75rem;
-        --hero-padding: 4rem 2rem 3.5rem;
-      }
-
-      /* Mobile breakpoints with proper CSS custom properties */
-      @media (max-width: 640px) {
-        :root {
-          --social-size: 3.5rem;
-          --social-gap: 1rem;
-          --social-icon-size: 1.25rem;
-          --social-radius: 1rem;
-          --hero-padding: 2.5rem 1rem 2rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        :root {
-          --social-size: 3.25rem;
-          --social-gap: 0.875rem;
-        }
-      }
-
-      /* Apply the variables */
-      .hero-responsive {
-        padding: var(--hero-padding);
-      }
-
-      .social-responsive {
-        gap: var(--social-gap);
-        margin-top: 1rem;
-      }
-    </style>
   </body>
 </html>
