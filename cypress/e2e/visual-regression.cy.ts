@@ -34,26 +34,22 @@ describe("Visual Regression Tests", () => {
     });
   });
 
-  // NOTE: Blog post tests commented out - we use external links, not local /blog/ routes
-  // When local blog posts are implemented, uncomment and update these tests
-  //
-  // describe("Blog Posts", () => {
-  //   const blogViewports = [
-  //     { ...VIEWPORTS.desktop, snapshot: "blog-post-desktop" },
-  //     { ...VIEWPORTS.mobile, snapshot: "blog-post-mobile" },
-  //   ];
-  //
-  //   blogViewports.forEach((viewport) => {
-  //     it(`should match ${viewport.name.toLowerCase()} blog post screenshot`, () => {
-  //       // This would test local blog posts at /blog/[slug] routes
-  //       // Currently all blog posts are external links (dev.to, medium, etc.)
-  //       cy.visit("/blog/some-local-post"); // Update with actual local post
-  //       cy.viewport(viewport.width, viewport.height);
-  //       cy.waitForPageLoad();
-  //       cy.matchImageSnapshot(viewport.snapshot);
-  //     });
-  //   });
-  // });
+  describe("Blog Posts", () => {
+    const blogViewports = [
+      { ...VIEWPORTS.desktop, snapshot: "blog-post-desktop" },
+      { ...VIEWPORTS.tablet, snapshot: "blog-post-tablet" },
+      { ...VIEWPORTS.mobile, snapshot: "blog-post-mobile" },
+    ];
+
+    blogViewports.forEach((viewport) => {
+      it(`should match ${viewport.name.toLowerCase()} blog post screenshot`, () => {
+        cy.visit("/blog/turning-articles-into-podcasts");
+        cy.viewport(viewport.width, viewport.height);
+        cy.waitForPageLoad();
+        cy.matchImageSnapshot(viewport.snapshot);
+      });
+    });
+  });
 
   describe("404 Page", () => {
     const errorPageViewports = [
