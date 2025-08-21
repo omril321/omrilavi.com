@@ -7,6 +7,7 @@ import BlogImage from "../components/BlogImage.astro";
 import SEO from "../components/SEO.astro";
 import Analytics from "../components/Analytics.astro";
 import { validateAllPostImages } from "../utils/validateImages";
+import { formatDate } from "../utils/formatDate";
 
 // Get local blog posts
 const blogPosts = await getCollection("blog");
@@ -23,9 +24,7 @@ const allPosts = [
     slug: post.url,
   })),
 ].sort((a, b) => {
-  const dateA = new Date(a.publishDate);
-  const dateB = new Date(b.publishDate);
-  return dateB.getTime() - dateA.getTime();
+  return b.publishDate.getTime() - a.publishDate.getTime();
 });
 
 // Validate that all post images exist
@@ -158,8 +157,8 @@ validateAllPostImages(allPosts);
                       )}
                     </div>
                     <p class="text-muted text-sm mb-6 leading-relaxed line-clamp-3 flex-1">{post.description}</p>
-                    <time datetime={post.publishDate} class="text-xs text-muted font-medium mt-auto">
-                      {post.publishDate}
+                    <time datetime={post.publishDate.toISOString()} class="text-xs text-muted font-medium mt-auto">
+                      {formatDate(post.publishDate)}
                     </time>
                   </div>
                 </a>
