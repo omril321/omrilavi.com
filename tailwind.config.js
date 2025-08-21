@@ -15,6 +15,10 @@ export default {
         foreground: colors.foreground,
         muted: colors.muted,
 
+        "text-primary": colors.textPrimary,
+        "text-secondary": colors.textSecondary,
+        "border-tertiary": colors.border,
+
         linkedin: colors.linkedin,
         github: colors.github,
         medium: colors.medium,

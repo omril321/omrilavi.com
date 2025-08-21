@@ -23,16 +23,16 @@ const { title, description, image, publishDate } = Astro.props;
 
     <Analytics />
   </head>
-  <body class="bg-background text-foreground font-sans leading-relaxed">
-    <header class="border-b border-gray-700 bg-surface">
+  <body class="bg-background text-text-primary font-sans leading-relaxed">
+    <header class="fixed inset-x-0 top-0 z-50 navbar-overlay" id="navbar">
       <nav class="max-w-6xl mx-auto p-4 flex items-center justify-between">
         <div class="flex items-center gap-4">
-          <img src="/me.png" alt="Omri Lavi" class="w-10 h-10 rounded-full border-2 border-primary/20 shadow-md" />
-          <span class="text-white font-medium hidden sm:block">Omri Lavi</span>
+          <img src="/me.png" alt="Omri Lavi" class="w-10 h-10 rounded-full border-2 border-white/20 shadow-md" />
+          <span class="text-text-primary font-medium hidden sm:block">Omri Lavi</span>
         </div>
         <a
           href="/"
-          class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors duration-200 font-medium"
+          class="inline-flex items-center gap-2 text-primary hover:text-text-primary transition-colors duration-200 font-medium"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -42,35 +42,67 @@ const { title, description, image, publishDate } = Astro.props;
       </nav>
     </header>
 
-    <main class="max-w-4xl mx-auto p-8">
-      <article class="bg-white rounded-xl overflow-hidden shadow-2xl">
-        <header class="relative">
-          <img src={image} alt={title} class="w-full h-64 md:h-80 object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-              {title}
-            </h1>
-            <p class="text-lg md:text-xl text-gray-200 mb-4 leading-relaxed">
-              {description}
-            </p>
-            <time datetime={publishDate} class="text-sm text-gray-300 font-medium bg-black/30 px-3 py-1 rounded-full">
-              {publishDate}
-            </time>
-          </div>
-        </header>
-
-        <div
-          class="prose prose-lg max-w-3xl mx-auto p-8 md:p-12 prose-gray prose-headings:text-gray-900 prose-a:text-blue-600 prose-strong:text-gray-900 prose-code:text-gray-800 prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-code:text-sm prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-blockquote:border-blue-500 prose-blockquote:bg-blue-50"
-        >
-          <slot />
+    <article>
+      <!-- HERO SECTION -->
+      <section class="relative h-[90vh] min-h-[600px] md:h-[80vh] md:min-h-[500px] max-h-[800px]">
+        <!-- Hero Background Image -->
+        <div class="absolute inset-0">
+          <img src={image} alt="" class="h-full w-full object-cover" />
+          <!-- Gradient overlay: dark at top for text contrast, transparent at bottom for smooth transition -->
+          <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-transparent"></div>
+          <!-- Bottom fade to background color -->
+          <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-background"></div>
         </div>
-      </article>
-    </main>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 flex items-center h-full">
+          <div class="mx-auto max-w-6xl px-6 w-full">
+            <div class="max-w-3xl pt-16 md:pt-20">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-white">
+                {title}
+              </h1>
+              {
+                description && (
+                  <p class="mt-4 text-base md:text-lg text-white/95 leading-7 font-medium drop-shadow-sm">
+                    {description}
+                  </p>
+                )
+              }
+              <div class="mt-6 text-sm text-white/80 font-medium">
+                <time datetime={publishDate}>{publishDate}</time>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTENT SECTION -->
+      <section>
+        <div class="mx-auto max-w-[80ch] md:max-w-[88ch] px-6 md:px-8 lg:px-12 pt-8 pb-12 lg:pt-12 lg:pb-16">
+          <div
+            class="prose prose-invert
+                      prose-headings:scroll-mt-28 prose-headings:leading-tight prose-headings:text-text-primary
+                      prose-p:leading-7 prose-p:text-text-primary
+                      prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                      prose-a:decoration-primary prose-a:transition-all
+                      prose-strong:text-text-primary
+                      prose-li:text-text-primary prose-li:leading-7
+                      prose-img:rounded-2xl prose-img:border prose-img:border-border-tertiary
+                      prose-pre:bg-surface prose-pre:border prose-pre:border-border-tertiary
+                      prose-pre:rounded-2xl prose-pre:overflow-x-auto
+                      prose-code:bg-surface prose-code:text-text-primary
+                      prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-code:text-sm
+                      prose-blockquote:border-l-primary prose-blockquote:text-text-secondary"
+          >
+            <slot />
+          </div>
+        </div>
+      </section>
+    </article>
 
     <style>
       .mermaid {
-        @apply max-w-full max-h-[500px] my-8 bg-white/[0.02] rounded-lg p-4 shadow-md overflow-auto;
+        @apply max-w-full max-h-[500px] my-8 bg-surface rounded-2xl p-4 border border-border-tertiary overflow-auto;
       }
 
       @media (max-width: 768px) {
@@ -78,9 +110,37 @@ const { title, description, image, publishDate } = Astro.props;
           @apply max-h-[350px] my-6 p-3;
         }
       }
-      .prose img {
-        @apply rounded-lg shadow-md;
+
+      .navbar-overlay {
+        @apply transition-colors duration-300 ease-in-out;
+      }
+
+      .navbar-overlay.scrolled {
+        @apply bg-background border-b border-border-tertiary;
       }
     </style>
+
+    <script>
+      // Navbar scroll behavior
+      const navbar = document.getElementById("navbar");
+      let scrolled = false;
+
+      function updateNavbar() {
+        if (!navbar) return;
+
+        const shouldBeScrolled = window.scrollY > 12;
+
+        if (shouldBeScrolled && !scrolled) {
+          navbar.classList.add("scrolled");
+          scrolled = true;
+        } else if (!shouldBeScrolled && scrolled) {
+          navbar.classList.remove("scrolled");
+          scrolled = false;
+        }
+      }
+
+      window.addEventListener("scroll", updateNavbar);
+      updateNavbar(); // Check initial state
+    </script>
   </body>
 </html>
