@@ -9,6 +9,7 @@
   "scripts": {
     "build": "astro build",
     "cypress": "cypress open",
+    "cypress:update-screenshots": "cypress run --env updateSnapshots=true",
     "cypress:run": "cypress run",
     "cypress:dev": "start-server-and-test dev http://localhost:4321 cypress",
     "cypress:test": "start-server-and-test preview http://localhost:4321 cypress:run",
