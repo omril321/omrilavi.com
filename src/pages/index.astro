@@ -44,21 +44,14 @@ validateAllPostImages(allPosts);
     <Analytics />
   </head>
   <body class="bg-background text-foreground font-sans leading-relaxed">
-    <!-- Hero Section -->
-    <header
-      class="relative overflow-hidden text-center border-b border-border-tertiary pt-16 px-8 pb-14 mobile:pt-10 mobile:px-4 mobile:pb-8"
-      style="background: linear-gradient(135deg, rgb(11, 16, 32) 0%, rgb(15, 22, 41) 100%);"
-    >
-      <!-- Subtle accent overlay -->
-      <div
-        class="absolute inset-0 pointer-events-none"
-        style="background: radial-gradient(circle at 50% 50%, rgba(96, 165, 250, 0.05) 0%, transparent 70%);"
-      >
-      </div>
+    <!-- Clean flowing background -->
+    <div class="fixed inset-0 pointer-events-none z-0 bg-gradient-to-br from-background via-surface to-background">
+    </div>
 
+    <!-- Hero Section -->
+    <header class="relative text-center pt-16 px-8 pb-20 mobile:pt-10 mobile:px-4 mobile:pb-16 z-10">
       <h1
-        class="relative z-10 mb-6 font-bold text-white"
-        style="font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: -0.02em; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);"
+        class="relative z-10 mb-6 font-bold text-white text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-lg"
       >
         {PROFESSIONAL_INFO.name}
       </h1>
@@ -72,15 +65,11 @@ validateAllPostImages(allPosts);
         />
       </div>
 
-      <p
-        class="relative z-10 mb-8 font-medium text-primary"
-        style="font-size: clamp(1.1rem, 3vw, 1.5rem); letter-spacing: 0.01em;"
-      >
+      <p class="relative z-10 mb-8 font-medium text-primary text-lg md:text-xl lg:text-2xl tracking-wide">
         {PROFESSIONAL_INFO.tagline}
       </p>
       <p
-        class="relative z-10 mx-auto mb-12 font-normal text-muted max-w-2xl"
-        style="font-size: clamp(1rem, 2.5vw, 1.2rem); line-height: 1.7;"
+        class="relative z-10 mx-auto mb-12 font-normal text-muted max-w-2xl text-base md:text-lg lg:text-xl leading-relaxed"
       >
         {ABOUT_ME.short}
       </p>
@@ -133,7 +122,7 @@ validateAllPostImages(allPosts);
     </header>
 
     <!-- Posts Grid -->
-    <main class="max-w-6xl mx-auto p-8 bg-surface">
+    <main class="relative max-w-6xl mx-auto p-8 z-10">
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
         {
           allPosts.map((post) => {
@@ -148,16 +137,28 @@ validateAllPostImages(allPosts);
                 >
                   <BlogImage src={post.image} alt={post.title} />
                   <div class="p-6">
-                    <h2 class="text-xl font-semibold text-foreground mb-2 leading-tight line-clamp-2">{post.title}</h2>
-                    <p class="text-muted text-sm mb-4 leading-relaxed line-clamp-3">{post.description}</p>
-                    <div class="flex items-center justify-between text-xs text-muted">
-                      <time datetime={post.publishDate} class="font-medium">
-                        {post.publishDate}
-                      </time>
+                    <div class="flex items-start justify-between gap-2 mb-2">
+                      <h2 class="text-xl font-semibold text-foreground leading-tight line-clamp-2">{post.title}</h2>
                       {isExternal && (
-                        <span class="bg-primary/20 text-primary px-2 py-1 rounded-full font-medium">External</span>
+                        <svg
+                          class="w-4 h-4 text-primary flex-shrink-0 mt-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
                       )}
                     </div>
+                    <p class="text-muted text-sm mb-4 leading-relaxed line-clamp-3">{post.description}</p>
+                    <time datetime={post.publishDate} class="text-xs text-muted font-medium">
+                      {post.publishDate}
+                    </time>
                   </div>
                 </a>
               </article>
