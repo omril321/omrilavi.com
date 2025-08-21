@@ -42,7 +42,7 @@ You can explore the architecture and source code [on GitHub](https://github.com/
 ```mermaid
 flowchart TD
   A["Input URLs"] --> B["Extract Metadata"]
-  B --> C["Generate Podcast (NotebookLM)"]
+  B --> C["Generate Podcast"]
   C --> D["Convert Audio (FFmpeg)"]
   D --> E["Finalize Metadata"]
   E --> F["Upload (RedCircle)"]
