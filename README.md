@@ -82,6 +82,116 @@ yarn preview
 - 17 functional tests (links, navigation, analytics)
 - 5 visual regression tests (cross-device screenshots)
 
+## Adding a New Blog Post
+
+### Quick Checklist
+
+To add a new internal blog post, you need to:
+
+1. **Create post directory**: `src/content/blog/your-post-name/`
+2. **Write the MDX file**: `src/content/blog/your-post-name/index.mdx`
+3. **Add hero image**: `public/blog-assets/your-post-name.png/jpg`
+4. **Add post assets** (optional): Place in post directory alongside `index.mdx`
+
+### Detailed Steps
+
+#### 1. Create Post Directory
+
+```bash
+mkdir src/content/blog/your-post-name
+```
+
+**Naming convention**: Use kebab-case (lowercase with hyphens)
+
+#### 2. Create the MDX File
+
+Create `src/content/blog/your-post-name/index.mdx` with the following frontmatter:
+
+```mdx
+---
+title: "Your Post Title"
+description: "A concise description of your post (10-500 characters). This appears in meta tags and post previews."
+image: "/blog-assets/your-post-name.png"
+publishDate: "2024-01-15"
+---
+
+## Your Content Here
+
+Write your post content in MDX format. You can use:
+
+- **Markdown syntax** for text formatting
+- **Mermaid diagrams** for flowcharts and diagrams
+- **Local images**: `![Alt text](./your-image.png)`
+- **Code blocks** with syntax highlighting
+```
+
+#### 3. Add Hero Image
+
+Create a hero image and place it in:
+
+```
+public/blog-assets/your-post-name.png
+```
+
+#### 4. Add Post-Specific Assets (Optional)
+
+Place any additional images, screenshots, or files in your post directory:
+
+```
+src/content/blog/your-post-name/
+├── index.mdx
+├── screenshot1.png
+└── code-example.png
+```
+
+Reference them in your MDX with relative paths:
+
+```mdx
+![Screenshot](./screenshot1.png)
+```
+
+#### 5. Frontmatter Reference
+
+| Field         | Type   | Description                                   | Example                                                                |
+| ------------- | ------ | --------------------------------------------- | ---------------------------------------------------------------------- |
+| `title`       | string | Post title (appears in hero and meta tags)    | `"Building Better APIs"`                                               |
+| `description` | string | SEO description (10-500 chars)                | `"A guide to designing clean, maintainable REST APIs with TypeScript"` |
+| `image`       | string | Hero image path (starts with `/blog-assets/`) | `"/blog-assets/building-apis.png"`                                     |
+| `publishDate` | string | Publication date (YYYY-MM-DD format)          | `"2024-01-15"`                                                         |
+
+#### 6. Development & Testing
+
+After creating your post:
+
+```bash
+# Start development server to preview
+yarn dev
+
+# Run tests to ensure everything works
+yarn cypress:test
+
+# Build to check for any issues
+yarn build
+```
+
+Your post will be available at: `http://localhost:4321/blog/your-post-name`
+
+### Content Guidelines
+
+- **Hero images**: Should be visually appealing and relevant to your content
+- **Post assets**: Keep images optimized and use descriptive filenames
+- **MDX features**: Take advantage of Mermaid diagrams for technical content
+- **SEO**: Write compelling descriptions that accurately represent your content
+
+### Automated Post Creation
+
+For a streamlined, automated approach to adding new blog posts, use the comprehensive agent prompt available at:
+
+**📋 `prompts/new_post.md`**
+
+This prompt guides any AI assistant through the complete process.
+Simply share the prompt with an AI assistant along with your markdown content, and it will handle the entire integration process automatically.
+
 ## Tech Stack
 
 ### Core
