@@ -1,0 +1,14 @@
+---
+interface Props {
+  src: string;
+  title?: string;
+}
+
+const { src, title } = Astro.props;
+---
+
+<audio controls preload="metadata" class="rounded-3xl mx-auto block my-8" aria-label={title}>
+  <source src={src} type="audio/wav" />
+  <source src={src.replace(".wav", ".mp3")} type="audio/mpeg" />
+  Your browser does not support native audio playback.
+</audio>

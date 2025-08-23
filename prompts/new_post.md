@@ -156,3 +156,7 @@ Upon approval:
 - Maintain consistent file naming conventions
 
 Remember: Be thorough in validation, clear in communication, and always get final approval before making changes.
+
+## Evergreen Instructions
+
+If the given instructions are outdated or need to be updated, update this file.
