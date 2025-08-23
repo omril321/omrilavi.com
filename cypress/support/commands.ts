@@ -26,7 +26,7 @@ Cypress.Commands.add("waitForPageLoad", () => {
 
       // Step 1: Quickly scroll through ALL images to trigger lazy loading
       cy.get("img").each(($img) => {
-        cy.wrap($img).scrollIntoView({ duration: 50 });
+        cy.wrap($img).scrollIntoView({ duration: 10 });
       });
 
       // Step 2: Wait for ALL images to start loading

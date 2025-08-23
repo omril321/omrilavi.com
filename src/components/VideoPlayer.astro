@@ -1,0 +1,30 @@
+---
+interface Props {
+  src: string;
+  description?: string;
+  className?: string;
+}
+
+const { src, description } = Astro.props;
+---
+
+<div class="flex flex-col justify-center items-center my-8">
+  <video
+    src={src}
+    autoplay
+    muted
+    playsinline
+    webkit-playsinline
+    controls
+    controlslist="nofullscreen noplaybackrate nodownload novolume"
+    disablepictureinpicture
+    disableRemotePlayback
+    loop
+    preload="auto"
+    class="rounded-3xl mx-auto block max-h-[75vh] border-2 border-border-tertiary"
+    aria-label={description}
+  >
+    Your browser does not support native video playback.
+  </video>
+  <i class="text-center">{description}</i>
+</div>

@@ -1,19 +1,25 @@
 ---
-title: "Turning Articles Into Podcasts, Automatically"
-description: "An automation flow using NotebookLM, Playwright, and a monday.com board to convert articles into daily podcasts - perfect for busy parents who have time to listen but not to read."
-image: "/blog-assets/turning-articles-into-podcasts.png"
+title: "No Time to Read? Here’s How I Turned Articles Into Podcasts"
+description: "I lost time to read after becoming a parent - so I built a system with NotebookLM, Playwright, and a monday.com board to automatically turn articles into podcasts."
+image: "/blog-assets/turning-articles-into-podcasts/cover.png"
 publishDate: "2025-08-20"
 ---
+import VideoPlayer from "../../../components/VideoPlayer.astro";
 
-## Too Much to Read, Just Enough Time to Listen
+## When Reading Didn’t Fit, Listening Stepped In
 
 After my daughter was born, my ability to sit and read collapsed. Articles piled up. Newsletters went unread. But my podcast queue? That kept moving. Whether I was walking with a stroller or making coffee, I still had time to listen, just not to read.
 
 Meanwhile, AI was moving fast. New frameworks, papers, tools, and shifts in thinking flowed by faster than I could keep up. I wanted to stay informed, to keep learning, but I needed a different interface for it. One that matched my new constraints - including something lightweight like a monday.com board where I could queue up articles without friction.
 
-That’s what this post is about: building a personal system that turns web articles into high-quality podcasts automatically, using NotebookLM, browser automation, and a flexible monday.com board flow. I’ll walk through the design, the constraints, the failures, and the lessons learned - not as a product pitch, but as a blueprint for hacking around the edges of tools that weren’t designed to be automated. If you’d rather explore the code directly, it’s available on [GitHub](https://github.com/omril321/automated-notebooklm).
+That's what this post is about: building a personal system that turns web articles into high-quality podcasts automatically, using NotebookLM, browser automation, and a flexible monday.com board flow. I'll walk through the design, the constraints, the failures, and the lessons learned - not as a product pitch, but as a blueprint for hacking around the edges of tools that weren't designed to be automated. If you'd rather explore the code directly, it's available on [GitHub](https://github.com/omril321/automated-notebooklm).
 
-## NotebookLM Had the Right Output, But the Wrong Interface
+<VideoPlayer 
+src="/blog-assets/turning-articles-into-podcasts/articles_into_podcasts.mp4" 
+description="The system in action, easily converting an article into a podcast episode." 
+/>
+
+## When Great Results Are Trapped in a Bad Experience
 
 Once I started experimenting, NotebookLM quickly stood out. Its studio podcast feature doesn’t just summarize, it produces a natural-feeling conversation, often between two distinct personas, that sounds like a real podcast. The tone is calm, the structure clear, and the quality genuinely high. I tried open-source tools like [Podcastfy](https://github.com/souzatharsis/podcastfy) and [open-notebooklm](https://github.com/gabrielchua/open-notebooklm), and while they work well, the results didn’t come close to the output quality I consistently got from NotebookLM.
 
@@ -31,7 +37,7 @@ To get a single article turned into a podcast episode I could hear on my phone, 
 
 The result was excellent, and once published, the episode would automatically appear in my podcast app via subscription. But the path to that outcome was slow, fragile, and full of steps I’d rather automate. Not because I needed scale, just because I didn’t want to repeat the same tedious flow every day.
 
-## So I Built a Fully Automated Pipeline
+## Tired of Repeating Steps, I Automated the Whole Thing
 
 The goal wasn’t to scale up, it was to stop repeating the same steps by hand. I wanted a system where I could feed it one or more URLs, walk away, and later find real podcast episodes waiting in my feed. No clicking. No downloading. No babysitting.
 
@@ -74,7 +80,7 @@ There’s also an optional integration with a monday.com board. That lets me add
 
 This makes the whole process incredibly lightweight: I can add links from my phone, let the system run overnight, and wake up to a set of episodes ready to go.
 
-## Browser Bots, Heuristics, and Board Intelligence
+## Behind the Curtain: Hacks, Shortcuts, and a Monday Integration
 
 Because there’s no official API for NotebookLM or RedCircle, the system uses full browser automation to control the flow. It runs a real Chrome instance, not headless, and includes several mitigations to reduce the chance of being flagged as a bot. If you're curious about the exact techniques, the best reference is [the code itself](https://github.com/omril321/automated-notebooklm).
 
@@ -93,7 +99,7 @@ There are additional automations running inside the board itself, including some
 
 *A real look at the monday.com board: I add items casually, and the system enriches them with metadata, scores podcast fitness, and tracks output.*
 
-## Building for the Real World, Not the Ideal One
+## Elegance Got Me Started - Resilience Kept It Running
 
 This wasn’t an exercise in building a perfect system, it was a response to the constraints I actually had. Automation targets changed. Interfaces evolved. Some things worked one day and failed the next. So I didn’t aim for robustness in the textbook sense. I aimed for resilience in the lived sense.
 
@@ -101,7 +107,7 @@ That meant prioritizing clarity over cleverness. Fail early if something’s bro
 
 And in a setup like this, that’s not a compromise. That’s the architecture.
 
-## Important Caveats and Ethical Boundaries
+## Bending the Rules Without Breaking Them
 
 This project probably steps outside the terms of use for both NotebookLM and RedCircle. Most consumer-facing platforms don’t support browser automation, even when it’s respectful, rate-limited, and entirely local.
 
@@ -109,7 +115,7 @@ That said, I’ve always been drawn to edge cases, places where tools weren’t 
 
 This isn’t meant as a recommendation, or even a reusable solution. It’s just a sketch, an experiment in making the tools I already use fit into the life I actually have. If you try something similar, do it carefully, and know the risks going in.
 
-## The Real Win: Reclaiming Daily Learning
+## The Real Payoff: Learning While Life Keeps Moving
 
 This system isn’t stable or polished. It leans on brittle UIs, long wait times, and a stack of conditional logic to survive automation-hostile platforms. But it works – and that’s enough to turn ordinary moments, like walks or dishes, into time for learning and reflection.
 
