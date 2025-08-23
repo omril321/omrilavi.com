@@ -41,7 +41,7 @@ const { title, description, image, publishDate } = Astro.props;
 
     <article>
       <!-- HERO SECTION -->
-      <section class="relative h-[90vh] min-h-[600px] md:h-[80vh] md:min-h-[500px] max-h-[800px]">
+      <section class="relative h-[90vh] min-h-[600px] md:h-[80vh] md:min-h-[500px] max-h-[800px] blogpost-hero">
         <!-- Hero Background Image -->
         <div class="absolute inset-0">
           <img src={image} alt="" class="h-full w-full object-cover" />
@@ -55,17 +55,17 @@ const { title, description, image, publishDate } = Astro.props;
         <div class="relative z-10 flex items-center h-full">
           <div class="mx-auto max-w-[80ch] md:max-w-[88ch] px-6 md:px-8 lg:px-12 w-full">
             <div class="pt-16 md:pt-20">
-              <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-white">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-white hero-text-shadow">
                 {title}
               </h1>
               {
                 description && (
-                  <p class="mt-4 text-base md:text-lg text-white/95 leading-7 font-medium drop-shadow-sm">
+                  <p class="mt-4 text-base md:text-lg text-white/95 leading-7 font-medium hero-text-shadow hero-text-soft">
                     {description}
                   </p>
                 )
               }
-              <div class="mt-6 text-sm text-white/80 font-medium">
+              <div class="mt-6 text-sm text-white/80 font-medium hero-text-shadow hero-text-soft">
                 <time datetime={publishDate.toISOString()}>{formatDate(publishDate)}</time>
               </div>
             </div>
@@ -114,6 +114,34 @@ const { title, description, image, publishDate } = Astro.props;
 
       .navbar-overlay.scrolled {
         @apply bg-background border-b border-border-tertiary;
+      }
+
+      /* Strong, crisp outline for hero text to maximize contrast over busy backgrounds */
+      .blogpost-hero {
+        --hero-shadow-rgb: 0 0 0; /* base color as RGB to allow alpha overrides */
+        --hero-shadow-alpha: 0.55; /* strong variant default */
+        --hero-shadow-glow-alpha: 0.4;
+        --hero-shadow-glow-blur: 14px;
+      }
+
+      .hero-text-shadow {
+        --hero-text-shadow: 0 1px 0 rgb(var(--hero-shadow-rgb) / var(--hero-shadow-alpha)),
+          0 -1px 0 rgb(var(--hero-shadow-rgb) / var(--hero-shadow-alpha)),
+          1px 0 0 rgb(var(--hero-shadow-rgb) / var(--hero-shadow-alpha)),
+          -1px 0 0 rgb(var(--hero-shadow-rgb) / var(--hero-shadow-alpha)),
+          1px 1px 0 rgb(var(--hero-shadow-rgb) / var(--hero-shadow-alpha)),
+          -1px 1px 0 rgb(var(--hero-shadow-rgb) / var(--hero-shadow-alpha)),
+          1px -1px 0 rgb(var(--hero-shadow-rgb) / var(--hero-shadow-alpha)),
+          -1px -1px 0 rgb(var(--hero-shadow-rgb) / var(--hero-shadow-alpha)),
+          0 0 var(--hero-shadow-glow-blur) rgb(var(--hero-shadow-rgb) / var(--hero-shadow-glow-alpha));
+        text-shadow: var(--hero-text-shadow);
+      }
+
+      /* Utility to soften the same shadow */
+      .hero-text-soft {
+        --hero-shadow-alpha: 0.3;
+        --hero-shadow-glow-alpha: 0.1;
+        --hero-shadow-glow-blur: 8px;
       }
     </style>
 
