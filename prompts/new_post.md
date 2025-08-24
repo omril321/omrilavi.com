@@ -75,7 +75,13 @@ For each external reference found in the markdown:
 3. **Create index.mdx**: Write final MDX file with updated paths
 4. **Update references**: Ensure all `![](...)` and `[](...)` point to correct locations
 
-## Step 5: Validation & Preview
+## Step 5: Post references
+
+1. Check the other existing posts.
+2. See if any existing post is related to the new post's content.
+3. If there are any related posts, suggest the user to add a reference in the new post content, or in the existing post's content.
+
+## Step 6: Validation & Preview
 
 1. **Show diff**: Display original markdown vs final MDX
 2. **Start dev server**: Run `yarn dev` if not already running
@@ -85,7 +91,7 @@ For each external reference found in the markdown:
    - Verify all images, diagrams, and media load correctly
 4. **Test functionality**: Ensure mermaid diagrams, code blocks, and all features work
 
-## Step 6: Final Review & Approval
+## Step 7: Final Review & Approval
 
 **Present complete summary and ask for explicit approval.** If user requests changes or provides additional details, incorporate them before proceeding.
 

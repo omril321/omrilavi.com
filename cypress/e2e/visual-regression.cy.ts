@@ -34,19 +34,23 @@ describe("Visual Regression Tests", () => {
     });
   });
 
-  describe("Blog Posts", () => {
+  describe("Blog Posts", async () => {
     const blogViewports = [
       { ...VIEWPORTS.desktop, snapshot: "blog-post-desktop" },
       { ...VIEWPORTS.tablet, snapshot: "blog-post-tablet" },
       { ...VIEWPORTS.mobile, snapshot: "blog-post-mobile" },
     ];
 
-    blogViewports.forEach((viewport) => {
-      it(`should match ${viewport.name.toLowerCase()} blog post screenshot`, () => {
-        cy.visit("/blog/turning-articles-into-podcasts");
-        cy.viewport(viewport.width, viewport.height);
-        cy.waitForPageLoad();
-        cy.matchImageSnapshot(viewport.snapshot);
+    const blogPosts = [{ slug: "turning-articles-into-podcasts" }, { slug: "building-ai-podcasts-and-letting-go" }];
+
+    blogPosts.forEach((post) => {
+      blogViewports.forEach((viewport) => {
+        it(`should match ${viewport.name.toLowerCase()} blog post screenshot ${post.slug}`, () => {
+          cy.visit(`/blog/${post.slug}`);
+          cy.viewport(viewport.width, viewport.height);
+          cy.waitForPageLoad();
+          cy.matchImageSnapshot(`${viewport.snapshot}-${post.slug}`);
+        });
       });
     });
   });

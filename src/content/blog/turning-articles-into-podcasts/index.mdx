@@ -12,7 +12,7 @@ After my daughter was born, my ability to sit and read collapsed. Articles piled
 
 Meanwhile, AI was moving fast. New frameworks, papers, tools, and shifts in thinking flowed by faster than I could keep up. I wanted to stay informed, to keep learning, but I needed a different interface for it. One that matched my new constraints - including something lightweight like a monday.com board where I could queue up articles without friction.
 
-That's what this post is about: building a personal system that turns web articles into high-quality podcasts automatically, using NotebookLM, browser automation, and a flexible monday.com board flow. I'll walk through the design, the constraints, the failures, and the lessons learned - not as a product pitch, but as a blueprint for hacking around the edges of tools that weren't designed to be automated. If you'd rather explore the code directly, it's available on [GitHub](https://github.com/omril321/automated-notebooklm).
+That's what this post is about: building a personal system that turns web articles into high-quality podcasts automatically, using [NotebookLM](https://notebooklm.google/), browser automation with [Playwright](https://playwright.dev/), and a flexible [monday.com](https://monday.com) board flow. I'll walk through the design, the constraints, the failures, and the lessons learned - not as a product pitch, but as a blueprint for hacking around the edges of tools that weren't designed to be automated. If you'd rather explore the code directly, it's available on [GitHub](https://github.com/omril321/automated-notebooklm).
 
 <VideoPlayer 
 src="/blog-assets/turning-articles-into-podcasts/articles_into_podcasts.mp4" 
@@ -32,8 +32,8 @@ To get a single article turned into a podcast episode I could hear on my phone, 
 - Add the article as a resource
 - Generate the podcast (and wait 10–12 minutes)
 - Download the WAV file
-- Convert it to MP3
-- Upload it to a podcast hosting platform like RedCircle
+- Convert it to MP3 with [FFmpeg](https://ffmpeg.org/)
+- Upload it to a podcast hosting platform like [RedCircle](https://redcircle.com/)
 
 The result was excellent, and once published, the episode would automatically appear in my podcast app via subscription. But the path to that outcome was slow, fragile, and full of steps I’d rather automate. Not because I needed scale, just because I didn’t want to repeat the same tedious flow every day.
 
@@ -93,7 +93,7 @@ The monday.com board adds another layer of intelligence. I can add links casuall
 
 These signals feed into a lightweight scoring system that helps filter out poor fits. Only high-scoring, unprocessed articles are selected, up to a daily cap, and passed through the podcast generation pipeline.
 
-There are additional automations running inside the board itself, including some powered by AI, which enhance and structure content further. There’s more to say about how these internal automations work - some use board logic, others call AI-based enrichment tools - but that’s something I’ll dive into in a future post.
+There are additional automations running inside the board itself, including some powered by AI, which enhance and structure content further. There’s more to say about how these internal automations work - some use board logic, others call AI-based enrichment tools - but that’s covered in [a different post](/blog/building-ai-podcasts-and-letting-go).
 
 ![monday.com board screenshot](./monday-board-screenshot.png)
 
