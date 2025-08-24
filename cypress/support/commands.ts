@@ -19,9 +19,13 @@ Cypress.Commands.add("waitForPageLoad", () => {
   cy.window().its("document.readyState").should("eq", "complete");
 
   // For pages with images, properly wait for lazy loading to complete
-  cy.get("body").then(($body) => {
-    const images = $body.find("img");
-    if (images.length > 0) {
+  cy.get("body")
+    .then(($body) => {
+      const images = $body.find("img");
+      if (!images.length) {
+        cy.log("📄 No images found on page");
+        return;
+      }
       cy.log(`🖼️  Found ${images.length} images, triggering lazy loading...`);
 
       // Step 1: Quickly scroll through ALL images to trigger lazy loading
@@ -47,10 +51,17 @@ Cypress.Commands.add("waitForPageLoad", () => {
       });
 
       cy.log("✅ All images loaded successfully");
-    } else {
-      cy.log("📄 No images found on page");
-    }
-  });
+    })
+    .then(() => {
+      cy.get("video").each(($video) => {
+        cy.log(`🎥  Found ${$video.length} videos, pausing and resetting playback to 0`);
+        const videoEl = $video[0] as HTMLVideoElement;
+        if (!videoEl.paused) {
+          videoEl.pause();
+        }
+        videoEl.currentTime = 0;
+      });
+    });
 });
 
 declare global {
