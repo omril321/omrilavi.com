@@ -37,6 +37,15 @@ export default {
       borderWidth: {
         24: "24px",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            // Remove the backticks from the inline code, since this is handled later by the mdx plugin
+            "code::before": { content: "none" },
+            "code::after": { content: "none" },
+          },
+        },
+      },
     },
   },
   variants: {
