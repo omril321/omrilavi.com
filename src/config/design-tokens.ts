@@ -18,7 +18,7 @@ export const colors = {
   textSecondary: "#b9c1d1",
   border: "rgba(255, 255, 255, 0.08)",
 
-  mermaidSecondary: "#374151",
+  mermaidLineColor: "#4f6ea0",
 
   linkedin: "#0077b5",
   github: "#333333",

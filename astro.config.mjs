@@ -24,7 +24,7 @@ export default defineConfig({
           primaryColor: colors.primary,
           primaryTextColor: colors.textPrimary,
           primaryBorderColor: colors.primary,
-          lineColor: colors.border,
+          lineColor: colors.mermaidLineColor,
           background: colors.surface,
           secondaryColor: colors.secondary,
           tertiaryColor: colors.tertiary,
