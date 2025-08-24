@@ -53,7 +53,7 @@ Cypress.Commands.add("waitForPageLoad", () => {
       cy.log("✅ All images loaded successfully");
     })
     .then(() => {
-      cy.get("video").each(($video) => {
+      cy.find("video").each(($video) => {
         cy.log(`🎥  Found ${$video.length} videos, pausing and resetting playback to 0`);
         const videoEl = $video[0] as HTMLVideoElement;
         if (!videoEl.paused) {
