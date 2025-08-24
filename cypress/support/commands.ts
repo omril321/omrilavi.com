@@ -53,13 +53,20 @@ Cypress.Commands.add("waitForPageLoad", () => {
       cy.log("✅ All images loaded successfully");
     })
     .then(() => {
-      cy.find("video").each(($video) => {
-        cy.log(`🎥  Found ${$video.length} videos, pausing and resetting playback to 0`);
-        const videoEl = $video[0] as HTMLVideoElement;
-        if (!videoEl.paused) {
-          videoEl.pause();
-        }
-        videoEl.currentTime = 0;
+      cy.window().then((win) => {
+        const vids = win.document.querySelectorAll("video"); // empty NodeList is fine
+        vids.forEach((vid) => {
+          cy.log("Pausing and resetting video playback to 0");
+          const reset = () => {
+            vid.pause();
+            vid.currentTime = 0;
+          };
+          if (vid.readyState > 0) {
+            reset();
+          } else {
+            vid.addEventListener("loadedmetadata", reset, { once: true });
+          }
+        });
       });
     });
 });
