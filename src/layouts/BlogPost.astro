@@ -4,9 +4,11 @@ import Analytics from "../components/Analytics.astro";
 import { formatDate } from "../utils/formatDate";
 import type { BlogEntry } from "../content/config";
 
-type Props = BlogEntry;
+type Props = BlogEntry & {
+  relatedPosts: Array<{ slug: string; title: string }>;
+};
 
-const { title, description, image, publishDate } = Astro.props;
+const { title, description, image, publishDate, relatedPosts } = Astro.props as Props;
 ---
 
 <html lang="en">
@@ -92,6 +94,20 @@ const { title, description, image, publishDate } = Astro.props;
                       prose-blockquote:border-l-primary prose-blockquote:text-text-secondary"
           >
             <slot />
+            {
+              relatedPosts.length > 0 && (
+                <>
+                  <h2 class="text-2xl font-semibold">Related Posts</h2>
+                  <ul class="mt-4 space-y-2">
+                    {relatedPosts.map((post) => (
+                      <li>
+                        <a href={`/blog/${post.slug}`}>{post.title}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )
+            }
           </div>
         </div>
       </section>
