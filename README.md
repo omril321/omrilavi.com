@@ -90,7 +90,7 @@ To add a new internal blog post, you need to:
 
 1. **Create post directory**: `src/content/blog/your-post-name/`
 2. **Write the MDX file**: `src/content/blog/your-post-name/index.mdx`
-3. **Add hero image**: `public/blog-assets/your-post-name.png/jpg`
+3. **Add hero image**: place the source PNG/JPG under `public/blog-assets/your-post-name.*`, then run `scripts/png2small.sh` to create an optimized image (AVIF/WebP/JPEG). Use the generated `.avif` path.
 4. **Add post assets** (optional): Place in post directory alongside `index.mdx`
 
 ### Detailed Steps
@@ -111,7 +111,7 @@ Create `src/content/blog/your-post-name/index.mdx` with the following frontmatte
 ---
 title: "Your Post Title"
 description: "A concise description of your post (10-500 characters). This appears in meta tags and post previews."
-image: "/blog-assets/your-post-name.png"
+image: "/blog-assets/your-post-name.avif"
 publishDate: "2024-01-15"
 ---
 
@@ -121,7 +121,7 @@ Write your post content in MDX format. You can use:
 
 - **Markdown syntax** for text formatting
 - **Mermaid diagrams** for flowcharts and diagrams
-- **Local images**: `![Alt text](./your-image.png)`
+- **Local images**: `![Alt text](./your-image.avif)`
 - **Code blocks** with syntax highlighting
 ```
 
@@ -130,7 +130,7 @@ Write your post content in MDX format. You can use:
 Create a hero image and place it in:
 
 ```
-public/blog-assets/your-post-name.png
+public/blog-assets/your-post-name.avif
 ```
 
 #### 4. Add Post-Specific Assets (Optional)
@@ -140,14 +140,14 @@ Place any additional images, screenshots, or files in your post directory:
 ```
 src/content/blog/your-post-name/
 ├── index.mdx
-├── screenshot1.png
-└── code-example.png
+├── screenshot1.avif
+└── code-example.avif
 ```
 
 Reference them in your MDX with relative paths:
 
 ```mdx
-![Screenshot](./screenshot1.png)
+![Screenshot](./screenshot1.avif)
 ```
 
 #### 5. Frontmatter Reference
@@ -156,7 +156,7 @@ Reference them in your MDX with relative paths:
 | ------------- | ------ | --------------------------------------------- | ---------------------------------------------------------------------- |
 | `title`       | string | Post title (appears in hero and meta tags)    | `"Building Better APIs"`                                               |
 | `description` | string | SEO description (10-500 chars)                | `"A guide to designing clean, maintainable REST APIs with TypeScript"` |
-| `image`       | string | Hero image path (starts with `/blog-assets/`) | `"/blog-assets/building-apis.png"`                                     |
+| `image`       | string | Hero image path (starts with `/blog-assets/`) | `"/blog-assets/building-apis.avif"`                                    |
 | `publishDate` | string | Publication date (YYYY-MM-DD format)          | `"2024-01-15"`                                                         |
 
 #### 6. Development & Testing
