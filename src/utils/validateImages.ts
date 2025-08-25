@@ -6,20 +6,30 @@
 import fs from "fs";
 import path from "path";
 
-export function validateImageExists(imagePath: string): boolean {
-  // Remove leading slash and convert to file system path
-  const cleanPath = imagePath.startsWith("/") ? imagePath.slice(1) : imagePath;
-  const fullPath = path.join(process.cwd(), "public", cleanPath);
-
+function validateImageExists(fullPath: string): boolean {
   return fs.existsSync(fullPath);
+}
+
+function validateImageIsOptimized(imagePath: string): boolean {
+  if (imagePath.endsWith(".png")) {
+    return false;
+  }
+  return true;
 }
 
 export function validateAllPostImages(posts: Array<{ image: string; title: string }>): void {
   const missingImages: string[] = [];
 
+  const nonOptimizedImages: string[] = [];
+
   posts.forEach((post) => {
-    if (!validateImageExists(post.image)) {
-      missingImages.push(`${post.title}: ${post.image}`);
+    const cleanPath = post.image.startsWith("/") ? post.image.slice(1) : post.image;
+    const fullPath = path.join(process.cwd(), "public", cleanPath);
+    if (!validateImageExists(fullPath)) {
+      missingImages.push(`${post.title}: ${fullPath}`);
+    }
+    if (!validateImageIsOptimized(fullPath)) {
+      nonOptimizedImages.push(`${post.title}: ${fullPath}`);
     }
   });
 
@@ -28,7 +38,15 @@ export function validateAllPostImages(posts: Array<{ image: string; title: strin
     missingImages.forEach((missing) => console.warn(`  - ${missing}`));
 
     throw new Error(`Missing ${missingImages.length} blog post images`);
-  } else {
-    console.log("✅ All blog post images validated");
   }
+
+  if (nonOptimizedImages.length > 0) {
+    console.error("⚠️  Non-optimized blog post images:");
+    nonOptimizedImages.forEach((nonOptimized) => console.warn(`  - ${nonOptimized}`));
+
+    throw new Error(
+      `Non-optimized ${nonOptimizedImages.length} blog post images. Use scripts/png2small.sh to optimize them.`
+    );
+  }
+  console.log("✅ All blog post images validated");
 }

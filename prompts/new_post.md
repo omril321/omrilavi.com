@@ -50,6 +50,7 @@ Ask the user for the markdown content via one of these methods:
 
 - Ask: "Provide the path to the hero image for this post, or paste the image directly. This will be the main visual for the post card and hero section."
 - Inform that image should be wide aspect ratio (16:9) and web-optimized
+- If the image is not web-optimized, run `scripts/png2small.sh` to optimize it. Update all references to the image to use the new path. Once approved, remove the previous image.
 
 ### Referenced Assets
 

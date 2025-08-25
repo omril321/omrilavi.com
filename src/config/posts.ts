@@ -15,14 +15,14 @@ export const posts: ExternalPost[] = [
     publishDate: new Date("2025-02-01"),
     description:
       "Exploring key lessons from Will Larson's 'Staff Engineer,' this article delves into the four archetypes of Staff+ Engineers and strategies for impactful technical leadership.",
-    image: "/blog-assets/growing-as-a-technical-leader-lessons-from-the-book-staff-engineer.png",
+    image: "/blog-assets/growing-as-a-technical-leader-lessons-from-the-book-staff-engineer.webp",
   },
   {
     url: "https://engineering.monday.com/testkit-mastery-part-5-key-takeaways-and-lessons-learned-for-building-better-testkits/",
     title: "Testkit Mastery, Part 5: Key Takeaways and Lessons Learned for Building Better Testkits",
     description:
       "Reflecting on building testkits for complex libraries, this article shares key takeaways and lessons learned to enhance testing workflows and create developer-friendly tools.",
-    image: "/blog-assets/testkit-mastery-part-5-key-takeaways-and-lessons-learned-for-building-better-testkits.png",
+    image: "/blog-assets/testkit-mastery-part-5-key-takeaways-and-lessons-learned-for-building-better-testkits.avif",
     publishDate: new Date("2025-03-14"),
   },
   {
@@ -30,7 +30,7 @@ export const posts: ExternalPost[] = [
     title: "Testkit Mastery, Part 4: Design for Easy Integration into Testing Environments",
     description:
       "This article explores strategies for seamlessly integrating testkits into environments like Vitest and Storybook, ensuring minimal setup and a consistent developer experience.",
-    image: "/blog-assets/testkit-mastery-part-4-design-for-easy-integration-into-testing-environments.png",
+    image: "/blog-assets/testkit-mastery-part-4-design-for-easy-integration-into-testing-environments.avif",
     publishDate: new Date("2025-02-28"),
   },
   {
@@ -38,7 +38,7 @@ export const posts: ExternalPost[] = [
     title: "Testkit Mastery, Part 3: Building the Core Structure of a Flexible and Reliable Testkit",
     description:
       "Delving into the implementation of core components, this article discusses balancing flexibility and accuracy to create a robust testkit for complex libraries.",
-    image: "/blog-assets/testkit-mastery-part-3-building-the-core-structure-of-a-flexible-and-reliable-testkit.png",
+    image: "/blog-assets/testkit-mastery-part-3-building-the-core-structure-of-a-flexible-and-reliable-testkit.avif",
     publishDate: new Date("2025-02-21"),
   },
   {
@@ -46,7 +46,7 @@ export const posts: ExternalPost[] = [
     title: "Testkit Mastery, Part 2: Designing a Developer-Friendly Testkit",
     description:
       "This article walks through prototyping a testkit API, focusing on key requirements for usability, flexibility, and seamless TypeScript integration.",
-    image: "/blog-assets/testkit-mastery-part-2-designing-a-developer-friendly-testkit.png",
+    image: "/blog-assets/testkit-mastery-part-2-designing-a-developer-friendly-testkit.avif",
     publishDate: new Date("2025-02-14"),
   },
   {
@@ -55,7 +55,7 @@ export const posts: ExternalPost[] = [
     publishDate: new Date("2025-01-25"),
     description:
       "Discover how we built a TypeScript tool to test and optimize selectors, improving performance by ensuring consistent references for identical inputs.",
-    image: "/blog-assets/how-typescripts-compiler-helped-us-prevent-redux-performance-issues.png",
+    image: "/blog-assets/how-typescripts-compiler-helped-us-prevent-redux-performance-issues.avif",
   },
   {
     url: "https://gitnation.com/contents/the-superpower-of-asts-how-we-saved-16percent-on-our-bundle-size",
@@ -85,21 +85,21 @@ export const posts: ExternalPost[] = [
     publishDate: new Date("2023-03-19"),
     description:
       "Discover new web optimization techniques with our custom Babel loader that decreased our bundle sizes by up to 16%.",
-    image: "/blog-assets/the-superpower-of-babel-how-we-saved-16-on-our-bundle-size.png",
+    image: "/blog-assets/the-superpower-of-babel-how-we-saved-16-on-our-bundle-size.avif",
   },
   {
     url: "https://www.testim.io/blog/typescript-skiplibcheck/",
     title: "Understanding TypeScript's skipLibCheck Once and For All",
     description: "Read about the behavior and usages of the skipLibCheck option, and understand when to use it.",
     publishDate: new Date("2021-08-25"),
-    image: "/blog-assets/understanding-typescripts-skiplibcheck-once-and-for-all.png",
+    image: "/blog-assets/understanding-typescripts-skiplibcheck-once-and-for-all.avif",
   },
   {
     url: "https://dev.to/omril321/developing-self-compassion-an-answer-to-the-constant-burnout-35e1",
     title: "Developing Self Compassion: An Answer to the Constant Burnout",
     description:
       "Are you generally stressed about your value as a developer? Feeling like you're just not enough? This post is for you.",
-    image: "/blog-assets/developing-self-compassion-an-answer-to-the-constant-burnout.png",
+    image: "/blog-assets/developing-self-compassion-an-answer-to-the-constant-burnout.webp",
     publishDate: new Date("2021-07-16"),
   },
   {
@@ -107,7 +107,7 @@ export const posts: ExternalPost[] = [
     title: "Better Error Messages in TypeScript 4.2 - Smarter Type Alias Preservation",
     description:
       "Smarter Type Alias Preservation makes TypeScript 'remember' which union-types are being used while displaying the error messages.",
-    image: "/blog-assets/better-error-messages-in-typescript-42-smarter-type-alias-preservation.png",
+    image: "/blog-assets/better-error-messages-in-typescript-42-smarter-type-alias-preservation.webp",
     publishDate: new Date("2021-02-28"),
   },
   {
@@ -115,7 +115,7 @@ export const posts: ExternalPost[] = [
     title: "Git Metric - Solving the Pain of Measuring a Project Migration",
     description: "With Git Metric you can quickly analyze git repository's history within minutes.",
     publishDate: new Date("2021-02-14"),
-    image: "/blog-assets/git-metric-solving-the-pain-of-measuring-a-project-migration.png",
+    image: "/blog-assets/git-metric-solving-the-pain-of-measuring-a-project-migration.webp",
   },
   {
     url: "https://www.testim.io/blog/writing-your-first-custom-stylelint-rule/",
