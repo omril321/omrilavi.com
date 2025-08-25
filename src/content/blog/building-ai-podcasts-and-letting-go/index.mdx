@@ -1,6 +1,6 @@
 ---
 title: "Building an AI-Generated Podcast I Didn’t Want to Keep"
-description: "What I learned building an AI-generated podcast pipeline—voice models, SSML, orchestration with LangGraph—and why I ultimately moved on."
+description: "What I learned building an AI-generated podcast pipeline, voice models, SSML, orchestration with LangGraph - and why I ultimately moved on."
 image: "/blog-assets/building-ai-podcasts-and-letting-go/cover.png"
 publishDate: "2025-08-24"
 relatedPostSlugs: ["turning-articles-into-podcasts"]
@@ -23,7 +23,7 @@ It was about clarity over cleverness: taking a vague idea and turning it into so
 
 The end goal was clear: an automated system that could take a set of articles, summarize them, convert the summaries into a two-speaker conversational script, and then generate audio files that sounded like a real dialogue. All of this needed to run with minimal manual steps, producing a podcast-like result I could listen to daily.
 
-I wanted the output to sound human, not perfect, but pleasant. That meant natural pacing, varied tone, and two distinct voices that felt like co-hosts. I wasn’t aiming for deep character development, but I didn’t want it to feel robotic either. The two-speaker format was important: it breaks monotony and helps simulate conversational flow. One voice feels like a lecture; two voices, even if scripted, feel like an exchange.
+I wanted the output to sound human, not perfect, but pleasant. That meant natural pacing, varied tone, and two distinct voices that felt like co-hosts. I wasn’t aiming for deep character development, but I didn’t want it to feel robotic either. The two-speaker format was important: it breaks monotony and helps simulate conversational flow. One voice feels like a lecture. Two voices, even if scripted, feel like an exchange.
 
 To make this happen, I built a pipeline using [LangGraph](https://langchain-ai.github.io/langgraph/) to orchestrate the flow. The core stages were: fetch articles, summarize them, generate a script, convert it to speech, and finally stitch the audio together into a single file. Each stage could be debugged independently and improved in isolation. The modularity was key.
 
@@ -59,7 +59,7 @@ To manage complexity, I experimented with [Cursor](https://www.cursor.com/) memo
 
 #### LangGraph: Flexible, but Demanding
 
-LangGraph gave me clean orchestration with state management. But getting it to work the way I wanted wasn’t trivial. I hit friction when trying to enforce structure on the output, especially when feeding LLMs. Eventually, I built my own validation layer using [`zod-to-json-schema`](https://www.npmjs.com/package/zod-to-json-schema), which gave me reliability and confidence in the pipeline. I’m sure there’s a more idiomatic LangGraph approach, but mine worked, and I understood every part of it. That clarity helped me push through other challenges later on.
+LangGraph gave me clean orchestration with state management. But getting it to work the way I wanted wasn’t trivial. I hit friction when trying to enforce structure on the output, especially when feeding LLMs. Eventually, I built [my own validation layer](https://github.com/omril321/podcast-generator/blob/main/src/actions/generateScript.ts#L41) using [`zod-to-json-schema`](https://www.npmjs.com/package/zod-to-json-schema), which gave me reliability and confidence in the pipeline. I’m sure there’s a more idiomatic LangGraph approach, but mine worked, and I understood every part of it. That clarity helped me push through other challenges later on.
 
 #### Tooling Overload
 
@@ -85,7 +85,7 @@ Minimal SSML worked best. In the example below, I added a pause after the questi
 
 #### Newsfeed Integration: A Tangent Too Far
 
-At one point, I tried to make the podcast feed itself, sourcing articles through Tavily and turning them into episodes. It sounded great on paper, but took a lot of duct tape to get working. Even then, the results weren’t good enough. I spent too much time wrestling with search APIs and ranking logic. Now I curate sources manually. It’s simpler, and more reliable.
+At one point, I tried to make the podcast feed itself, sourcing articles through [Tavily](https://tavily.com/) and turning them into episodes. It sounded great on paper, but took a lot of duct tape to get working. Even then, the results weren’t good enough. I spent too much time wrestling with search APIs and ranking logic. Now I curate sources manually. It’s simpler, and more reliable.
 
 
 ### The Tools That Didn’t Fit - and What I Learned
@@ -108,21 +108,18 @@ Both Podcastfy and Open-Notebook looked interesting - well-scoped tools built fo
 
 #### **[Google Cloud Text-to-Speech](https://cloud.google.com/text-to-speech)** – Hosted TTS with clear, contrasting voices
 
-I eventually landed on Google Cloud Text-to-Speech, using two voices - Autonoe and Algieba - from the Chirp 3 HD family. After testing most of the available options, these stood out for their clarity and contrast. They weren’t flawless, but together they gave the two-speaker format a more natural rhythm. The voices are [en‑US‑Chirp3‑HD‑Algieba](https://cloud.google.com/static/text-to-speech/docs/audio/en-US-Chirp3-HD-Algieba.wav) and [en‑US‑Chirp3‑HD‑Autonoe](https://cloud.google.com/static/text-to-speech/docs/audio/en-US-Chirp3-HD-Autonoe.wav). You can browse the full list of available voices [here](https://cloud.google.com/text-to-speech/docs/list-voices-and-types).
+I eventually landed on Google Cloud Text-to-Speech, using two voices - [Autonoe](https://cloud.google.com/static/text-to-speech/docs/audio/en-US-Chirp3-HD-Autonoe.wav) and [Algieba](https://cloud.google.com/static/text-to-speech/docs/audio/en-US-Chirp3-HD-Algieba.wav) - from the (Chirp 3 HD)[https://cloud.google.com/text-to-speech/docs/chirp3-hd] family. 
+After testing most of the available options, these stood out for their clarity and contrast. 
+They weren’t flawless, but together they gave the two-speaker format a more natural rhythm. 
+You can browse the full list of available voices [here](https://cloud.google.com/text-to-speech/docs/list-voices-and-types).
 
 
 Rather than chase a polished final product, I focused on what each version taught me. After every change - SSML tweaks, voice swaps, script edits - I listened. Not to a single clip, but to a mix of inputs. Did it sound more natural? Was it easier to follow? The only way to tell was to sit with the audio.
 
 Automation would’ve helped, but this part couldn’t be automated. I had to trust my ears.
 
-Progress came in stages: plain text, then SSML everywhere, then SSML dialed back to just enough. Voices changed, formatting evolved. Slowly, the audio started to feel like something I might actually choose to hear.
+Progress came in stages: plain text, then SSML everywhere, then SSML dialed back to just enough. Voices changed, formatting evolved. Slowly, the audio started to feel like something I might actually choose to hear. You can hear the evolution in the audio samples below.
 
-These kinds of small shifts - subtle choices in structure, format, or tooling - ended up mattering more than I expected. The evolution wasn’t dramatic, but it was real - and you can hear it.
-
-
-### Audio samples
-
-Here are three snapshots from the project’s evolution.
 
 #### Early phase — no SSML
 
@@ -143,6 +140,7 @@ More natural, with occasional weird emotional cues (hear the 5 seconds for a cri
 <AudioPlayer src="/blog-assets/building-ai-podcasts-and-letting-go/sample-3-final-balanced.wav" title="Sample 3: Final balanced version" />
 
 Together they show the arc: the plain baseline is robotic, the SSML-heavy pass sounds less natural, and the final balanced version is the most listenable (though it can still be improved).
+These kinds of small shifts - subtle choices in structure, format, or tooling - ended up mattering more than I expected. The evolution wasn’t dramatic, but it was real - and you can hear it.
 
 
 ### What Held Up When Most Didn’t
@@ -180,7 +178,7 @@ A common approach is to generate the full script with speaker names on every lin
 
 #### Line-Based Audio Stitching
 
-To keep things fast, I parallelized the audio generation, letting multiple chunks be processed by Google TTS at once. Instead of writing and reading temporary files, I streamed the results directly into memory. I then stitched the clips into a final audio file using simple logic and small crossfades. A crossfade overlaps the end of one clip with the start of another to smooth the transition.
+To keep things fast, I parallelized the audio generation, letting multiple chunks be processed by Google TTS at once. Instead of writing and reading temporary files, I streamed the results directly into memory. I then [stitched the clips](https://github.com/omril321/podcast-generator/blob/main/src/services/audio-stitcher/index.ts) into a final audio file using simple logic and small crossfades. A crossfade overlaps the end of one clip with the start of another to smooth the transition.
 
 The crossfades played a subtle but important role. Without them, the playback felt abrupt, as if one speaker snapped in immediately after the other. With them, the timing felt more conversational, less like a list being read out loud.
 
@@ -209,7 +207,10 @@ From the start, I wasn’t aiming to ship a product. I wanted to explore the mov
 - Build something I would actually choose to listen to, even if just occasionally.
 - Know when to stop: not when everything’s perfect, but when the project has taught me enough.
 
-So I stopped. Not because it failed, but because it delivered. The project had taught me what I needed to know. And that clarity gave me permission to move on - which led me to thinking about automating [NotebookLM](https://notebooklm.google/), a simpler and better-aligned solution for the same core goal. This will be covered in a different post.
+So I stopped. Not because it failed, but because it delivered. 
+The project had taught me what I needed to know. 
+And that clarity gave me permission to move on - which led me to thinking about automating [NotebookLM](https://notebooklm.google/), a simpler and better-aligned solution for the same core goal. 
+This project is covered in [a different post](/blog/turning-articles-into-podcasts).
 
 
 ### What Paid Off - and What I Should’ve Let Go Sooner
