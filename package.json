@@ -7,7 +7,6 @@
   },
   "private": true,
   "scripts": {
-    "prebuild": "node scripts/generate-og-images.mjs",
     "build": "astro build",
     "cypress": "cypress open",
     "cypress:update-screenshots": "cypress run --env updateSnapshots=true",
