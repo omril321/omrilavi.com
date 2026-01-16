@@ -51,3 +51,6 @@ cypress/videos/
 cypress/screenshots/
 cypress/snapshots/**/__diff_output__/
 # Note: cypress/snapshots/ baseline images should be committed for visual regression testing
+
+# Generated OG images (auto-generated during build from AVIF/WebP sources)
+public/blog-assets/**/*-og.jpg

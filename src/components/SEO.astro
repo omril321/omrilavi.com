@@ -17,6 +17,18 @@ const siteUrl = Astro.site?.toString() || "https://omrilavi.com";
 const canonicalUrl = url || Astro.url.toString();
 const absoluteImage = image.startsWith("http") ? image : new URL(image, siteUrl).toString();
 
+// Auto-derive OG image path: /blog-assets/foo.avif → /blog-assets/foo-og.jpg
+function deriveOgImagePath(imagePath: string): string {
+  const supportedExtensions = [".avif", ".webp"];
+  const ext = imagePath.match(/\.[^.]+$/)?.[0]?.toLowerCase() || "";
+  if (!supportedExtensions.includes(ext)) {
+    return imagePath; // Already JPG/PNG, use as-is
+  }
+  return imagePath.replace(/\.[^.]+$/, "-og.jpg");
+}
+
+const socialImage = new URL(deriveOgImagePath(image), siteUrl).toString();
+
 // Structured data for homepage
 const websiteStructuredData = {
   "@context": "https://schema.org",
@@ -70,7 +82,7 @@ const structuredData = type === "article" && articleStructuredData ? articleStru
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={absoluteImage} />
+<meta property="og:image" content={socialImage} />
 <meta property="og:site_name" content={PROFESSIONAL_INFO.fullTitle} />
 
 <!-- Twitter -->
@@ -78,7 +90,7 @@ const structuredData = type === "article" && articleStructuredData ? articleStru
 <meta property="twitter:url" content={canonicalUrl} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={absoluteImage} />
+<meta property="twitter:image" content={socialImage} />
 <meta property="twitter:creator" content={PROFESSIONAL_INFO.twitterHandle} />
 
 <!-- Article specific meta tags -->
