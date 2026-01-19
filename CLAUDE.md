@@ -63,6 +63,10 @@ publishDate: "YYYY-MM-DD"
 
 Hero images go in `public/blog-assets/`. Run `scripts/png2small.sh` to optimize.
 
+## Blog Writing
+
+Use the `/blog-writer` skill for creating new posts.
+
 ## Testing
 
 Visual regression tests use `cypress-image-snapshot`. Run `yarn cypress:update-screenshots` after intentional visual changes. Tests require production build (`yarn build` first).
@@ -72,3 +76,5 @@ Visual regression tests use `cypress-image-snapshot`. Run `yarn cypress:update-s
 Strict TypeScript rules enabled:
 - `@typescript-eslint/no-floating-promises: error` - Must handle promises
 - `@typescript-eslint/consistent-type-imports: warn` - Use `import type` for types
+
+<!-- Last Updated: 2026-01-19 -->
