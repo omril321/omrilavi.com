@@ -7,6 +7,7 @@ export const basePostSchema = z.object({
   image: z.string(),
   publishDate: z.coerce.date(),
   relatedPostSlugs: z.array(z.string()).optional(),
+  discussionLink: z.string().url().optional(),
 });
 
 // Blog collection schema (no URL needed)

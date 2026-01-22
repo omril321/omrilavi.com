@@ -1,0 +1,19 @@
+---
+export interface Props {
+  href: string;
+  label?: string;
+}
+
+const { href, label = "See Discussion & Comments" } = Astro.props;
+---
+
+<div class="mt-8 pt-6 border-t border-border-tertiary not-prose">
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="text-primary hover:underline"
+  >
+    {label}
+  </a>
+</div>

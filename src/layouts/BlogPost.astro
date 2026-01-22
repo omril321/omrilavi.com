@@ -1,6 +1,7 @@
 ---
 import SEO from "../components/SEO.astro";
 import Analytics from "../components/Analytics.astro";
+import DiscussionLink from "../components/DiscussionLink.astro";
 import { formatDate } from "../utils/formatDate";
 import type { BlogEntry } from "../content/config";
 
@@ -8,7 +9,7 @@ type Props = BlogEntry & {
   relatedPosts: Array<{ slug: string; title: string }>;
 };
 
-const { title, description, image, publishDate, relatedPosts } = Astro.props as Props;
+const { title, description, image, publishDate, relatedPosts, discussionLink } = Astro.props as Props;
 ---
 
 <html lang="en">
@@ -108,6 +109,7 @@ const { title, description, image, publishDate, relatedPosts } = Astro.props as 
                 </>
               )
             }
+            {discussionLink && <DiscussionLink href={discussionLink} />}
           </div>
         </div>
       </section>
